@@ -27,10 +27,9 @@ Dazu passen die neu bei Ubuntu eingeführten &lt;a href="https://blog.ubuntu.com
 die extern erreichbaren Container hängen an einer Bridge  mit dem phyiskalischen Interface des Hosts.
 Weiterhin gibt es ein internes Lxd-Network, an dem Infrastrukturdienste wie Ldap, MySQL und Redis lauschen.
 Die externe Anbindung erfolgt über ein /29-Netzwerk. Die Container, die an der externen Bridge hängen, routen den Traffic über die externe Ip
-des Hosts, nur  mit dieser als Gateway ist Kommunikation mizt dem Internet möglich.
-Die Container haben dafür folgende Netplan-Konfig:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;root@container:~# cat /etc/netplan/50-cloud-init.yaml&lt;/span&gt;
-&lt;span class="l l-Scalar l-Scalar-Plain"&gt;network&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+des Hosts, nur  mit dieser als Gateway ist Kommunikation mit dem Internet möglich.&lt;/p&gt;
+&lt;p&gt;Die Container haben dafür folgende Netplan-Konfig:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;network&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="nt"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;2&lt;/span&gt;
     &lt;span class="nt"&gt;ethernets&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="nt"&gt;eth0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
