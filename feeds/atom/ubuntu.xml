@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg - ubuntu</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom/ubuntu.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2011-06-19T15:38:00+02:00</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle><entry><title>Snmp unter Ubuntu</title><link href="https://xunzi.github.io/snmp-unter-ubuntu.html" rel="alternate"></link><published>2011-06-19T15:38:00+02:00</published><updated>2011-06-19T15:38:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2011-06-19:/snmp-unter-ubuntu.html</id><summary type="html">&lt;p&gt;Falls mal jemand unter Ubuntu die net-snmp-Utilities (snmpwalk etc.)
+einsetzen will, ist zu beachten, daß zusätzlich zm Paket &lt;em&gt;snmp&lt;/em&gt; auch
+noch &lt;em&gt;snmp-mibs-downloader&lt;/em&gt; installiert werden muss, dann werden die
+MIBs automatisch heruntergaladen und integriert. Zusätzlich muß noch in
+der Datei /etc/snmp/snmp.conf die Zeile mibs : auskommentiert werden.
+Grund für …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Falls mal jemand unter Ubuntu die net-snmp-Utilities (snmpwalk etc.)
+einsetzen will, ist zu beachten, daß zusätzlich zm Paket &lt;em&gt;snmp&lt;/em&gt; auch
+noch &lt;em&gt;snmp-mibs-downloader&lt;/em&gt; installiert werden muss, dann werden die
+MIBs automatisch heruntergaladen und integriert. Zusätzlich muß noch in
+der Datei /etc/snmp/snmp.conf die Zeile mibs : auskommentiert werden.
+Grund für das Gehmpel sind wohl Lizenzprobleme, die die Auslieferung der
+MIBs seit &lt;a href="http://www.m8in.de/?p=427"&gt;Ubuntu 10.4 als Teil der Distribution verhindern&lt;/a&gt;.&lt;/p&gt;</content><category term="misc"></category><category term="snmp"></category><category term="ubuntu"></category></entry></feed>

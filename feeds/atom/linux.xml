@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg - linux</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom/linux.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2010-09-14T14:09:00+02:00</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle><entry><title>von Linux zu MacOS</title><link href="https://xunzi.github.io/von-linux-zu-macos.html" rel="alternate"></link><published>2010-09-14T14:09:00+02:00</published><updated>2010-09-14T14:09:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2010-09-14:/von-linux-zu-macos.html</id><summary type="html">&lt;p&gt;Da seit neuestem ein MacMini unseren Sekretär ziert, musste ich für
+einige liebgewonnene Applikationen Ersatz suchen. Besonders schwierig
+war diese Suche im Bereich Bildverwaltung und Musikverwaltung.&lt;/p&gt;
+&lt;p&gt;Als Bildverwaltung kam bisher immer &lt;a href="http://www.digikam.org/drupal/"&gt;Digikam&lt;/a&gt; zum Einsatz. Das läßt
+sich zwar auch unter MacOS &lt;a href="http://opensourcecat.blogspot.com/2009/01/en-digikam-little-step-more-to-world.html"&gt;kompilieren&lt;/a&gt;, aber das erfordert häßliche
+Krücken, um die KDE-Umgebung …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Da seit neuestem ein MacMini unseren Sekretär ziert, musste ich für
+einige liebgewonnene Applikationen Ersatz suchen. Besonders schwierig
+war diese Suche im Bereich Bildverwaltung und Musikverwaltung.&lt;/p&gt;
+&lt;p&gt;Als Bildverwaltung kam bisher immer &lt;a href="http://www.digikam.org/drupal/"&gt;Digikam&lt;/a&gt; zum Einsatz. Das läßt
+sich zwar auch unter MacOS &lt;a href="http://opensourcecat.blogspot.com/2009/01/en-digikam-little-step-more-to-world.html"&gt;kompilieren&lt;/a&gt;, aber das erfordert häßliche
+Krücken, um die KDE-Umgebung zum Laufen zu bringen. iPhoto war auch
+nicht so mein Fall (das war vor allem erstaunlich zäh, noch bevor ich
+alle meine Bilder importiert hatte), schließlich bin ich bei Googles
+Picasa gelandet, weil ich keine Lust hatte, ein- oder zweihundert Euro
+für die einschlägigen Produkte von Adobe oder Apple auszugeben, Picasa
+angenehm flott reagiert und die grundlegenden Bearbeitungsfunktionen
+bereithält, die ich so brauche. Ein zusätzliches Plus ist die
+hervorragende Integration in die Picasa Webalben.&lt;/p&gt;
+&lt;p&gt;Die Musikverwaltung war ein noch größeres Problem, da iTunes komplett
+indiskutabel ist (warum muß ich meine Kreditkartennummer angeben, wenn
+ich Coverbilder zu meinen Musikstücken sehen will) und mein Mp3-Player
+nur &lt;a href="http://en.wikipedia.org/wiki/Media_Transfer_Protocol"&gt;Mtp&lt;/a&gt; und &lt;a href="http://en.wikipedia.org/wiki/USB_mass_storage_device_class"&gt;Msc&lt;/a&gt; spricht und somit in iTunes gar nicht
+unterstützt wird. Nach Experimenten mit Xnjb, das &lt;a href="http://www.wentnet.com/projects/xnjb/"&gt;Mtp&lt;/a&gt; unter MacOS
+implementiert, bin ich bei &lt;a href="http://getsongbird.com/"&gt;Songbird&lt;/a&gt; gelandet, der in der letzten
+Version sehr gute Unterstützung für Msc-Geräte bietet.&lt;strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Update]&lt;/strong&gt;Noch besser, weil schlanker und schneller ist
+&lt;a href="http://www.clementine-player.org/"&gt;Clementine&lt;/a&gt;, sehr empfehlenswert für alle, die Amarok 1.x
+nachtrauern!&lt;/p&gt;
+&lt;p&gt;Angeschaut habe ich mir auch &lt;a href="http://jajuk.info/index.php/Main_Page"&gt;Jajuk&lt;/a&gt;, das aber nicht so schön in den
+MacOS-Desktop integriert ist (das hat mich auf der Suche nach einem
+Editor auch wieder von &lt;a href="http://www.jedit.org"&gt;jEdit&lt;/a&gt; abgebracht, aber an der Editoren-Front
+gibt es ja zum Glück &lt;a href="http://aquamacs.org/"&gt;Aquamacs&lt;/a&gt;!)&lt;/p&gt;</content><category term="misc"></category><category term="helferlein"></category><category term="macos"></category><category term="linux"></category></entry></feed>

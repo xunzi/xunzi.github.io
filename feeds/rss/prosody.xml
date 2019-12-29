@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - prosody</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Mon, 13 Jul 2009 18:24:00 +0200</lastBuildDate><item><title>Neuer Jabber-Server</title><link>https://xunzi.github.io/neuer-jabber-server.html</link><description>&lt;p&gt;Im Zuge der &lt;a href="http://www.drexler-online.net/pebble/2009/07/12/upgrade_auf_lenny_und_umstellung_auf_dovecot.html"&gt;Server-Renovierung&lt;/a&gt; habe ich auch den Jabberserver von
+&lt;a href="http://www.igniterealtime.org/projects/openfire/index.jsp"&gt;Openfire&lt;/a&gt;auf &lt;a href="http://prosody.im/"&gt;Prosody&lt;/a&gt; umgestellt.&lt;/p&gt;
+&lt;p&gt;Prosody ist sehr klein und braucht nur sehr wenige Resourcen. Außerdem
+ist es sehr sehr einfach aufzusetzen (obwohl Openfire mit der
+Weboberfläche da auch recht simpel ist). Was noch fehlt sind die
+Gateway-Plugins zu anderen IM-Systemen …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Mon, 13 Jul 2009 18:24:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2009-07-13:/neuer-jabber-server.html</guid><category>misc</category><category>jabber</category><category>prosody</category><category>rootserver</category></item></channel></rss>

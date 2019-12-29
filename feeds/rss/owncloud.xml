@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - owncloud</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Thu, 12 Apr 2012 15:32:00 +0200</lastBuildDate><item><title>Testinstallation: Owncloud</title><link>https://xunzi.github.io/testinstallation-owncloud.html</link><description>&lt;p&gt;Ich habe - angeregt durch die Jubelmeldungen über &lt;a href="http://owncloud.org"&gt;owncloud&lt;/a&gt; - eine
+Testinstanz von "Your Cloud, Your Data, Your Way!" aufgesetzt. OC
+kombiniert einen Webdav-Server, mit dem man die Dateien in die
+Dateimanager moderner Betriebssysteme einbinden kann mit einem
+Kalender/Caldav-Server und einem Addressbuch/carddav-Server. Die
+Standards caldav und carddav werden z. B …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Thu, 12 Apr 2012 15:32:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2012-04-12:/testinstallation-owncloud.html</guid><category>misc</category><category>owncloud</category><category>php-fpm</category><category>nginx</category></item></channel></rss>

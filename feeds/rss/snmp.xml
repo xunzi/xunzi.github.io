@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - snmp</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Sun, 19 Jun 2011 15:38:00 +0200</lastBuildDate><item><title>Snmp unter Ubuntu</title><link>https://xunzi.github.io/snmp-unter-ubuntu.html</link><description>&lt;p&gt;Falls mal jemand unter Ubuntu die net-snmp-Utilities (snmpwalk etc.)
+einsetzen will, ist zu beachten, daß zusätzlich zm Paket &lt;em&gt;snmp&lt;/em&gt; auch
+noch &lt;em&gt;snmp-mibs-downloader&lt;/em&gt; installiert werden muss, dann werden die
+MIBs automatisch heruntergaladen und integriert. Zusätzlich muß noch in
+der Datei /etc/snmp/snmp.conf die Zeile mibs : auskommentiert werden.
+Grund für …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Sun, 19 Jun 2011 15:38:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2011-06-19:/snmp-unter-ubuntu.html</guid><category>misc</category><category>snmp</category><category>ubuntu</category></item></channel></rss>

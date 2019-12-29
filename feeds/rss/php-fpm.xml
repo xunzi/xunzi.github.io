@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - php-fpm</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Mon, 02 Jul 2012 19:33:00 +0200</lastBuildDate><item><title>Apache raus, Nginx rein</title><link>https://xunzi.github.io/apache-raus-nginx-rein.html</link><description>&lt;p&gt;Anlässlich des Upgrades auf Ubuntu Precise habe ich den Webserver
+umgestellt von Apache auf Nginx. Für das ungeliebte Php muss dann
+&lt;a href="http://php-fpm.org/"&gt;php-fpm.org/&lt;/a&gt; mit ins Boot, der Java-Appserver wird per Proxy
+angebunden, da Nginx kein AJP spricht. Auf dem kleinen Webserver
+performt das Ganze ganz gut und hat den Vorteil …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Mon, 02 Jul 2012 19:33:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2012-07-02:/apache-raus-nginx-rein.html</guid><category>misc</category><category>apache</category><category>php-fpm</category><category>nginx</category></item><item><title>Testinstallation: Owncloud</title><link>https://xunzi.github.io/testinstallation-owncloud.html</link><description>&lt;p&gt;Ich habe - angeregt durch die Jubelmeldungen über &lt;a href="http://owncloud.org"&gt;owncloud&lt;/a&gt; - eine
+Testinstanz von "Your Cloud, Your Data, Your Way!" aufgesetzt. OC
+kombiniert einen Webdav-Server, mit dem man die Dateien in die
+Dateimanager moderner Betriebssysteme einbinden kann mit einem
+Kalender/Caldav-Server und einem Addressbuch/carddav-Server. Die
+Standards caldav und carddav werden z. B …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Thu, 12 Apr 2012 15:32:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2012-04-12:/testinstallation-owncloud.html</guid><category>misc</category><category>owncloud</category><category>php-fpm</category><category>nginx</category></item></channel></rss>

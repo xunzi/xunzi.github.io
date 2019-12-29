@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - beamer</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Mon, 17 Jan 2011 21:44:00 +0100</lastBuildDate><item><title>Org-Export als Beamer-Präse</title><link>https://xunzi.github.io/org-export-als-beamer-prase.html</link><description>&lt;p&gt;Eine der zahlreichen äußerst praktischen Anwendungen von org-mode ist
+die Möglichkeit, org-Dokumente als Beamer-Präsentationen zu exportieren.
+Das sieht dann z.B. so aus, wie in diesem &lt;a href="/static/beispielpraese.pdf"&gt;Beispiel&lt;/a&gt;. Erzeugt wurde
+das Ganze aus dieser &lt;a href="/static/beispielpraese.org"&gt;org-Datei&lt;/a&gt;. (Damit dieser Export funktioniert,
+muß übrigens eine LaTex-Umgebung installiert sein!)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Mon, 17 Jan 2011 21:44:00 +0100</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2011-01-17:/org-export-als-beamer-prase.html</guid><category>misc</category><category>org-mode</category><category>emacs</category><category>beamer</category></item></channel></rss>

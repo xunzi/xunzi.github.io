@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - tmux</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Mon, 18 Jul 2016 10:25:00 +0200</lastBuildDate><item><title>Dottmuxconf</title><link>https://xunzi.github.io/dot-tumxconf.html</link><description>&lt;p&gt;Tmux-Konfig mit grüner Statusleite und veränderten Keybinding.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;unbind C-b
+&lt;span class="nb"&gt;set&lt;/span&gt; -g prefix C-g
+bind C-g send-prefix
+bind g send-prefix
+
+&lt;span class="nb"&gt;set&lt;/span&gt;-window-option -g window-status-current-bg red
+
+&lt;span class="c"&gt;# Set window notifications&lt;/span&gt;
+setw -g monitor-activity on
+&lt;span class="nb"&gt;set&lt;/span&gt; -g visual-activity on
+setw -g automatic-rename
+
+&lt;span class="c"&gt;#emacs key bindings of course&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt;-window-option -g mode-keys emacs
+
+&lt;span class="nb"&gt;set&lt;/span&gt; -g …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Mon, 18 Jul 2016 10:25:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2016-07-18:/dot-tumxconf.html</guid><category>misc</category><category>tmux</category><category>dotfiles</category></item></channel></rss>

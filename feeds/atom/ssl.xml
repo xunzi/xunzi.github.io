@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg - ssl</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom/ssl.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2008-06-09T20:09:00+02:00</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle><entry><title>SSL-Problem</title><link href="https://xunzi.github.io/ssl-problem.html" rel="alternate"></link><published>2008-06-09T20:09:00+02:00</published><updated>2008-06-09T20:09:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2008-06-09:/ssl-problem.html</id><summary type="html">&lt;p&gt;Ein Verweis auf die Zertifikatskette (certificate chain) läßt
+https-Verbindungen von IE oder Opera zu Apache scheitern. Geholfen bei
+der Fehlersuche haben openssl und &lt;a href="http://www.google.de"&gt;google.&lt;/a&gt; Das &lt;a href="http://www.drexler-online.net/blog/serverkonfiguration/"&gt;erwähnte&lt;/a&gt; Problem
+mit SSL-Verbindungen von IE7 und Opera unter WIndows hat sich nun auch
+gelöst: Schuld war ein Eintrag in einer Apache-Konfigurationsdatei, der
+auf die …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ein Verweis auf die Zertifikatskette (certificate chain) läßt
+https-Verbindungen von IE oder Opera zu Apache scheitern. Geholfen bei
+der Fehlersuche haben openssl und &lt;a href="http://www.google.de"&gt;google.&lt;/a&gt; Das &lt;a href="http://www.drexler-online.net/blog/serverkonfiguration/"&gt;erwähnte&lt;/a&gt; Problem
+mit SSL-Verbindungen von IE7 und Opera unter WIndows hat sich nun auch
+gelöst: Schuld war ein Eintrag in einer Apache-Konfigurationsdatei, der
+auf die Zertifikatskette verweist: &lt;br&gt;
+&lt;code&gt;SSLCertificateChainFile /etc/ssl/certs/ca-certificates.crt&lt;/code&gt;&lt;br&gt;
+Auch wenn in weiteren Direktiven die Überprüfung von
+Client-Zertifikaten explizit abgeschaltet ist, versucht Apache dennoch,
+ein Client-Zertifikat anzufordern.&lt;br&gt;
+Das sieht beim Debugging mit openssl dann so aus:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;[0]xpc:~% openssl s_client -connect hostname.domainname.tld:443 CONNECTED(00000003) 8634:error:1408E098:SSL routines:SSL3_GET_MESSAGE:excessive message size:s3_both.c:449:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Unter Firefox hat es wunderbar funktioniert, weil ich da tatsächlich ein
+Client-Zertifikat installiert habe.&lt;/p&gt;</content><category term="misc"></category><category term="ssl"></category><category term="apache"></category></entry></feed>

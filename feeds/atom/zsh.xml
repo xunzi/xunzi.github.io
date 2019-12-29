@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg - zsh</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom/zsh.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2015-09-07T21:51:00+02:00</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle><entry><title>Dotzsh</title><link href="https://xunzi.github.io/dot-zshrc.html" rel="alternate"></link><published>2015-09-07T21:51:00+02:00</published><updated>2015-09-07T21:51:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2015-09-07:/dot-zshrc.html</id><summary type="html">&lt;p&gt;Im Laufe der Jahre gewachsene Zsh-Konfig.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Enable compsys completion.&lt;/span&gt;
+bindkey -e
+setopt NO_BEEP SHARE_HISTORY HIST_IGNORE_ALL_DUPS
+autoload -U compinit
+compinit
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -o interactive &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+ &lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;%(?.[%?].%S[%?]%s)%B%m%b:{%!}%~%# &amp;#39;&lt;/span&gt;
+ &lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls -l&amp;#39;&lt;/span&gt;
+ &lt;span class="c1"&gt;#alias ls=&amp;#39;ls --color=auto&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;span class="nv"&gt;SAVEHIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;span class="nv"&gt;HISTFILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.history.zsh
+
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;GOVERSION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.4 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Im Laufe der Jahre gewachsene Zsh-Konfig.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Enable compsys completion.&lt;/span&gt;
+bindkey -e
+setopt NO_BEEP SHARE_HISTORY HIST_IGNORE_ALL_DUPS
+autoload -U compinit
+compinit
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -o interactive &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+ &lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;%(?.[%?].%S[%?]%s)%B%m%b:{%!}%~%# &amp;#39;&lt;/span&gt;
+ &lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls -l&amp;#39;&lt;/span&gt;
+ &lt;span class="c1"&gt;#alias ls=&amp;#39;ls --color=auto&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;span class="nv"&gt;SAVEHIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;span class="nv"&gt;HISTFILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.history.zsh
+
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;GOVERSION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.4.2
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;GOROOT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/Cellar/go/&lt;span class="nv"&gt;$GOVERSION&lt;/span&gt;/libexec
+&lt;span class="c1"&gt;#pip only in virtualenv &lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PIP_REQUIRE_VIRTUALENV&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.pip/cache
+
+&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; myssh &lt;span class="o"&gt;{&lt;/span&gt;
+ &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;x&lt;/span&gt;&lt;span class="nv"&gt;$TMUX&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; !&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;x&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+ print -P &lt;span class="s2"&gt;&amp;quot;Ssh to %B&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;%b&amp;quot;&lt;/span&gt;
+ &lt;span class="nv"&gt;d&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date &lt;span class="s1"&gt;&amp;#39;+%s&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+ tmux neww -n &lt;span class="nv"&gt;$1&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;script -q logs/&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$d&lt;/span&gt;&lt;span class="s2"&gt;.log ssh &lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+ &lt;span class="k"&gt;else&lt;/span&gt;
+ print -P &lt;span class="s2"&gt;&amp;quot;no target given&amp;quot;&lt;/span&gt;
+ &lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;span class="c1"&gt;# pip zsh completion start&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; _pip_completion &lt;span class="o"&gt;{&lt;/span&gt;
+ &lt;span class="nb"&gt;local&lt;/span&gt; words cword
+ &lt;span class="nb"&gt;read&lt;/span&gt; -Ac words
+ &lt;span class="nb"&gt;read&lt;/span&gt; -cn cword
+ &lt;span class="nv"&gt;reply&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt; &lt;span class="nv"&gt;COMP_WORDS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$words&lt;/span&gt;&lt;span class="s2"&gt;[*]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+ &lt;span class="nv"&gt;COMP_CWORD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt; cword-1 &lt;span class="k"&gt;))&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+ &lt;span class="nv"&gt;PIP_AUTO_COMPLETE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;$words&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+compctl -K _pip_completion pip
+&lt;span class="c1"&gt;# pip zsh completion end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="misc"></category><category term="zsh"></category><category term="dotfiles"></category></entry></feed>

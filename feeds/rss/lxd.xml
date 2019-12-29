@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - lxd</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Sun, 07 Oct 2018 14:36:00 +0200</lastBuildDate><item><title>KVM zu LXD</title><link>https://xunzi.github.io/kvm-zu-lxd.html</link><description>&lt;p&gt;Alle vier Jahre migrieren wir den Hetzner-Server auf neue Hardware,
+bei der letzten Umstellung haben wir auch gleich den Unterbau
+geändert, wo früher die individuellen Gäste als kvm/libvirt-Gäste
+liefen und die Infrastruktur (Datenbanken, Verzeichnisdienst, Email)
+auf dem Host, sind jetzt alle Funktionen in &lt;a href="https://linuxcontainers.org/lxd/introduction/"&gt;Lxd&lt;/a&gt;-Container
+ausgelagert.&lt;/p&gt;
+&lt;p&gt;Lxd-Container stellen sich …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Sun, 07 Oct 2018 14:36:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2018-10-07:/kvm-zu-lxd.html</guid><category>misc</category><category>kvm</category><category>rootserver</category><category>lxd</category></item></channel></rss>

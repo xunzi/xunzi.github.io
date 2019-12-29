@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - django</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Thu, 24 Jun 2010 18:24:00 +0200</lastBuildDate><item><title>Django-Toolbar</title><link>https://xunzi.github.io/django-toolbar.html</link><description>&lt;p&gt;Bei meinen Experimenten mit &lt;a href="http://www.djangoproject.com/"&gt;Django&lt;/a&gt; ist mir letztlich die
+&lt;a href="http://rob.cogit8.org/blog/2008/Sep/19/introducing-django-debug-toolbar/"&gt;Django-Toolbar&lt;/a&gt; unter die Finger gekommen. Hierbei handelt es sich um
+eine Django-Middleware, die zusätzlich zu der normalen Ausgabe ein
+Overlay erzeugt, dem man so interessante Details wie die Http-Header des
+aktuellen Requests oder die SQL-Queries, die für den aktuellen Request
+ausgeführt …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Thu, 24 Jun 2010 18:24:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2010-06-24:/django-toolbar.html</guid><category>misc</category><category>django</category><category>helferlein</category><category>web</category></item></channel></rss>

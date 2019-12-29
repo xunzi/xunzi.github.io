@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - blockdevice</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Mon, 02 Jul 2018 22:25:00 +0200</lastBuildDate><item><title>Virsh disk handling</title><link>https://xunzi.github.io/virsh-disk-handling.html</link><description>&lt;p&gt;Wenn die qemu/kvm-Platten vollaufen, kann man relativ einfach eine neue Platte erzeugen und mounten. Das ist in vielen Fällen weniger kritisch, als existierende Diskimages, Partitionen und Dateisysteme zu vergrößern.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neue Platte erzeugen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Eine neues Diskimage (im qcow2-Format, siehe &lt;a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Virtualization/3.5/html/Technical_Guide/QCOW2.html"&gt;Diskussion&lt;/a&gt; zu den Unterschieden der beiden Formate, qcow2 ist angeblich langsamer …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Mon, 02 Jul 2018 22:25:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2018-07-02:/virsh-disk-handling.html</guid><category>misc</category><category>virsh</category><category>blockdevice</category><category>qemu-img</category></item></channel></rss>

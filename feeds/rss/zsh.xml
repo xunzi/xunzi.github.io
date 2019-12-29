@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - zsh</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Mon, 07 Sep 2015 21:51:00 +0200</lastBuildDate><item><title>Dotzsh</title><link>https://xunzi.github.io/dot-zshrc.html</link><description>&lt;p&gt;Im Laufe der Jahre gewachsene Zsh-Konfig.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Enable compsys completion.&lt;/span&gt;
+bindkey -e
+setopt NO_BEEP SHARE_HISTORY HIST_IGNORE_ALL_DUPS
+autoload -U compinit
+compinit
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -o interactive &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+ &lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;%(?.[%?].%S[%?]%s)%B%m%b:{%!}%~%# &amp;#39;&lt;/span&gt;
+ &lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls -l&amp;#39;&lt;/span&gt;
+ &lt;span class="c1"&gt;#alias ls=&amp;#39;ls --color=auto&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;span class="nv"&gt;SAVEHIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;span class="nv"&gt;HISTFILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.history.zsh
+
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;GOVERSION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.4 …&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Mon, 07 Sep 2015 21:51:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2015-09-07:/dot-zshrc.html</guid><category>misc</category><category>zsh</category><category>dotfiles</category></item></channel></rss>

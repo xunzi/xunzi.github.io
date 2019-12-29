@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg - dstat</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom/dstat.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2008-07-05T11:08:00+02:00</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle><entry><title>Konsolenhelfer (1): dstat</title><link href="https://xunzi.github.io/konsolenhelfer-1-dstat.html" rel="alternate"></link><published>2008-07-05T11:08:00+02:00</published><updated>2008-07-05T11:08:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2008-07-05:/konsolenhelfer-1-dstat.html</id><summary type="html">&lt;p&gt;Auf der Suche nach Performance-Engpässen ist es öfter notwendig, die
+Ausgaben der Kommandos &lt;code&gt;vmstat&lt;/code&gt;, &lt;code&gt;iostat&lt;/code&gt; und &lt;code&gt;nfsstat&lt;/code&gt; miteinander zu
+vergleichen. Einfacher als drei Terminalfenster mit den jeweiligen
+Kommandos ist das Tool &lt;code&gt;dstat&lt;/code&gt;, das zusätzlich noch eine
+augenfreundlich kolorierte Ausgabe erzeugt. &lt;code&gt;Dstat&lt;/code&gt; von &lt;a href="http://dag.wieers.com/home-made/dstat/"&gt;Dag Wieers&lt;/a&gt;. &lt;code&gt;dstat&lt;/code&gt; misst eine konfigurierbare Auswahl von …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Auf der Suche nach Performance-Engpässen ist es öfter notwendig, die
+Ausgaben der Kommandos &lt;code&gt;vmstat&lt;/code&gt;, &lt;code&gt;iostat&lt;/code&gt; und &lt;code&gt;nfsstat&lt;/code&gt; miteinander zu
+vergleichen. Einfacher als drei Terminalfenster mit den jeweiligen
+Kommandos ist das Tool &lt;code&gt;dstat&lt;/code&gt;, das zusätzlich noch eine
+augenfreundlich kolorierte Ausgabe erzeugt. &lt;code&gt;Dstat&lt;/code&gt; von &lt;a href="http://dag.wieers.com/home-made/dstat/"&gt;Dag Wieers&lt;/a&gt;. &lt;code&gt;dstat&lt;/code&gt; misst eine konfigurierbare Auswahl von
+Betriebssystem-Parametern und zeigt sie kontinuierlich an. Wird &lt;code&gt;dstat&lt;/code&gt;
+ohne weitere Parameter aufgerufen, zeigt es Statistiken zu Cpu, Blockdevice, Netzwerk, Paging und System (Context switches und Interrupts) an:
+&lt;img alt="dstat screenshot" src="/static/dstat.png" title="dtstat screenshot"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Dstat&lt;/code&gt; ist durch Plugins erweiterbar, eine Liste der verfügbaren
+Plugins gibt das Kommando &lt;code&gt;dstat -M list&lt;/code&gt;.&lt;br&gt;
+So ist es zum Beispiel möglich, zusätzlich zu den erwähnten
+Default-Statistiken den "most expensive"-Pozeß anzeigen zu lassen,
+gemessen in Hundertstel-Sekunden, die der Prozess im user-Mode und im
+Kernel-Mode verbracht hat (siehe &lt;code&gt;man 5 proc&lt;/code&gt;).
+Außerdem ist dstat in Python geschrieben, so dass es sehr einfach ist,
+neue Plugins zu schreiben.&lt;/p&gt;</content><category term="misc"></category><category term="helferlein"></category><category term="dstat"></category></entry></feed>

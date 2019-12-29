@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg - kvm</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom/kvm.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2018-10-07T14:36:00+02:00</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle><entry><title>KVM zu LXD</title><link href="https://xunzi.github.io/kvm-zu-lxd.html" rel="alternate"></link><published>2018-10-07T14:36:00+02:00</published><updated>2018-10-07T14:36:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2018-10-07:/kvm-zu-lxd.html</id><summary type="html">&lt;p&gt;Alle vier Jahre migrieren wir den Hetzner-Server auf neue Hardware,
+bei der letzten Umstellung haben wir auch gleich den Unterbau
+geändert, wo früher die individuellen Gäste als kvm/libvirt-Gäste
+liefen und die Infrastruktur (Datenbanken, Verzeichnisdienst, Email)
+auf dem Host, sind jetzt alle Funktionen in &lt;a href="https://linuxcontainers.org/lxd/introduction/"&gt;Lxd&lt;/a&gt;-Container
+ausgelagert.&lt;/p&gt;
+&lt;p&gt;Lxd-Container stellen sich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Alle vier Jahre migrieren wir den Hetzner-Server auf neue Hardware,
+bei der letzten Umstellung haben wir auch gleich den Unterbau
+geändert, wo früher die individuellen Gäste als kvm/libvirt-Gäste
+liefen und die Infrastruktur (Datenbanken, Verzeichnisdienst, Email)
+auf dem Host, sind jetzt alle Funktionen in &lt;a href="https://linuxcontainers.org/lxd/introduction/"&gt;Lxd&lt;/a&gt;-Container
+ausgelagert.&lt;/p&gt;
+&lt;p&gt;Lxd-Container stellen sich wie ein vollwertiges Betriebssystem dar,
+mir persönlich sind Docker-Container zu friemelig, der Unix-Admin in
+mir stört sich einfach daran, dass man bei Docker nicht so einfach mit
+der Shell rumporkeln kann, bis es geht. Ich sehe Docker und rkt eher
+als fortgeschrittenes Delivery-Format, während für unseren Rootserver
+eher leichtgewichtige VM-ähnliche Konstrukte passend sind.&lt;/p&gt;
+&lt;p&gt;Ich habe angefangen, Links und Beispielbefehle zu Lxd auf &lt;a href="https://github.com/xunzi/lxd-documents"&gt;Github&lt;/a&gt; zu sammeln.&lt;/p&gt;
+&lt;p&gt;Insbesondere die Integration mit zfs ist erstklassig und tausendmal flexibler als das Hantieren mit Diskimages bei libvirt.
+Auch die Netzwerkanbindung ist flexibel, neben dem "klassichen" Bridge-Konzept gibt es auch die Möglichkeit,
+definierte Ports (tcp oder udp) zu proxen.
+Dazu passen die neu bei Ubuntu eingeführten &lt;a href="https://blog.ubuntu.com/2018/07/09/minimal-ubuntu-released"&gt;Minimal Images&lt;/a&gt; für schlanke und auf das Nötigste reduzierte Installationen.&lt;/p&gt;
+&lt;p&gt;Lxd unterstützt seit neustem auch Clustering, das kommt aber auf dem rootserver mangels Hardware-Redundanz nicht zum Einsatz.&lt;/p&gt;</content><category term="misc"></category><category term="kvm"></category><category term="rootserver"></category><category term="lxd"></category></entry></feed>

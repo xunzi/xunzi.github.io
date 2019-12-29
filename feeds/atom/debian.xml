@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg - debian</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom/debian.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2009-07-12T04:51:00+02:00</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle><entry><title>Upgrade auf Lenny und Umstellung auf Dovecot</title><link href="https://xunzi.github.io/upgrade-auf-lenny-und-umstellung-auf-dovecot.html" rel="alternate"></link><published>2009-07-12T04:51:00+02:00</published><updated>2009-07-12T04:51:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2009-07-12:/upgrade-auf-lenny-und-umstellung-auf-dovecot.html</id><summary type="html">&lt;p&gt;Gestern habe ich mir ein Herz gefasst und den Server auf Lenny
+aktualisiert. Der erste Lauf von &lt;em&gt;aptitude dist-upgrade&lt;/em&gt; förderte 7
+unauflösbare Konflikte zu Tage, aber nach dem Entfernen von libsasl2 und
+libapache2-mod-php5 ging es dann reibungslos. Nach dem reboot (immer ein
+spannender Moment bis die Pings wieder zurückkommen) ging …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Gestern habe ich mir ein Herz gefasst und den Server auf Lenny
+aktualisiert. Der erste Lauf von &lt;em&gt;aptitude dist-upgrade&lt;/em&gt; förderte 7
+unauflösbare Konflikte zu Tage, aber nach dem Entfernen von libsasl2 und
+libapache2-mod-php5 ging es dann reibungslos. Nach dem reboot (immer ein
+spannender Moment bis die Pings wieder zurückkommen) ging dann fast
+alles wieder wie gewohnt bis auf Postfix und den Tomcat-Mount per ajp.
+Postfix mochte keine Benutzer mehr authentifizieren, wohl ein Problem
+mit Sasl und Passworten im Klartext (die ich in Syscp ausgeschaltet
+habe). Die einfachste Lösung hierfür war, Courier durch Dovecot zu
+ersetzen und Postfix gegen Dovecot authentifizieren zu lassen, was dank
+der exzellenten Doku von Dovecot sehr einfach war.  &lt;/p&gt;
+&lt;p&gt;Der fehlende Tomcat-Mount  lag daran, daß der Mountpoint in die
+Definition des Virtual Host verschoben werden muß.&lt;/p&gt;</content><category term="misc"></category><category term="rootserver"></category><category term="debian"></category><category term="dovecot"></category></entry></feed>

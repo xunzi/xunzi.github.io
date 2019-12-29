@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - dovecot</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Sun, 12 Jul 2009 04:51:00 +0200</lastBuildDate><item><title>Upgrade auf Lenny und Umstellung auf Dovecot</title><link>https://xunzi.github.io/upgrade-auf-lenny-und-umstellung-auf-dovecot.html</link><description>&lt;p&gt;Gestern habe ich mir ein Herz gefasst und den Server auf Lenny
+aktualisiert. Der erste Lauf von &lt;em&gt;aptitude dist-upgrade&lt;/em&gt; förderte 7
+unauflösbare Konflikte zu Tage, aber nach dem Entfernen von libsasl2 und
+libapache2-mod-php5 ging es dann reibungslos. Nach dem reboot (immer ein
+spannender Moment bis die Pings wieder zurückkommen) ging …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Sun, 12 Jul 2009 04:51:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2009-07-12:/upgrade-auf-lenny-und-umstellung-auf-dovecot.html</guid><category>misc</category><category>rootserver</category><category>debian</category><category>dovecot</category></item></channel></rss>

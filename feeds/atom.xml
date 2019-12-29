@@ -1,2 +1,659 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2019-12-29T17:59:26Z</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2019-02-09T00:00:00+01:00</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle><entry><title>Roundcube Session DB Cleanup</title><link href="https://xunzi.github.io/roundcube-session-sb-Cleanup.html" rel="alternate"></link><published>2019-02-09T00:00:00+01:00</published><updated>2019-02-09T00:00:00+01:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2019-02-09:/roundcube-session-sb-Cleanup.html</id><summary type="html">&lt;p&gt;Auf dem kleinen mysql-Server, der verschiedene Applikationen auf dem rootserver mit Daten versorgt, ist mir aufgefallen, dass die Sessiontabelle der roundcube-Datenbank ca. 350 MB groß war. Eine genauere Untersuchung ergab, dass da Einträge bis ins Jahr 2015 zurückgingen. Hier schien also ein Cleanup-Job schon sehr lange nicht mehr gelaufen zu …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Auf dem kleinen mysql-Server, der verschiedene Applikationen auf dem rootserver mit Daten versorgt, ist mir aufgefallen, dass die Sessiontabelle der roundcube-Datenbank ca. 350 MB groß war. Eine genauere Untersuchung ergab, dass da Einträge bis ins Jahr 2015 zurückgingen. Hier schien also ein Cleanup-Job schon sehr lange nicht mehr gelaufen zu sein.&lt;/p&gt;
+&lt;p&gt;Die Sessiontabelle sieht folgendermaßen aus:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MariaDB&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;roundcube&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;desc&lt;/span&gt; &lt;span class="n"&gt;session&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;+---------+--------------+------+-----+---------------------+-------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Field&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Type&lt;/span&gt;         &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;Null&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Key&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;Default&lt;/span&gt;             &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;Extra&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+---------+--------------+------+-----+---------------------+-------+&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;sess_id&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kt"&gt;varchar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;PRI&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;                &lt;span class="o"&gt;|&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;changed&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kt"&gt;datetime&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;MUL&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;01&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;01&lt;/span&gt; &lt;span class="mi"&gt;00&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;ip&lt;/span&gt;      &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kt"&gt;varchar&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;                &lt;span class="o"&gt;|&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;vars&lt;/span&gt;    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="kt"&gt;mediumtext&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="n"&gt;NO&lt;/span&gt;   &lt;span class="o"&gt;|&lt;/span&gt;     &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="no"&gt;NULL&lt;/span&gt;                &lt;span class="o"&gt;|&lt;/span&gt;       &lt;span class="o"&gt;|&lt;/span&gt;
+&lt;span class="o"&gt;+---------+--------------+------+-----+---------------------+-------+&lt;/span&gt;
+&lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;rows&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="kt"&gt;set&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;00&lt;/span&gt; &lt;span class="n"&gt;sec&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Die Anzahl der Einträge lag bei ca. 500000. Um die Tabelle um alle Einträge zu erleichtern, die vor dem 01.02.2019 dazu gekommen sind, reichte ein beherztes&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;delete from session where changed &amp;lt; '2019-02-01 00:00:00';&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Danach ist die Anzahl der Einträge auf knappe 500 gesunken. Um den Plattenplatz wieder freizugeben bedurfte es eines &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MariaDB [roundcube]&amp;gt; optimize table session;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;um die Tabelle wieder auf 10 MB zusammenschrumpfen zu lassen.&lt;/p&gt;
+&lt;p&gt;Den Effekt sieht man auch ganz gut in der Größe der täglichen DB-Dumps:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# ls -alh /backup/mysql/&lt;/span&gt;
+total 840M
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; root root &lt;span class="m"&gt;4&lt;/span&gt;.0K Feb  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:49 .
+drwxr-xr-x &lt;span class="m"&gt;5&lt;/span&gt; root root &lt;span class="m"&gt;4&lt;/span&gt;.0K Sep &lt;span class="m"&gt;12&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:20 ..
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  59M Jan &lt;span class="m"&gt;26&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:41 mysqldump-2019-01-26.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  59M Jan &lt;span class="m"&gt;27&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:44 mysqldump-2019-01-27.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  59M Jan &lt;span class="m"&gt;28&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:42 mysqldump-2019-01-28.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  59M Jan &lt;span class="m"&gt;29&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:42 mysqldump-2019-01-29.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  59M Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:42 mysqldump-2019-01-30.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  59M Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:41 mysqldump-2019-01-31.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  59M Feb  &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:45 mysqldump-2019-02-01.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  59M Feb  &lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:46 mysqldump-2019-02-02.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  60M Feb  &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:48 mysqldump-2019-02-03.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  60M Feb  &lt;span class="m"&gt;4&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:44 mysqldump-2019-02-04.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  60M Feb  &lt;span class="m"&gt;5&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:46 mysqldump-2019-02-05.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  60M Feb  &lt;span class="m"&gt;6&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:43 mysqldump-2019-02-06.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  60M Feb  &lt;span class="m"&gt;7&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:39 mysqldump-2019-02-07.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  60M Feb  &lt;span class="m"&gt;8&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:40 mysqldump-2019-02-08.sql.gz
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; root root  15M Feb  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:38 mysqldump-2019-02-09.sql.gz
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Der Cleanup wird übrigens von zwei Konfigurationen gesteuert:&lt;/p&gt;
+&lt;p&gt;In der Roundcube-Konfig wird die Lebensdauer der Session gesetzt:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="x"&gt;// Session lifetime in minutes&lt;/span&gt;
+&lt;span class="x"&gt;$config[&amp;#39;session_lifetime&amp;#39;] = 10;&lt;/span&gt;
+&lt;span class="x"&gt;`````&lt;/span&gt;
+
+&lt;span class="x"&gt;Und in der php-Konfig (`php.ini`) wird die Cleanupfrequenz mit den Werten `session.gc_probability` und `session.gc_divisor` gesteuert.&lt;/span&gt;
+
+&lt;span class="x"&gt;````php&lt;/span&gt;
+&lt;span class="x"&gt;; Defines the probability that the &amp;#39;garbage collection&amp;#39; process is started&lt;/span&gt;
+&lt;span class="x"&gt;; on every session initialization. The probability is calculated by using&lt;/span&gt;
+&lt;span class="x"&gt;; gc_probability/gc_divisor. Where session.gc_probability is the numerator&lt;/span&gt;
+&lt;span class="x"&gt;; and gc_divisor is the denominator in the equation. Setting this value to 1&lt;/span&gt;
+&lt;span class="x"&gt;; when the session.gc_divisor value is 100 will give you approximately a 1% chance&lt;/span&gt;
+&lt;span class="x"&gt;; the gc will run on any give request.&lt;/span&gt;
+&lt;span class="x"&gt;; Default Value: 1&lt;/span&gt;
+&lt;span class="x"&gt;; Development Value: 1&lt;/span&gt;
+&lt;span class="x"&gt;; Production Value: 1&lt;/span&gt;
+&lt;span class="x"&gt;; http://php.net/session.gc-probability&lt;/span&gt;
+&lt;span class="x"&gt;session.gc_probability = 1&lt;/span&gt;
+
+&lt;span class="x"&gt;; Defines the probability that the &amp;#39;garbage collection&amp;#39; process is started on every&lt;/span&gt;
+&lt;span class="x"&gt;; session initialization. The probability is calculated by using the following equation:&lt;/span&gt;
+&lt;span class="x"&gt;; gc_probability/gc_divisor. Where session.gc_probability is the numerator and&lt;/span&gt;
+&lt;span class="x"&gt;; session.gc_divisor is the denominator in the equation. Setting this value to 1&lt;/span&gt;
+&lt;span class="x"&gt;; when the session.gc_divisor value is 100 will give you approximately a 1% chance&lt;/span&gt;
+&lt;span class="x"&gt;; the gc will run on any give request. Increasing this value to 1000 will give you&lt;/span&gt;
+&lt;span class="x"&gt;; a 0.1% chance the gc will run on any give request. For high volume production servers,&lt;/span&gt;
+&lt;span class="x"&gt;; this is a more efficient approach.&lt;/span&gt;
+&lt;span class="x"&gt;; Default Value: 100&lt;/span&gt;
+&lt;span class="x"&gt;; Development Value: 1000&lt;/span&gt;
+&lt;span class="x"&gt;; Production Value: 1000&lt;/span&gt;
+&lt;span class="x"&gt;; http://php.net/session.gc-divisor&lt;/span&gt;
+&lt;span class="x"&gt;session.gc_divisor = 1000&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Die Häufigkeit der Cleanups berechnet sich folgendermaßen: &lt;code&gt;session.gc_probability/session.gc_divisor&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;session.gc_probability&lt;/code&gt; stand in diesem speziellen Fall auf 0, so dass kein Cleanup stattfand.&lt;/p&gt;</content><category term="misc"></category><category term="mysql"></category><category term="roundcube"></category><category term="php"></category></entry><entry><title>KVM zu LXD</title><link href="https://xunzi.github.io/kvm-zu-lxd.html" rel="alternate"></link><published>2018-10-07T14:36:00+02:00</published><updated>2018-10-07T14:36:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2018-10-07:/kvm-zu-lxd.html</id><summary type="html">&lt;p&gt;Alle vier Jahre migrieren wir den Hetzner-Server auf neue Hardware,
+bei der letzten Umstellung haben wir auch gleich den Unterbau
+geändert, wo früher die individuellen Gäste als kvm/libvirt-Gäste
+liefen und die Infrastruktur (Datenbanken, Verzeichnisdienst, Email)
+auf dem Host, sind jetzt alle Funktionen in &lt;a href="https://linuxcontainers.org/lxd/introduction/"&gt;Lxd&lt;/a&gt;-Container
+ausgelagert.&lt;/p&gt;
+&lt;p&gt;Lxd-Container stellen sich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Alle vier Jahre migrieren wir den Hetzner-Server auf neue Hardware,
+bei der letzten Umstellung haben wir auch gleich den Unterbau
+geändert, wo früher die individuellen Gäste als kvm/libvirt-Gäste
+liefen und die Infrastruktur (Datenbanken, Verzeichnisdienst, Email)
+auf dem Host, sind jetzt alle Funktionen in &lt;a href="https://linuxcontainers.org/lxd/introduction/"&gt;Lxd&lt;/a&gt;-Container
+ausgelagert.&lt;/p&gt;
+&lt;p&gt;Lxd-Container stellen sich wie ein vollwertiges Betriebssystem dar,
+mir persönlich sind Docker-Container zu friemelig, der Unix-Admin in
+mir stört sich einfach daran, dass man bei Docker nicht so einfach mit
+der Shell rumporkeln kann, bis es geht. Ich sehe Docker und rkt eher
+als fortgeschrittenes Delivery-Format, während für unseren Rootserver
+eher leichtgewichtige VM-ähnliche Konstrukte passend sind.&lt;/p&gt;
+&lt;p&gt;Ich habe angefangen, Links und Beispielbefehle zu Lxd auf &lt;a href="https://github.com/xunzi/lxd-documents"&gt;Github&lt;/a&gt; zu sammeln.&lt;/p&gt;
+&lt;p&gt;Insbesondere die Integration mit zfs ist erstklassig und tausendmal flexibler als das Hantieren mit Diskimages bei libvirt.
+Auch die Netzwerkanbindung ist flexibel, neben dem "klassichen" Bridge-Konzept gibt es auch die Möglichkeit,
+definierte Ports (tcp oder udp) zu proxen.
+Dazu passen die neu bei Ubuntu eingeführten &lt;a href="https://blog.ubuntu.com/2018/07/09/minimal-ubuntu-released"&gt;Minimal Images&lt;/a&gt; für schlanke und auf das Nötigste reduzierte Installationen.&lt;/p&gt;
+&lt;p&gt;Lxd unterstützt seit neustem auch Clustering, das kommt aber auf dem rootserver mangels Hardware-Redundanz nicht zum Einsatz.&lt;/p&gt;</content><category term="misc"></category><category term="kvm"></category><category term="rootserver"></category><category term="lxd"></category></entry><entry><title>Virsh disk handling</title><link href="https://xunzi.github.io/virsh-disk-handling.html" rel="alternate"></link><published>2018-07-02T22:25:00+02:00</published><updated>2018-07-02T22:25:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2018-07-02:/virsh-disk-handling.html</id><summary type="html">&lt;p&gt;Wenn die qemu/kvm-Platten vollaufen, kann man relativ einfach eine neue Platte erzeugen und mounten. Das ist in vielen Fällen weniger kritisch, als existierende Diskimages, Partitionen und Dateisysteme zu vergrößern.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neue Platte erzeugen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Eine neues Diskimage (im qcow2-Format, siehe &lt;a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Virtualization/3.5/html/Technical_Guide/QCOW2.html"&gt;Diskussion&lt;/a&gt; zu den Unterschieden der beiden Formate, qcow2 ist angeblich langsamer …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Wenn die qemu/kvm-Platten vollaufen, kann man relativ einfach eine neue Platte erzeugen und mounten. Das ist in vielen Fällen weniger kritisch, als existierende Diskimages, Partitionen und Dateisysteme zu vergrößern.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neue Platte erzeugen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Eine neues Diskimage (im qcow2-Format, siehe &lt;a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Virtualization/3.5/html/Technical_Guide/QCOW2.html"&gt;Diskussion&lt;/a&gt; zu den Unterschieden der beiden Formate, qcow2 ist angeblich langsamer, bietet aber Snapshots) kann man folgendrmaßen erstellen:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;next:&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;1026&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;~% &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;format&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;qcow2&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;next:&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;1026&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;~% &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;your_vm_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;somename&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;next:&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;1026&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;~% qemu-img create -f &lt;span class="nv"&gt;$format&lt;/span&gt; &lt;span class="nv"&gt;$your_vm_name&lt;/span&gt;-128G.qcow2 128G
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Für Images im Raw-Format einfach die erste Zeile so umschreiben:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;next:&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;1026&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;~% &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;format&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;raw&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Diskimage an VM anhängen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;next:&lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="m"&gt;1026&lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;~% virsh attach-disk &lt;span class="nv"&gt;$your_vm_name&lt;/span&gt; &lt;span class="nv"&gt;$your_vm_name&lt;/span&gt;-128G.qcow2 vdb --current
+&lt;/pre&gt;&lt;/div&gt;</content><category term="misc"></category><category term="virsh"></category><category term="blockdevice"></category><category term="qemu-img"></category></entry><entry><title>Dottmuxconf</title><link href="https://xunzi.github.io/dot-tumxconf.html" rel="alternate"></link><published>2016-07-18T10:25:00+02:00</published><updated>2016-07-18T10:25:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2016-07-18:/dot-tumxconf.html</id><summary type="html">&lt;p&gt;Tmux-Konfig mit grüner Statusleite und veränderten Keybinding.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;unbind C-b
+&lt;span class="nb"&gt;set&lt;/span&gt; -g prefix C-g
+bind C-g send-prefix
+bind g send-prefix
+
+&lt;span class="nb"&gt;set&lt;/span&gt;-window-option -g window-status-current-bg red
+
+&lt;span class="c"&gt;# Set window notifications&lt;/span&gt;
+setw -g monitor-activity on
+&lt;span class="nb"&gt;set&lt;/span&gt; -g visual-activity on
+setw -g automatic-rename
+
+&lt;span class="c"&gt;#emacs key bindings of course&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt;-window-option -g mode-keys emacs
+
+&lt;span class="nb"&gt;set&lt;/span&gt; -g …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Tmux-Konfig mit grüner Statusleite und veränderten Keybinding.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;unbind C-b
+&lt;span class="nb"&gt;set&lt;/span&gt; -g prefix C-g
+bind C-g send-prefix
+bind g send-prefix
+
+&lt;span class="nb"&gt;set&lt;/span&gt;-window-option -g window-status-current-bg red
+
+&lt;span class="c"&gt;# Set window notifications&lt;/span&gt;
+setw -g monitor-activity on
+&lt;span class="nb"&gt;set&lt;/span&gt; -g visual-activity on
+setw -g automatic-rename
+
+&lt;span class="c"&gt;#emacs key bindings of course&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt;-window-option -g mode-keys emacs
+
+&lt;span class="nb"&gt;set&lt;/span&gt; -g &lt;span class="nb"&gt;history&lt;/span&gt;-limit 10000
+&lt;span class="nb"&gt;set&lt;/span&gt; -g &lt;span class="k"&gt;default&lt;/span&gt;-terminal &lt;span class="s2"&gt;&amp;quot;xterm-256color&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt; -g base-index 1
+&lt;span class="nb"&gt;set&lt;/span&gt; -g status-interval 2
+&lt;span class="nb"&gt;set&lt;/span&gt; -g status-right &lt;span class="s2"&gt;&amp;quot;#S #[fg=green,bg=black]#(tmux-mem-cpu-load --colors --interval 2)#[default]&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="misc"></category><category term="tmux"></category><category term="dotfiles"></category></entry><entry><title>Umstellung auf https</title><link href="https://xunzi.github.io/umstellung-auf-https.html" rel="alternate"></link><published>2016-02-08T20:29:00+01:00</published><updated>2016-02-08T20:29:00+01:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2016-02-08:/umstellung-auf-https.html</id><summary type="html">&lt;p&gt;Da es dank &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; jetzt auch https-Zertifikate für lau gibt,
+die in allen Browsern akzeptiert werden, habe ich dieses Blog dann
+auch mal auf https umgestellt. Hierfür benötigt man nur den
+Letsencrypt-Client, dann ist das Ganze in 2 Minuten umgesetzt. Ergänzt
+um einen Redirect von http auf https ist …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Da es dank &lt;a href="https://letsencrypt.org/"&gt;Let's Encrypt&lt;/a&gt; jetzt auch https-Zertifikate für lau gibt,
+die in allen Browsern akzeptiert werden, habe ich dieses Blog dann
+auch mal auf https umgestellt. Hierfür benötigt man nur den
+Letsencrypt-Client, dann ist das Ganze in 2 Minuten umgesetzt. Ergänzt
+um einen Redirect von http auf https ist die Seite jetzt ganz  den
+neuen Google-Siteranking-Kriterien entsprechend gesichert.&lt;/p&gt;
+&lt;p&gt;Der &lt;a href="https://www.ssllabs.com/ssltest/analyze.html?d=drexler-online.net"&gt;SSL Server Test&lt;/a&gt; vergibt für die Konfig sogar ein A+.&lt;/p&gt;</content><category term="misc"></category><category term="web"></category></entry><entry><title>Dotzsh</title><link href="https://xunzi.github.io/dot-zshrc.html" rel="alternate"></link><published>2015-09-07T21:51:00+02:00</published><updated>2015-09-07T21:51:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2015-09-07:/dot-zshrc.html</id><summary type="html">&lt;p&gt;Im Laufe der Jahre gewachsene Zsh-Konfig.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Enable compsys completion.&lt;/span&gt;
+bindkey -e
+setopt NO_BEEP SHARE_HISTORY HIST_IGNORE_ALL_DUPS
+autoload -U compinit
+compinit
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -o interactive &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+ &lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;%(?.[%?].%S[%?]%s)%B%m%b:{%!}%~%# &amp;#39;&lt;/span&gt;
+ &lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls -l&amp;#39;&lt;/span&gt;
+ &lt;span class="c1"&gt;#alias ls=&amp;#39;ls --color=auto&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;span class="nv"&gt;SAVEHIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;span class="nv"&gt;HISTFILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.history.zsh
+
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;GOVERSION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.4 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Im Laufe der Jahre gewachsene Zsh-Konfig.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Enable compsys completion.&lt;/span&gt;
+bindkey -e
+setopt NO_BEEP SHARE_HISTORY HIST_IGNORE_ALL_DUPS
+autoload -U compinit
+compinit
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -o interactive &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+ &lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;%(?.[%?].%S[%?]%s)%B%m%b:{%!}%~%# &amp;#39;&lt;/span&gt;
+ &lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;l&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ls -l&amp;#39;&lt;/span&gt;
+ &lt;span class="c1"&gt;#alias ls=&amp;#39;ls --color=auto&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;span class="nv"&gt;SAVEHIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+&lt;span class="nv"&gt;HISTFILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.history.zsh
+
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;GOVERSION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.4.2
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;GOROOT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/Cellar/go/&lt;span class="nv"&gt;$GOVERSION&lt;/span&gt;/libexec
+&lt;span class="c1"&gt;#pip only in virtualenv &lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PIP_REQUIRE_VIRTUALENV&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PIP_DOWNLOAD_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.pip/cache
+
+&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; myssh &lt;span class="o"&gt;{&lt;/span&gt;
+ &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;x&lt;/span&gt;&lt;span class="nv"&gt;$TMUX&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; !&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;x&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+ print -P &lt;span class="s2"&gt;&amp;quot;Ssh to %B&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;%b&amp;quot;&lt;/span&gt;
+ &lt;span class="nv"&gt;d&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date &lt;span class="s1"&gt;&amp;#39;+%s&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+ tmux neww -n &lt;span class="nv"&gt;$1&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;script -q logs/&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;$d&lt;/span&gt;&lt;span class="s2"&gt;.log ssh &lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+ &lt;span class="k"&gt;else&lt;/span&gt;
+ print -P &lt;span class="s2"&gt;&amp;quot;no target given&amp;quot;&lt;/span&gt;
+ &lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;span class="c1"&gt;# pip zsh completion start&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; _pip_completion &lt;span class="o"&gt;{&lt;/span&gt;
+ &lt;span class="nb"&gt;local&lt;/span&gt; words cword
+ &lt;span class="nb"&gt;read&lt;/span&gt; -Ac words
+ &lt;span class="nb"&gt;read&lt;/span&gt; -cn cword
+ &lt;span class="nv"&gt;reply&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt; &lt;span class="nv"&gt;COMP_WORDS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$words&lt;/span&gt;&lt;span class="s2"&gt;[*]&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+ &lt;span class="nv"&gt;COMP_CWORD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$((&lt;/span&gt; cword-1 &lt;span class="k"&gt;))&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+ &lt;span class="nv"&gt;PIP_AUTO_COMPLETE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;$words&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+compctl -K _pip_completion pip
+&lt;span class="c1"&gt;# pip zsh completion end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="misc"></category><category term="zsh"></category><category term="dotfiles"></category></entry><entry><title>Bildergalerien mit Sigal</title><link href="https://xunzi.github.io/bildergalerien-mit-sigal.html" rel="alternate"></link><published>2014-07-19T12:00:00+02:00</published><updated>2014-07-19T12:00:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2014-07-19:/bildergalerien-mit-sigal.html</id><summary type="html">&lt;p&gt;Die gelegentlich anfallenden Fotos aus dem Freunds- und Familienkreis
+habe ich bisher ärgerlicherweise bei Google hochgeladen udn mit einem
+privaten Link verteilt, so dass sie zwar nicht einer Google-Suche zum
+Opfer fallen können, aber dennoch bei Google bekannt sind. Viele Leute
+sind nachvollziehbarerweise auch gar nicht glücklich darüber, wenn sie …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Die gelegentlich anfallenden Fotos aus dem Freunds- und Familienkreis
+habe ich bisher ärgerlicherweise bei Google hochgeladen udn mit einem
+privaten Link verteilt, so dass sie zwar nicht einer Google-Suche zum
+Opfer fallen können, aber dennoch bei Google bekannt sind. Viele Leute
+sind nachvollziehbarerweise auch gar nicht glücklich darüber, wenn sie
+ihr Antlitz auf einer bei Google gehosteten Seite wiederfinden, so
+dass hier eine neue Lösung hermusste. Da ich ja das Blog schon mit
+&lt;a href="https://xunzi.github.io/streiche-mezzanine-setze-pelican.html"&gt;Pelican&lt;/a&gt; auf einen
+Generator für statische Webseiten umgestellt habe, lag es natürlich
+nahe, auch die Fotos mit einem solchen Generator in die Webseite
+einzubinden. Die Wahl ist hier auf &lt;a href="http://sigal.saimon.org/en/latest/"&gt;Sigal&lt;/a&gt; gefallen, das im
+wesentlichen auf den gleichen Technologien aufsetzt (Python,
+Jinja-Templates, Blinker).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Irgendwie war das Handling doch nicht benutzerfreundlich genug, Bilder
+teile ich jetzt über owncloud. Der ganze Sigal-Kram ist wieder
+rausgeflogen.&lt;/p&gt;</content><category term="misc"></category><category term="web"></category><category term="photos"></category></entry><entry><title>Streiche Mezzanine, setze Pelican</title><link href="https://xunzi.github.io/streiche-mezzanine-setze-pelican.html" rel="alternate"></link><published>2013-11-30T12:00:00+01:00</published><updated>2013-11-30T12:00:00+01:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2013-11-30:/streiche-mezzanine-setze-pelican.html</id><summary type="html">&lt;p&gt;Da &lt;a href="https://xunzi.github.io/blogtransfer-von-pebble-zu-mezzanine.html"&gt;Mezzanines&lt;/a&gt;
+Funktionsumfang für meine bescheidenen Bedürfnisse doch zu groß war,
+habe ich das Blog auf &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt; umgestellt, einen Generator für
+statische Webseiten. Denn Text kann man in &lt;a href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html"&gt;reStructuredText&lt;/a&gt; oder
+&lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; verfassen und es gibt eine große Auswahl an &lt;a href="https://github.com/getpelican/pelican-themes"&gt;Themes&lt;/a&gt; und
+&lt;a href="https://github.com/getpelican/pelican-plugins"&gt;Plugins&lt;/a&gt;, so dass bei Bedarf das Aussehen des Blogs …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Da &lt;a href="https://xunzi.github.io/blogtransfer-von-pebble-zu-mezzanine.html"&gt;Mezzanines&lt;/a&gt;
+Funktionsumfang für meine bescheidenen Bedürfnisse doch zu groß war,
+habe ich das Blog auf &lt;a href="http://getpelican.com/"&gt;Pelican&lt;/a&gt; umgestellt, einen Generator für
+statische Webseiten. Denn Text kann man in &lt;a href="http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html"&gt;reStructuredText&lt;/a&gt; oder
+&lt;a href="http://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; verfassen und es gibt eine große Auswahl an &lt;a href="https://github.com/getpelican/pelican-themes"&gt;Themes&lt;/a&gt; und
+&lt;a href="https://github.com/getpelican/pelican-plugins"&gt;Plugins&lt;/a&gt;, so dass bei Bedarf das Aussehen des Blogs schnell mal
+umgestellt werden kann. Ein weiterer Vorteil ist, dass die Inhalte
+dann einfach unter Versionskontrolle gestellt werden können, es sind
+ja nur Textdateien.&lt;/p&gt;
+&lt;p&gt;Praktischerweise kann Pelican auch von einem Rss-Feed &lt;a href="http://docs.getpelican.com/en/3.3.0/importer.html"&gt;importieren&lt;/a&gt;,
+so dass der erneute Transfer des Inhalts schnell und schmerzfrei über
+die Bühne ging.&lt;/p&gt;</content><category term="misc"></category><category term="web"></category><category term="rootserver"></category><category term="mezzanine"></category><category term="pelican"></category></entry><entry><title>Blogtransfer von Pebble zu Mezzanine</title><link href="https://xunzi.github.io/blogtransfer-von-pebble-zu-mezzanine.html" rel="alternate"></link><published>2013-05-13T18:36:00+02:00</published><updated>2013-05-13T18:36:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2013-05-13:/blogtransfer-von-pebble-zu-mezzanine.html</id><summary type="html">&lt;p&gt;Die Umsetzung der alten Blogposts aus Pebble erfolgte mit Hilfe eines
+Skripts, das die xml-Dateien parst und entsprechende
+Mezzanine/Django-Objeckte anlegt inkl. Tags und Kategorien.&lt;/p&gt;
+&lt;p&gt;Das Skript gibt es als &lt;a href="https://gist.github.com/xunzi/5603984"&gt;Gist&lt;/a&gt; bei Github.&lt;/p&gt;
+&lt;p&gt;Um wenigstens die Syndication-Clients nicht zu verschrecken, schubsen
+die folgenden Rewrite-Regeln in der Nginx-Konfig die Requests zu …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Die Umsetzung der alten Blogposts aus Pebble erfolgte mit Hilfe eines
+Skripts, das die xml-Dateien parst und entsprechende
+Mezzanine/Django-Objeckte anlegt inkl. Tags und Kategorien.&lt;/p&gt;
+&lt;p&gt;Das Skript gibt es als &lt;a href="https://gist.github.com/xunzi/5603984"&gt;Gist&lt;/a&gt; bei Github.&lt;/p&gt;
+&lt;p&gt;Um wenigstens die Syndication-Clients nicht zu verschrecken, schubsen
+die folgenden Rewrite-Regeln in der Nginx-Konfig die Requests zu den
+alten Rss- und Atom-Feeds auf die neuen Resourcen weiter:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rewrite ^/pebble/atom.xml$ /blog/feeds/atom/ break;rewrite ^/pebble/tags/(.+)/(.+).xml$ /blog/tag/$1/feeds/$2/ break;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Alle anderen Requests zu den alten Pebble-Urls werden einfach auf die
+Blogübersicht weitergeleitet:  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rewrite ^/pebble/.*     /blog/ permanent;&lt;/code&gt;&lt;/p&gt;</content><category term="misc"></category><category term="mezzanine"></category><category term="web"></category><category term="pebble"></category></entry><entry><title>Langsames TimeMachine-Backup mit MacOS 10.7.5</title><link href="https://xunzi.github.io/langsames-timemachine-backup-mit-macos-1075.html" rel="alternate"></link><published>2012-10-03T17:15:00+02:00</published><updated>2012-10-03T17:15:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2012-10-03:/langsames-timemachine-backup-mit-macos-1075.html</id><summary type="html">&lt;p&gt;Seit ein paar Tagen läuft das TimeMachine Backup auf dem Synology-NAS
+grottenlangsam. Ich habe verschiedene Dinge ausprobiert (neues Share
+anlegen, Indexdateien von Spotlight löschen, Indizierung für TM-Share
+ausschalten), alles ohne Erfolg. Schliesslich hat mich Google auf diesen
+&lt;a href="https://discussions.apple.com/thread/4324046?start=60&amp;amp;tstart=0"&gt;Thread&lt;/a&gt; geführt, wo der Spotlight-Indexer als Schuldiger benannt
+wird. Tatsächlich rennt das Backup …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Seit ein paar Tagen läuft das TimeMachine Backup auf dem Synology-NAS
+grottenlangsam. Ich habe verschiedene Dinge ausprobiert (neues Share
+anlegen, Indexdateien von Spotlight löschen, Indizierung für TM-Share
+ausschalten), alles ohne Erfolg. Schliesslich hat mich Google auf diesen
+&lt;a href="https://discussions.apple.com/thread/4324046?start=60&amp;amp;tstart=0"&gt;Thread&lt;/a&gt; geführt, wo der Spotlight-Indexer als Schuldiger benannt
+wird. Tatsächlich rennt das Backup wieder, wenn man per&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;den Indexer stoppt.&lt;/p&gt;
+&lt;p&gt;Nach erfolgreichem Backup sollte man dann auch mit&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;den Indexer wieder starten, eventuell dann auch in der Zeit, in der der
+Index neu aufgebaut wird, die automatischen Backups abstellen.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; Apple hat ein Update für das Problem ausgerollt, das das
+Problem behoben zu haben scheint, Spotlight und TM schnurren jetzt
+wieder nebeneinander her.&lt;/p&gt;</content><category term="misc"></category><category term="macos"></category><category term="spotlight"></category><category term="backup"></category></entry><entry><title>Apache raus, Nginx rein</title><link href="https://xunzi.github.io/apache-raus-nginx-rein.html" rel="alternate"></link><published>2012-07-02T19:33:00+02:00</published><updated>2012-07-02T19:33:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2012-07-02:/apache-raus-nginx-rein.html</id><summary type="html">&lt;p&gt;Anlässlich des Upgrades auf Ubuntu Precise habe ich den Webserver
+umgestellt von Apache auf Nginx. Für das ungeliebte Php muss dann
+&lt;a href="http://php-fpm.org/"&gt;php-fpm.org/&lt;/a&gt; mit ins Boot, der Java-Appserver wird per Proxy
+angebunden, da Nginx kein AJP spricht. Auf dem kleinen Webserver
+performt das Ganze ganz gut und hat den Vorteil …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Anlässlich des Upgrades auf Ubuntu Precise habe ich den Webserver
+umgestellt von Apache auf Nginx. Für das ungeliebte Php muss dann
+&lt;a href="http://php-fpm.org/"&gt;php-fpm.org/&lt;/a&gt; mit ins Boot, der Java-Appserver wird per Proxy
+angebunden, da Nginx kein AJP spricht. Auf dem kleinen Webserver
+performt das Ganze ganz gut und hat den Vorteil, dass die Nginx-Konfig
+deutlich einfacher und überschaubarer ist.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Erst dachte ich, die openJDK-Version im Lieferumfang von Precise hätte
+ne massive Macke, weil der Tomcat-Prozess munter alle verfügbaren
+Cpu-Zyklen aufgebraucht hat, es stellte sich dann aber heraus, dass die
+&lt;a href="http://www.heise.de/newsticker/meldung/Schaltsekunde-Linux-kann-einfrieren-1629683.html"&gt;Schaltsekunde&lt;/a&gt; schuld war und ein dezenter Reboot die schnellste
+Abhilfe brachte.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;[EDIT]&lt;/strong&gt; Einen anständigen Performance-Schub für die Auslieferung von
+Bildern bringt es, die Parameter &lt;code&gt;fastcgi_max_temp_file_size&lt;/code&gt; auf 0 und
+&lt;code&gt;proxy_buffering&lt;/code&gt; auf off  zu setzen, sonst werden grössere Dateien wie
+Photos oder Mp3-Dateien erst auf die Platte gepuffert und dann von Nginx
+ausgeliefert, da kommt es dann schon mal zu unschönen Verzögerungen.&lt;/p&gt;
+&lt;/p&gt;</content><category term="misc"></category><category term="apache"></category><category term="php-fpm"></category><category term="nginx"></category></entry><entry><title>Testinstallation: Owncloud</title><link href="https://xunzi.github.io/testinstallation-owncloud.html" rel="alternate"></link><published>2012-04-12T15:32:00+02:00</published><updated>2012-04-12T15:32:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2012-04-12:/testinstallation-owncloud.html</id><summary type="html">&lt;p&gt;Ich habe - angeregt durch die Jubelmeldungen über &lt;a href="http://owncloud.org"&gt;owncloud&lt;/a&gt; - eine
+Testinstanz von "Your Cloud, Your Data, Your Way!" aufgesetzt. OC
+kombiniert einen Webdav-Server, mit dem man die Dateien in die
+Dateimanager moderner Betriebssysteme einbinden kann mit einem
+Kalender/Caldav-Server und einem Addressbuch/carddav-Server. Die
+Standards caldav und carddav werden z. B …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe - angeregt durch die Jubelmeldungen über &lt;a href="http://owncloud.org"&gt;owncloud&lt;/a&gt; - eine
+Testinstanz von "Your Cloud, Your Data, Your Way!" aufgesetzt. OC
+kombiniert einen Webdav-Server, mit dem man die Dateien in die
+Dateimanager moderner Betriebssysteme einbinden kann mit einem
+Kalender/Caldav-Server und einem Addressbuch/carddav-Server. Die
+Standards caldav und carddav werden z. B. von Apples iOS unterstützt, so
+dass man in der eigenen Wolke seine Kalenderdaten und Kontakte speichern
+kann, ohne dass Google oder die anderen üblichen Verdächtigen nen
+schnellen Euro mit der Zweit- und Drittverwertung der persönlichen Daten
+machen können.&lt;/p&gt;
+&lt;p&gt;Das ist soweit ja ganz schnuckelig, leider ist das Ganze in Php
+geschrieben (apropos: &lt;a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/"&gt;hier&lt;/a&gt; gibt es ein schönes Php-Bashing), um es
+mit Nginx zum Laufen zu kriegen, braucht es einen Fcgi-Server, der den
+Php-Matsch ausführt, unter Ubuntu gibt es dafür &lt;a href="http://packages.ubuntu.com/oneiric/php5-fpm"&gt;php-fpm&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Die iOS-Clients finden die Caldav- und Carddav-Server für eine bestimmte
+Domäne per DNS-Request (Details dazu gibt es &lt;a href="http://andrew.mcmillan.net.nz/blog/srv_records_with_dnsmasq"&gt;hier&lt;/a&gt;).  Ist der Server
+einmal lokalisiert, sucht iOS nach well-known-Resourcen gemäss
+&lt;a href="http://tools.ietf.org/html/rfc5785.html"&gt;RFC5785&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Da diese nicht in der Owncoud-Applikation abgebildet werden, empfiehlt
+sich ein Redirect:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;rewrite ^/.well-known/host-meta /public.php?service=host-meta last;rewrite ^/.well-known/host-meta.json /public.php?service=host-meta-json last;&lt;/span&gt;
+&lt;span class="err"&gt;rewrite ^/.well-known/carddav /remote.php/carddav/ redirect;rewrite ^/.well-known/caldav /remote.php/caldav/ redirect;rewrite ^(/core/doc/[^\/]+/)$ $1/index.html;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Das reicht aber immer noch nicht, um das MacOS-Addressbuch glücklich zu
+machen, hier bedarf es eines weiteren Redirects:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;rewrite /apps/contacts/carddav.php/addressbooks/(.+)/addressbook/ /apps/contacts/carddav.php/addressbooks/$1/default permanent;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Das funktioniert natürlich nur, wenn der Kalender auch &lt;code&gt;default&lt;/code&gt; heisst,
+ist das nicht der Fall, klappt es nicht mehr. Diese Probleme sind wohl
+in der Lion-Version des MacOS-Adressbuches behoben.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; Synchronisation mit Thunderbird klappt auch, der Kalender
+braucht das &lt;a href="https://addons.mozilla.org/thunderbird/2313/"&gt;Lightning-Plugin&lt;/a&gt; und das Addressbuch kann man mit Hilfe
+des &lt;a href="http://www.sogo.nu/files/downloads/extensions/sogo-connector-10.0.1.xpi"&gt;Sogo-Konnektors&lt;/a&gt; und des Plugins "&lt;a href="https://nic-nac-project.org/~kaosmos/morecols-en.html"&gt;More Functions for
+Addressbook&lt;/a&gt;" syncen, klappt erstaunlich schmerzfrei.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit&lt;/strong&gt;: Nach dem Update auf Lion klappt das Caldav-Discovery
+tatsächlich problemlos.&lt;/p&gt;</content><category term="misc"></category><category term="owncloud"></category><category term="php-fpm"></category><category term="nginx"></category></entry><entry><title>Snmp unter Ubuntu</title><link href="https://xunzi.github.io/snmp-unter-ubuntu.html" rel="alternate"></link><published>2011-06-19T15:38:00+02:00</published><updated>2011-06-19T15:38:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2011-06-19:/snmp-unter-ubuntu.html</id><summary type="html">&lt;p&gt;Falls mal jemand unter Ubuntu die net-snmp-Utilities (snmpwalk etc.)
+einsetzen will, ist zu beachten, daß zusätzlich zm Paket &lt;em&gt;snmp&lt;/em&gt; auch
+noch &lt;em&gt;snmp-mibs-downloader&lt;/em&gt; installiert werden muss, dann werden die
+MIBs automatisch heruntergaladen und integriert. Zusätzlich muß noch in
+der Datei /etc/snmp/snmp.conf die Zeile mibs : auskommentiert werden.
+Grund für …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Falls mal jemand unter Ubuntu die net-snmp-Utilities (snmpwalk etc.)
+einsetzen will, ist zu beachten, daß zusätzlich zm Paket &lt;em&gt;snmp&lt;/em&gt; auch
+noch &lt;em&gt;snmp-mibs-downloader&lt;/em&gt; installiert werden muss, dann werden die
+MIBs automatisch heruntergaladen und integriert. Zusätzlich muß noch in
+der Datei /etc/snmp/snmp.conf die Zeile mibs : auskommentiert werden.
+Grund für das Gehmpel sind wohl Lizenzprobleme, die die Auslieferung der
+MIBs seit &lt;a href="http://www.m8in.de/?p=427"&gt;Ubuntu 10.4 als Teil der Distribution verhindern&lt;/a&gt;.&lt;/p&gt;</content><category term="misc"></category><category term="snmp"></category><category term="ubuntu"></category></entry><entry><title>Org-Export als Beamer-Präse</title><link href="https://xunzi.github.io/org-export-als-beamer-prase.html" rel="alternate"></link><published>2011-01-17T21:44:00+01:00</published><updated>2011-01-17T21:44:00+01:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2011-01-17:/org-export-als-beamer-prase.html</id><content type="html">&lt;p&gt;Eine der zahlreichen äußerst praktischen Anwendungen von org-mode ist
+die Möglichkeit, org-Dokumente als Beamer-Präsentationen zu exportieren.
+Das sieht dann z.B. so aus, wie in diesem &lt;a href="/static/beispielpraese.pdf"&gt;Beispiel&lt;/a&gt;. Erzeugt wurde
+das Ganze aus dieser &lt;a href="/static/beispielpraese.org"&gt;org-Datei&lt;/a&gt;. (Damit dieser Export funktioniert,
+muß übrigens eine LaTex-Umgebung installiert sein!)&lt;/p&gt;</content><category term="misc"></category><category term="org-mode"></category><category term="emacs"></category><category term="beamer"></category></entry><entry><title>Org-mode</title><link href="https://xunzi.github.io/org-mode.html" rel="alternate"></link><published>2011-01-15T19:36:00+01:00</published><updated>2011-01-15T19:36:00+01:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2011-01-15:/org-mode.html</id><summary type="html">&lt;p&gt;Die Suche nach einer Aufgaben- und Wissensmanagement-Software hat sich
+als Odyssee herausgestellt. Wichtige Stationen dieser Reise waren
+Scribble Paper, Task coach und &lt;a href="http://makagiga.sourceforge.net/index.html"&gt;Makagiga&lt;/a&gt;, ihr vorläufiges Ende fand
+die Reise bei &lt;a href="http://orgmode.org/"&gt;org-mode&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ein Problem, das mich schon länger umtreibt, ist ein Programm, mit dem
+ich einerseits meine Todo-Liste und andererseits die …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Die Suche nach einer Aufgaben- und Wissensmanagement-Software hat sich
+als Odyssee herausgestellt. Wichtige Stationen dieser Reise waren
+Scribble Paper, Task coach und &lt;a href="http://makagiga.sourceforge.net/index.html"&gt;Makagiga&lt;/a&gt;, ihr vorläufiges Ende fand
+die Reise bei &lt;a href="http://orgmode.org/"&gt;org-mode&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ein Problem, das mich schon länger umtreibt, ist ein Programm, mit dem
+ich einerseits meine Todo-Liste und andererseits die zahlreichen
+Informationen managen kann, die tagtäglich so auf mich
+einprasseln.Kompliziert wird die Suche dadurch, daß das Ganze unter
+Windows laufen muß, damit ich es bei der Arbeit sinnvoll nutzen kann.&lt;/p&gt;
+&lt;p&gt;Zuerst habe ich es mit zwei Programmen versucht, &lt;a href="http://home.arcor.de/jhoetger/scpapers/"&gt;Scribble Papers&lt;/a&gt; als
+Wissensdatenbank und &lt;a href="http://www.taskcoach.org/"&gt;Taskcoach&lt;/a&gt; als Aufgabenverwaltung, aber
+irgendwie fehlte die Möglichkeit, direkt von deri einen in die andere
+Applikation zu verlinken, so daß viele Details in beiden vorlagen.&lt;/p&gt;
+&lt;p&gt;Der nächste Schritt war &lt;a href="http://makagiga.sourceforge.net/"&gt;Makagiga&lt;/a&gt;, das beide Funktionalitäten in
+sich vereint, hierbei hat mir aber die Möglichkeit gefehlt, Tasks in
+Subtasks zu teilen, so daß alle Aufgaben zu einem Projekt gleichwertig
+in der Todo-Liste auftauchten. Außerdem sind in der Editor-Komponente
+die Formatierungsmöglichkeiten arg beschränkt.&lt;/p&gt;
+&lt;p&gt;Die annähernd ideale Lösung ist aber &lt;a href="http://orgmode.org/"&gt;org-mode&lt;/a&gt;, eine
+Emacs-Erweiterung, die durch ihre starke Flexibilität und
+Konfigurierbarkeit alle möglichen Workflows abbilden kann.Ich bin ja eh
+ein großer Emacs-Fan, die Vorstellung, daß man den ganzen Arbeitstag in
+einem Programm verbringt, das alles kann, außer Kaffee kochen, find ich
+toll.&lt;/p&gt;</content><category term="misc"></category><category term="org-mode"></category><category term="emacs"></category></entry><entry><title>Einbruch!</title><link href="https://xunzi.github.io/einbruch.html" rel="alternate"></link><published>2010-09-19T19:28:00+02:00</published><updated>2010-09-19T19:28:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2010-09-19:/einbruch.html</id><summary type="html">&lt;p&gt;Einbruch in unseren schönen Server! Spam- und Virusmails ham se
+verschickt, die Schmutzbuckel.&lt;/p&gt;
+&lt;p&gt;Aufgefallen ist das Ganze dadurch, daß Postfix immer versucht hat, Mails
+an den Webserver-User zuzustellen. Ich habe mir die Mails dann mal
+weiterleiten lassen und hatte in ein paar Sekunden weit über 500 neue
+Emails, alles Bounces …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Einbruch in unseren schönen Server! Spam- und Virusmails ham se
+verschickt, die Schmutzbuckel.&lt;/p&gt;
+&lt;p&gt;Aufgefallen ist das Ganze dadurch, daß Postfix immer versucht hat, Mails
+an den Webserver-User zuzustellen. Ich habe mir die Mails dann mal
+weiterleiten lassen und hatte in ein paar Sekunden weit über 500 neue
+Emails, alles Bounces von Aol und Yahoo, die mich darüber informieren
+wollten, daß meine Mails nicht zugestellt werden konnten. In der
+Mailqueue waren auch noch ein paar Dutzend Mails, denen die Mxe von
+Yahoo die Annahme verweigerten. Sehr verdächtig! Die gebouncten Mails
+machten Werbung für potenzsteigernde Mittel und enthielten wohl auch
+Viren.&lt;/p&gt;
+&lt;p&gt;Der Einbruch erfolgte über eine nicht gepatchte Webapplikation, hier
+fanden sich dann in einem Cache-Verzeichnis ein paar Php-Dateien, namens
+admin.php, cache.php (die sind nach dem Dateidatum zusammen dort
+gelandet), cached.php (zwei Tage später hochgeladen) und sendme.php
+(hierüber sind die Spammails hochgeladen worden). Admin.php ist ein
+&lt;a href="/static/w4ck1ng.png"&gt;Webinterface&lt;/a&gt;, mit dem man verschiedene interessante Sachen machen
+kann. Cache.php und cached.php ermöglichen es, einen Irc-Server
+aufzumachen.&lt;/p&gt;
+&lt;p&gt;Die Zahl der Müllmails liegt bei etwa 20000, das hat schon gereicht, um
+auf die Blackliste von Barracuda zu kommen (die haben den Eintrag aber
+auf Nachfrage sehr schnell wieder gelöscht).&lt;/p&gt;
+&lt;p&gt;Insgesamt eine sehr ärgerliche Geschichte, die wohl auch noch
+unangenehmer hätte ausgehen können.&lt;/p&gt;
+&lt;p&gt;Die Datei admin.php hat die Checksumme 20ed027c0d6d6798b3ec03fb8ef42756,
+falls mal einer vergleichen will.&lt;/p&gt;
+&lt;p&gt;Als Gegenmaßnahme habe ich dem Webserver-User die Shell gegen /bin/false
+ausgetauscht (das hätte ich schon längst machen sollen) und einen Bcc
+für alle Mails eingerichtet, die der Webserver-User schickt. Das geht
+mit folgendem Eintrag in /etc/postfix/main.cf:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sender\_bcc\_maps = hash:/etc/postfix/sender\_bcc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In dieser Datei stehen Absenderadressen und die dazugehörigen
+bcc-Adressen. Das Ganze muß noch per postmap /etc/postfix/sender_bcc in
+eine Hashmap umgewandelt werden, dann wird für jede Mail, die
+www-data@minden144.server4you.de eine Blindkopie an eine andere Andresse
+geschickt.&lt;/p&gt;</content><category term="misc"></category><category term="web"></category><category term="rootserver"></category><category term="security"></category></entry><entry><title>von Linux zu MacOS</title><link href="https://xunzi.github.io/von-linux-zu-macos.html" rel="alternate"></link><published>2010-09-14T14:09:00+02:00</published><updated>2010-09-14T14:09:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2010-09-14:/von-linux-zu-macos.html</id><summary type="html">&lt;p&gt;Da seit neuestem ein MacMini unseren Sekretär ziert, musste ich für
+einige liebgewonnene Applikationen Ersatz suchen. Besonders schwierig
+war diese Suche im Bereich Bildverwaltung und Musikverwaltung.&lt;/p&gt;
+&lt;p&gt;Als Bildverwaltung kam bisher immer &lt;a href="http://www.digikam.org/drupal/"&gt;Digikam&lt;/a&gt; zum Einsatz. Das läßt
+sich zwar auch unter MacOS &lt;a href="http://opensourcecat.blogspot.com/2009/01/en-digikam-little-step-more-to-world.html"&gt;kompilieren&lt;/a&gt;, aber das erfordert häßliche
+Krücken, um die KDE-Umgebung …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Da seit neuestem ein MacMini unseren Sekretär ziert, musste ich für
+einige liebgewonnene Applikationen Ersatz suchen. Besonders schwierig
+war diese Suche im Bereich Bildverwaltung und Musikverwaltung.&lt;/p&gt;
+&lt;p&gt;Als Bildverwaltung kam bisher immer &lt;a href="http://www.digikam.org/drupal/"&gt;Digikam&lt;/a&gt; zum Einsatz. Das läßt
+sich zwar auch unter MacOS &lt;a href="http://opensourcecat.blogspot.com/2009/01/en-digikam-little-step-more-to-world.html"&gt;kompilieren&lt;/a&gt;, aber das erfordert häßliche
+Krücken, um die KDE-Umgebung zum Laufen zu bringen. iPhoto war auch
+nicht so mein Fall (das war vor allem erstaunlich zäh, noch bevor ich
+alle meine Bilder importiert hatte), schließlich bin ich bei Googles
+Picasa gelandet, weil ich keine Lust hatte, ein- oder zweihundert Euro
+für die einschlägigen Produkte von Adobe oder Apple auszugeben, Picasa
+angenehm flott reagiert und die grundlegenden Bearbeitungsfunktionen
+bereithält, die ich so brauche. Ein zusätzliches Plus ist die
+hervorragende Integration in die Picasa Webalben.&lt;/p&gt;
+&lt;p&gt;Die Musikverwaltung war ein noch größeres Problem, da iTunes komplett
+indiskutabel ist (warum muß ich meine Kreditkartennummer angeben, wenn
+ich Coverbilder zu meinen Musikstücken sehen will) und mein Mp3-Player
+nur &lt;a href="http://en.wikipedia.org/wiki/Media_Transfer_Protocol"&gt;Mtp&lt;/a&gt; und &lt;a href="http://en.wikipedia.org/wiki/USB_mass_storage_device_class"&gt;Msc&lt;/a&gt; spricht und somit in iTunes gar nicht
+unterstützt wird. Nach Experimenten mit Xnjb, das &lt;a href="http://www.wentnet.com/projects/xnjb/"&gt;Mtp&lt;/a&gt; unter MacOS
+implementiert, bin ich bei &lt;a href="http://getsongbird.com/"&gt;Songbird&lt;/a&gt; gelandet, der in der letzten
+Version sehr gute Unterstützung für Msc-Geräte bietet.&lt;strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Update]&lt;/strong&gt;Noch besser, weil schlanker und schneller ist
+&lt;a href="http://www.clementine-player.org/"&gt;Clementine&lt;/a&gt;, sehr empfehlenswert für alle, die Amarok 1.x
+nachtrauern!&lt;/p&gt;
+&lt;p&gt;Angeschaut habe ich mir auch &lt;a href="http://jajuk.info/index.php/Main_Page"&gt;Jajuk&lt;/a&gt;, das aber nicht so schön in den
+MacOS-Desktop integriert ist (das hat mich auf der Suche nach einem
+Editor auch wieder von &lt;a href="http://www.jedit.org"&gt;jEdit&lt;/a&gt; abgebracht, aber an der Editoren-Front
+gibt es ja zum Glück &lt;a href="http://aquamacs.org/"&gt;Aquamacs&lt;/a&gt;!)&lt;/p&gt;</content><category term="misc"></category><category term="helferlein"></category><category term="macos"></category><category term="linux"></category></entry><entry><title>Django-Toolbar</title><link href="https://xunzi.github.io/django-toolbar.html" rel="alternate"></link><published>2010-06-24T18:24:00+02:00</published><updated>2010-06-24T18:24:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2010-06-24:/django-toolbar.html</id><summary type="html">&lt;p&gt;Bei meinen Experimenten mit &lt;a href="http://www.djangoproject.com/"&gt;Django&lt;/a&gt; ist mir letztlich die
+&lt;a href="http://rob.cogit8.org/blog/2008/Sep/19/introducing-django-debug-toolbar/"&gt;Django-Toolbar&lt;/a&gt; unter die Finger gekommen. Hierbei handelt es sich um
+eine Django-Middleware, die zusätzlich zu der normalen Ausgabe ein
+Overlay erzeugt, dem man so interessante Details wie die Http-Header des
+aktuellen Requests oder die SQL-Queries, die für den aktuellen Request
+ausgeführt …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bei meinen Experimenten mit &lt;a href="http://www.djangoproject.com/"&gt;Django&lt;/a&gt; ist mir letztlich die
+&lt;a href="http://rob.cogit8.org/blog/2008/Sep/19/introducing-django-debug-toolbar/"&gt;Django-Toolbar&lt;/a&gt; unter die Finger gekommen. Hierbei handelt es sich um
+eine Django-Middleware, die zusätzlich zu der normalen Ausgabe ein
+Overlay erzeugt, dem man so interessante Details wie die Http-Header des
+aktuellen Requests oder die SQL-Queries, die für den aktuellen Request
+ausgeführt wurden. Das ist schon cool, fast noch cooler ist, daß
+Django mittlerweile sehr gut und vollständig in &lt;a href="http://packages.ubuntu.com/lucid/python-django"&gt;Ubuntu&lt;/a&gt; verfügbar
+ist (und auch die Toolbar ein aptitude install
+python-django-debug-toolbar entfernt ist). &lt;a href="/static/screenshot-django-toolbar.png"&gt;So&lt;/a&gt; sieht das Ganze in
+Aktion aus.&lt;/p&gt;</content><category term="misc"></category><category term="django"></category><category term="helferlein"></category><category term="web"></category></entry><entry><title>Fahrrad-Aggro</title><link href="https://xunzi.github.io/fahrrad-aggro.html" rel="alternate"></link><published>2009-12-02T20:45:00+01:00</published><updated>2009-12-02T20:45:00+01:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2009-12-02:/fahrrad-aggro.html</id><summary type="html">&lt;p&gt;Habe einen sehr lesenswerten &lt;a href="http://www.timesonline.co.uk/tol/comment/columnists/article6936082.ece"&gt;Artikel&lt;/a&gt; in der Online-Ausgabe der Times
+über Sinn und Unsinn des tollkühnen Radfahrens im Innenstadtverkehr
+gefunden. Die Kurzfassung: Fahrradfahren in der Stadt ist toll
+(ökologisch lobenswert, schnell und frei von Parkplatzsorgen), aber die
+meisten Radfahrer fahren wie die gesengten Säue.&lt;/p&gt;
+&lt;p&gt;Bei dieser Beobachtung hab ich mich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Habe einen sehr lesenswerten &lt;a href="http://www.timesonline.co.uk/tol/comment/columnists/article6936082.ece"&gt;Artikel&lt;/a&gt; in der Online-Ausgabe der Times
+über Sinn und Unsinn des tollkühnen Radfahrens im Innenstadtverkehr
+gefunden. Die Kurzfassung: Fahrradfahren in der Stadt ist toll
+(ökologisch lobenswert, schnell und frei von Parkplatzsorgen), aber die
+meisten Radfahrer fahren wie die gesengten Säue.&lt;/p&gt;
+&lt;p&gt;Bei dieser Beobachtung hab ich mich natürlich gleich wiedererkannt, da
+ich jeden morgen nachdem ich meinen Sohn zur Schule gebracht habe, an
+"Need for Speed" auf der Kirchfeldstraße teilnehme. Zeitlich bringt das
+natürlich gar nix, weil ja eine Ampelphase eh keine Minute dauert und es
+deshalb total belanglos ist, ob ich die Grünphase mitbekomme nicht.
+Weniger belanglos ist die Frage, ob der LKW, der gerade rechts vor mir
+abbiegt, auch sieht, daß ich ihn noch eben schnell überholen will.
+Außerdem konterkarieren der Stress und die Aufregung des
+Fahrradbanditentums den Vorteil der Fahrradanreise, nämlich daß man
+entspannt und locker unterwegs ist. Ich werde also mal versuchen, mich
+von der Verkehrshektik nicht anstecken zu lassen (auch im Hinblick
+darauf, daß mir bei der Vorstellung, daß meine Kinder so fahren würden,
+wie ich morgens unterwegs bin, ziemlich schlecht wird).&lt;/p&gt;</content><category term="misc"></category><category term="verkehr"></category><category term="radfahren"></category></entry><entry><title>Interview mit einem Botnetz-Chef</title><link href="https://xunzi.github.io/interview-mit-einem-botnetz-chef.html" rel="alternate"></link><published>2009-10-15T19:57:00+02:00</published><updated>2009-10-15T19:57:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2009-10-15:/interview-mit-einem-botnetz-chef.html</id><content type="html">&lt;p&gt;Die Securitygurus bei Cisco haben ihre Kommunikation mit einem
+Botnetzbetreiber &lt;a href="http://www.cisco.com/web/about/security/intelligence/bots.html"&gt;beschrieben&lt;/a&gt;. Der Typ kam gar nicht so unsympathisch
+rüber, ein Kleinunternehmer, der seine Herde durch IM-Spam vergrößert,
+kein erkennbares Unrechtsbewußtsein, eher mangelndes Mitleid mit naiven
+Usern, die blind auf alles klicken, was nicht schnell genug wegscrollt.&lt;/p&gt;</content><category term="misc"></category><category term="security"></category></entry><entry><title>taz-Werbespot</title><link href="https://xunzi.github.io/taz-werbespot.html" rel="alternate"></link><published>2009-10-11T17:47:00+02:00</published><updated>2009-10-11T17:47:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2009-10-11:/taz-werbespot.html</id><summary type="html">&lt;p&gt;Daß es den tollen &lt;a href="http://www.youtube.com/watch?v=skY4nddl5q0"&gt;taz-Werbespot&lt;/a&gt; überhaupt gibt, habe ich erst
+dadurch mitbekommen, daß der Bundesgerichtshof jetzt entschieden hat,
+daß der Spot &lt;a href="http://www.tagesschau.de/wirtschaft/tazbild100.html"&gt;keine unzulässige Herbsetzung des Boulevardblattes
+darstellt&lt;/a&gt;. Schön, daß Bild der taz den Gefallen getan hat, dagegen zu
+klagen - ich hab was gelernt und meine Vorurteile über Bild haben sich …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Daß es den tollen &lt;a href="http://www.youtube.com/watch?v=skY4nddl5q0"&gt;taz-Werbespot&lt;/a&gt; überhaupt gibt, habe ich erst
+dadurch mitbekommen, daß der Bundesgerichtshof jetzt entschieden hat,
+daß der Spot &lt;a href="http://www.tagesschau.de/wirtschaft/tazbild100.html"&gt;keine unzulässige Herbsetzung des Boulevardblattes
+darstellt&lt;/a&gt;. Schön, daß Bild der taz den Gefallen getan hat, dagegen zu
+klagen - ich hab was gelernt und meine Vorurteile über Bild haben sich
+bestätigt, nämlich daß die lange nicht so gut einstecken wie austeilen
+können.&lt;/p&gt;</content><category term="misc"></category><category term="bookmarks"></category><category term="taz"></category></entry><entry><title>Neuer Jabber-Server</title><link href="https://xunzi.github.io/neuer-jabber-server.html" rel="alternate"></link><published>2009-07-13T18:24:00+02:00</published><updated>2009-07-13T18:24:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2009-07-13:/neuer-jabber-server.html</id><summary type="html">&lt;p&gt;Im Zuge der &lt;a href="http://www.drexler-online.net/pebble/2009/07/12/upgrade_auf_lenny_und_umstellung_auf_dovecot.html"&gt;Server-Renovierung&lt;/a&gt; habe ich auch den Jabberserver von
+&lt;a href="http://www.igniterealtime.org/projects/openfire/index.jsp"&gt;Openfire&lt;/a&gt;auf &lt;a href="http://prosody.im/"&gt;Prosody&lt;/a&gt; umgestellt.&lt;/p&gt;
+&lt;p&gt;Prosody ist sehr klein und braucht nur sehr wenige Resourcen. Außerdem
+ist es sehr sehr einfach aufzusetzen (obwohl Openfire mit der
+Weboberfläche da auch recht simpel ist). Was noch fehlt sind die
+Gateway-Plugins zu anderen IM-Systemen …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Im Zuge der &lt;a href="http://www.drexler-online.net/pebble/2009/07/12/upgrade_auf_lenny_und_umstellung_auf_dovecot.html"&gt;Server-Renovierung&lt;/a&gt; habe ich auch den Jabberserver von
+&lt;a href="http://www.igniterealtime.org/projects/openfire/index.jsp"&gt;Openfire&lt;/a&gt;auf &lt;a href="http://prosody.im/"&gt;Prosody&lt;/a&gt; umgestellt.&lt;/p&gt;
+&lt;p&gt;Prosody ist sehr klein und braucht nur sehr wenige Resourcen. Außerdem
+ist es sehr sehr einfach aufzusetzen (obwohl Openfire mit der
+Weboberfläche da auch recht simpel ist). Was noch fehlt sind die
+Gateway-Plugins zu anderen IM-Systemen, mit denen man einen
+Jabber-Account beispielsweise mit einem MSN-Account verknüpfen kann,
+aber das ist mir momentan nicht so wichtig. Zum Ausgleich ist Prosody
+Virtualhost-fähig und in Lua geschrieben, eine Sprache, die ich mir
+sowieso immer schon mal ansehen wollte.&lt;/p&gt;</content><category term="misc"></category><category term="jabber"></category><category term="prosody"></category><category term="rootserver"></category></entry><entry><title>Upgrade auf Lenny und Umstellung auf Dovecot</title><link href="https://xunzi.github.io/upgrade-auf-lenny-und-umstellung-auf-dovecot.html" rel="alternate"></link><published>2009-07-12T04:51:00+02:00</published><updated>2009-07-12T04:51:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2009-07-12:/upgrade-auf-lenny-und-umstellung-auf-dovecot.html</id><summary type="html">&lt;p&gt;Gestern habe ich mir ein Herz gefasst und den Server auf Lenny
+aktualisiert. Der erste Lauf von &lt;em&gt;aptitude dist-upgrade&lt;/em&gt; förderte 7
+unauflösbare Konflikte zu Tage, aber nach dem Entfernen von libsasl2 und
+libapache2-mod-php5 ging es dann reibungslos. Nach dem reboot (immer ein
+spannender Moment bis die Pings wieder zurückkommen) ging …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Gestern habe ich mir ein Herz gefasst und den Server auf Lenny
+aktualisiert. Der erste Lauf von &lt;em&gt;aptitude dist-upgrade&lt;/em&gt; förderte 7
+unauflösbare Konflikte zu Tage, aber nach dem Entfernen von libsasl2 und
+libapache2-mod-php5 ging es dann reibungslos. Nach dem reboot (immer ein
+spannender Moment bis die Pings wieder zurückkommen) ging dann fast
+alles wieder wie gewohnt bis auf Postfix und den Tomcat-Mount per ajp.
+Postfix mochte keine Benutzer mehr authentifizieren, wohl ein Problem
+mit Sasl und Passworten im Klartext (die ich in Syscp ausgeschaltet
+habe). Die einfachste Lösung hierfür war, Courier durch Dovecot zu
+ersetzen und Postfix gegen Dovecot authentifizieren zu lassen, was dank
+der exzellenten Doku von Dovecot sehr einfach war.  &lt;/p&gt;
+&lt;p&gt;Der fehlende Tomcat-Mount  lag daran, daß der Mountpoint in die
+Definition des Virtual Host verschoben werden muß.&lt;/p&gt;</content><category term="misc"></category><category term="rootserver"></category><category term="debian"></category><category term="dovecot"></category></entry><entry><title>Photo-Sammlung bei Google</title><link href="https://xunzi.github.io/photo-sammlung-bei-google.html" rel="alternate"></link><published>2009-03-23T13:47:00+01:00</published><updated>2009-03-23T13:47:00+01:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2009-03-23:/photo-sammlung-bei-google.html</id><content type="html">&lt;p&gt;Schon seit November letzten Jahres gibt es bei Google &lt;a href="http://images.google.com/hosted/life"&gt;zehntausende
+Photos der Zeitschrift LIFE&lt;/a&gt;, die in ihrem &lt;a href="http://en.wikipedia.org/wiki/Life_Magazine"&gt;wechselvollen Werdegang&lt;/a&gt;
+auch einmal ein Zentralorgan des Photojournalismus war.&lt;/p&gt;</content><category term="misc"></category><category term="bookmarks"></category><category term="photos"></category></entry><entry><title>Bloggen aus Firefox</title><link href="https://xunzi.github.io/bloggen-aus-firefox.html" rel="alternate"></link><published>2009-03-23T09:09:00+01:00</published><updated>2009-03-23T09:09:00+01:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2009-03-23:/bloggen-aus-firefox.html</id><summary type="html">&lt;p&gt;Eine hübsche und nützliche Erweiterung für Firefox ist &lt;a href="https://addons.mozilla.org/en-US/firefox/addon/1730"&gt;ScribeFire&lt;/a&gt;,
+mit dessen Hilfe via &lt;a href="http://en.wikipedia.org/wiki/MetaWeblog"&gt;Metaweblog-API&lt;/a&gt; Blogbeiträge direkt aus Firefox
+heraus erstellt werden können.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Update]&lt;/strong&gt; FireScribe fügt neuen Einträgen ein unsichtbares
+pixelgroßes Jpg-Bild hinzu, das auf Zemanta verweist (sichtbar in der
+Quellcode-Ansicht). Die Konfigurationsoption "Automatically insert
+invisible tracking pixel for statistics gathering …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Eine hübsche und nützliche Erweiterung für Firefox ist &lt;a href="https://addons.mozilla.org/en-US/firefox/addon/1730"&gt;ScribeFire&lt;/a&gt;,
+mit dessen Hilfe via &lt;a href="http://en.wikipedia.org/wiki/MetaWeblog"&gt;Metaweblog-API&lt;/a&gt; Blogbeiträge direkt aus Firefox
+heraus erstellt werden können.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Update]&lt;/strong&gt; FireScribe fügt neuen Einträgen ein unsichtbares
+pixelgroßes Jpg-Bild hinzu, das auf Zemanta verweist (sichtbar in der
+Quellcode-Ansicht). Die Konfigurationsoption "Automatically insert
+invisible tracking pixel for statistics gathering" unter "Publishing"
+sollte dieses Verhalten deaktivieren.&lt;/p&gt;</content><category term="misc"></category><category term="firefox"></category><category term="helferlein"></category></entry><entry><title>Screencast einer Windows-Session in Virtualbox</title><link href="https://xunzi.github.io/screencast-einer-windows-session-in-virtualbox.html" rel="alternate"></link><published>2009-02-20T22:26:00+01:00</published><updated>2009-02-20T22:26:00+01:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2009-02-20:/screencast-einer-windows-session-in-virtualbox.html</id><summary type="html">&lt;p&gt;Screencasts von Windows-Sessions, die in einer Virtualbox-VM laufen,
+sind dank vrdp und pyvnc2swf sehr einfach zu erstellen.&lt;/p&gt;
+&lt;p&gt;Ein Screencast ist so etwas wie ein animierter Screenshot und in manchen
+Fällen einleuchtender als eine lange Kette von Schnappschüssen des
+Bildschirms.&lt;/p&gt;
+&lt;p&gt;Das Tool &lt;a href="http://www.unixuser.org/~euske/vnc2swf/"&gt;pyvnc2swf&lt;/a&gt; erstellt aus einer Vnc-Session ein Flashfilmchen.
+Um nun …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Screencasts von Windows-Sessions, die in einer Virtualbox-VM laufen,
+sind dank vrdp und pyvnc2swf sehr einfach zu erstellen.&lt;/p&gt;
+&lt;p&gt;Ein Screencast ist so etwas wie ein animierter Screenshot und in manchen
+Fällen einleuchtender als eine lange Kette von Schnappschüssen des
+Bildschirms.&lt;/p&gt;
+&lt;p&gt;Das Tool &lt;a href="http://www.unixuser.org/~euske/vnc2swf/"&gt;pyvnc2swf&lt;/a&gt; erstellt aus einer Vnc-Session ein Flashfilmchen.
+Um nun ein Screencast von einem per &lt;a href="http://www.virtualbox.org/"&gt;Virtualbox&lt;/a&gt; in ein Fenster
+verbannten Windows zu erstellen, reicht es, in den Einstellungen der
+virtuellen Maschine unter "Remote Display" das Häkchen bei "Enable VRDP
+Server" zu setzen und die virtuelle Maschine zu starten. Jetzt braucht
+es noch einen Vnc-Server (per &lt;code&gt;vncserver -geometry 800x600&lt;/code&gt; einfach zu
+starten) und sich per &lt;code&gt;vncviewer :1&lt;/code&gt; mit dem Vncserver zu verbinden.
+Unter Ubuntu startet die Vnc-Session ohne Fenstermanager aber mit einem
+Terminal. (Um einen sehr schlanken Desktop in der Vnc-Session
+hinzubekommen, empfiehlt sich das Paket &lt;a href="http://packages.ubuntu.com/hardy/twm"&gt;twm&lt;/a&gt;. Der Terminal ist aber
+auch völlig ausreichend, um sich per &lt;code&gt;rdesktop -k de localhost&lt;/code&gt; mit der
+laufenden virtuellen Maschine zu verbinden.&lt;/p&gt;
+&lt;p&gt;Parallel dazu muß dann das Programm pyvnc2swf gestartet werden, es
+bekommt als Parameter die Display-Nummer der Vnc-Session, also etwa so:
+&lt;code&gt;pyvnc2swf :1&lt;/code&gt;. Um die Aufnahme zu starten, muß man in der
+übersichlichen Gui den Start-Knopf drücken und das Passwort der
+Vnc-Session angeben. Danach kann man dann seine Vorführung auf dem
+Windows-Desktop abspulen und hernach den Stop-Knopf drücken. Das
+Ergebnis wird in zwei Dateien abgespeicher, einer Flash-Datei und einer
+html-Datei, die den Flash-Film mit einer Pause-Taste ausstattet.&lt;/p&gt;
+&lt;p&gt;Das Ergebnis sieht dann &lt;a href="/static/favourites-screencast.html"&gt;so aus&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Das ganze setzt neben der &lt;a href="http://www.virtualbox.org/wiki/VirtualBox_PUEL"&gt;"Personal Use and Evaluation License"-Version
+von Virtualbox&lt;/a&gt; (nur die beherrscht VRDP) noch &lt;a href="http://packages.ubuntu.com/hardy/rdesktop"&gt;rdesktop&lt;/a&gt; und
+&lt;a href="http://packages.ubuntu.com/hardy/graphics/pyvnc2swf"&gt;pyvnc2swf&lt;/a&gt; aus den Universe-Repositories voraus.&lt;/p&gt;</content><category term="misc"></category><category term="helferlein"></category><category term="virtualbox"></category></entry><entry><title>Konsolenhelfer (1): dstat</title><link href="https://xunzi.github.io/konsolenhelfer-1-dstat.html" rel="alternate"></link><published>2008-07-05T11:08:00+02:00</published><updated>2008-07-05T11:08:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2008-07-05:/konsolenhelfer-1-dstat.html</id><summary type="html">&lt;p&gt;Auf der Suche nach Performance-Engpässen ist es öfter notwendig, die
+Ausgaben der Kommandos &lt;code&gt;vmstat&lt;/code&gt;, &lt;code&gt;iostat&lt;/code&gt; und &lt;code&gt;nfsstat&lt;/code&gt; miteinander zu
+vergleichen. Einfacher als drei Terminalfenster mit den jeweiligen
+Kommandos ist das Tool &lt;code&gt;dstat&lt;/code&gt;, das zusätzlich noch eine
+augenfreundlich kolorierte Ausgabe erzeugt. &lt;code&gt;Dstat&lt;/code&gt; von &lt;a href="http://dag.wieers.com/home-made/dstat/"&gt;Dag Wieers&lt;/a&gt;. &lt;code&gt;dstat&lt;/code&gt; misst eine konfigurierbare Auswahl von …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Auf der Suche nach Performance-Engpässen ist es öfter notwendig, die
+Ausgaben der Kommandos &lt;code&gt;vmstat&lt;/code&gt;, &lt;code&gt;iostat&lt;/code&gt; und &lt;code&gt;nfsstat&lt;/code&gt; miteinander zu
+vergleichen. Einfacher als drei Terminalfenster mit den jeweiligen
+Kommandos ist das Tool &lt;code&gt;dstat&lt;/code&gt;, das zusätzlich noch eine
+augenfreundlich kolorierte Ausgabe erzeugt. &lt;code&gt;Dstat&lt;/code&gt; von &lt;a href="http://dag.wieers.com/home-made/dstat/"&gt;Dag Wieers&lt;/a&gt;. &lt;code&gt;dstat&lt;/code&gt; misst eine konfigurierbare Auswahl von
+Betriebssystem-Parametern und zeigt sie kontinuierlich an. Wird &lt;code&gt;dstat&lt;/code&gt;
+ohne weitere Parameter aufgerufen, zeigt es Statistiken zu Cpu, Blockdevice, Netzwerk, Paging und System (Context switches und Interrupts) an:
+&lt;img alt="dstat screenshot" src="/static/dstat.png" title="dtstat screenshot"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Dstat&lt;/code&gt; ist durch Plugins erweiterbar, eine Liste der verfügbaren
+Plugins gibt das Kommando &lt;code&gt;dstat -M list&lt;/code&gt;.&lt;br&gt;
+So ist es zum Beispiel möglich, zusätzlich zu den erwähnten
+Default-Statistiken den "most expensive"-Pozeß anzeigen zu lassen,
+gemessen in Hundertstel-Sekunden, die der Prozess im user-Mode und im
+Kernel-Mode verbracht hat (siehe &lt;code&gt;man 5 proc&lt;/code&gt;).
+Außerdem ist dstat in Python geschrieben, so dass es sehr einfach ist,
+neue Plugins zu schreiben.&lt;/p&gt;</content><category term="misc"></category><category term="helferlein"></category><category term="dstat"></category></entry><entry><title>SSL-Problem</title><link href="https://xunzi.github.io/ssl-problem.html" rel="alternate"></link><published>2008-06-09T20:09:00+02:00</published><updated>2008-06-09T20:09:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2008-06-09:/ssl-problem.html</id><summary type="html">&lt;p&gt;Ein Verweis auf die Zertifikatskette (certificate chain) läßt
+https-Verbindungen von IE oder Opera zu Apache scheitern. Geholfen bei
+der Fehlersuche haben openssl und &lt;a href="http://www.google.de"&gt;google.&lt;/a&gt; Das &lt;a href="http://www.drexler-online.net/blog/serverkonfiguration/"&gt;erwähnte&lt;/a&gt; Problem
+mit SSL-Verbindungen von IE7 und Opera unter WIndows hat sich nun auch
+gelöst: Schuld war ein Eintrag in einer Apache-Konfigurationsdatei, der
+auf die …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ein Verweis auf die Zertifikatskette (certificate chain) läßt
+https-Verbindungen von IE oder Opera zu Apache scheitern. Geholfen bei
+der Fehlersuche haben openssl und &lt;a href="http://www.google.de"&gt;google.&lt;/a&gt; Das &lt;a href="http://www.drexler-online.net/blog/serverkonfiguration/"&gt;erwähnte&lt;/a&gt; Problem
+mit SSL-Verbindungen von IE7 und Opera unter WIndows hat sich nun auch
+gelöst: Schuld war ein Eintrag in einer Apache-Konfigurationsdatei, der
+auf die Zertifikatskette verweist: &lt;br&gt;
+&lt;code&gt;SSLCertificateChainFile /etc/ssl/certs/ca-certificates.crt&lt;/code&gt;&lt;br&gt;
+Auch wenn in weiteren Direktiven die Überprüfung von
+Client-Zertifikaten explizit abgeschaltet ist, versucht Apache dennoch,
+ein Client-Zertifikat anzufordern.&lt;br&gt;
+Das sieht beim Debugging mit openssl dann so aus:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;[0]xpc:~% openssl s_client -connect hostname.domainname.tld:443 CONNECTED(00000003) 8634:error:1408E098:SSL routines:SSL3_GET_MESSAGE:excessive message size:s3_both.c:449:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Unter Firefox hat es wunderbar funktioniert, weil ich da tatsächlich ein
+Client-Zertifikat installiert habe.&lt;/p&gt;</content><category term="misc"></category><category term="ssl"></category><category term="apache"></category></entry></feed>

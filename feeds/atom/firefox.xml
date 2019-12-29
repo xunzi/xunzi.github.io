@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg - firefox</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom/firefox.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2009-03-23T09:09:00+01:00</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle><entry><title>Bloggen aus Firefox</title><link href="https://xunzi.github.io/bloggen-aus-firefox.html" rel="alternate"></link><published>2009-03-23T09:09:00+01:00</published><updated>2009-03-23T09:09:00+01:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2009-03-23:/bloggen-aus-firefox.html</id><summary type="html">&lt;p&gt;Eine hübsche und nützliche Erweiterung für Firefox ist &lt;a href="https://addons.mozilla.org/en-US/firefox/addon/1730"&gt;ScribeFire&lt;/a&gt;,
+mit dessen Hilfe via &lt;a href="http://en.wikipedia.org/wiki/MetaWeblog"&gt;Metaweblog-API&lt;/a&gt; Blogbeiträge direkt aus Firefox
+heraus erstellt werden können.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Update]&lt;/strong&gt; FireScribe fügt neuen Einträgen ein unsichtbares
+pixelgroßes Jpg-Bild hinzu, das auf Zemanta verweist (sichtbar in der
+Quellcode-Ansicht). Die Konfigurationsoption "Automatically insert
+invisible tracking pixel for statistics gathering …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Eine hübsche und nützliche Erweiterung für Firefox ist &lt;a href="https://addons.mozilla.org/en-US/firefox/addon/1730"&gt;ScribeFire&lt;/a&gt;,
+mit dessen Hilfe via &lt;a href="http://en.wikipedia.org/wiki/MetaWeblog"&gt;Metaweblog-API&lt;/a&gt; Blogbeiträge direkt aus Firefox
+heraus erstellt werden können.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Update]&lt;/strong&gt; FireScribe fügt neuen Einträgen ein unsichtbares
+pixelgroßes Jpg-Bild hinzu, das auf Zemanta verweist (sichtbar in der
+Quellcode-Ansicht). Die Konfigurationsoption "Automatically insert
+invisible tracking pixel for statistics gathering" unter "Publishing"
+sollte dieses Verhalten deaktivieren.&lt;/p&gt;</content><category term="misc"></category><category term="firefox"></category><category term="helferlein"></category></entry></feed>

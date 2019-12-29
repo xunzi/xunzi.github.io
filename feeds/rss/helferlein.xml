@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Bloggggg - helferlein</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Tue, 14 Sep 2010 14:09:00 +0200</lastBuildDate><item><title>von Linux zu MacOS</title><link>https://xunzi.github.io/von-linux-zu-macos.html</link><description>&lt;p&gt;Da seit neuestem ein MacMini unseren Sekretär ziert, musste ich für
+einige liebgewonnene Applikationen Ersatz suchen. Besonders schwierig
+war diese Suche im Bereich Bildverwaltung und Musikverwaltung.&lt;/p&gt;
+&lt;p&gt;Als Bildverwaltung kam bisher immer &lt;a href="http://www.digikam.org/drupal/"&gt;Digikam&lt;/a&gt; zum Einsatz. Das läßt
+sich zwar auch unter MacOS &lt;a href="http://opensourcecat.blogspot.com/2009/01/en-digikam-little-step-more-to-world.html"&gt;kompilieren&lt;/a&gt;, aber das erfordert häßliche
+Krücken, um die KDE-Umgebung …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Tue, 14 Sep 2010 14:09:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2010-09-14:/von-linux-zu-macos.html</guid><category>misc</category><category>helferlein</category><category>macos</category><category>linux</category></item><item><title>Django-Toolbar</title><link>https://xunzi.github.io/django-toolbar.html</link><description>&lt;p&gt;Bei meinen Experimenten mit &lt;a href="http://www.djangoproject.com/"&gt;Django&lt;/a&gt; ist mir letztlich die
+&lt;a href="http://rob.cogit8.org/blog/2008/Sep/19/introducing-django-debug-toolbar/"&gt;Django-Toolbar&lt;/a&gt; unter die Finger gekommen. Hierbei handelt es sich um
+eine Django-Middleware, die zusätzlich zu der normalen Ausgabe ein
+Overlay erzeugt, dem man so interessante Details wie die Http-Header des
+aktuellen Requests oder die SQL-Queries, die für den aktuellen Request
+ausgeführt …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Thu, 24 Jun 2010 18:24:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2010-06-24:/django-toolbar.html</guid><category>misc</category><category>django</category><category>helferlein</category><category>web</category></item><item><title>Bloggen aus Firefox</title><link>https://xunzi.github.io/bloggen-aus-firefox.html</link><description>&lt;p&gt;Eine hübsche und nützliche Erweiterung für Firefox ist &lt;a href="https://addons.mozilla.org/en-US/firefox/addon/1730"&gt;ScribeFire&lt;/a&gt;,
+mit dessen Hilfe via &lt;a href="http://en.wikipedia.org/wiki/MetaWeblog"&gt;Metaweblog-API&lt;/a&gt; Blogbeiträge direkt aus Firefox
+heraus erstellt werden können.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Update]&lt;/strong&gt; FireScribe fügt neuen Einträgen ein unsichtbares
+pixelgroßes Jpg-Bild hinzu, das auf Zemanta verweist (sichtbar in der
+Quellcode-Ansicht). Die Konfigurationsoption "Automatically insert
+invisible tracking pixel for statistics gathering …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Mon, 23 Mar 2009 09:09:00 +0100</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2009-03-23:/bloggen-aus-firefox.html</guid><category>misc</category><category>firefox</category><category>helferlein</category></item><item><title>Screencast einer Windows-Session in Virtualbox</title><link>https://xunzi.github.io/screencast-einer-windows-session-in-virtualbox.html</link><description>&lt;p&gt;Screencasts von Windows-Sessions, die in einer Virtualbox-VM laufen,
+sind dank vrdp und pyvnc2swf sehr einfach zu erstellen.&lt;/p&gt;
+&lt;p&gt;Ein Screencast ist so etwas wie ein animierter Screenshot und in manchen
+Fällen einleuchtender als eine lange Kette von Schnappschüssen des
+Bildschirms.&lt;/p&gt;
+&lt;p&gt;Das Tool &lt;a href="http://www.unixuser.org/~euske/vnc2swf/"&gt;pyvnc2swf&lt;/a&gt; erstellt aus einer Vnc-Session ein Flashfilmchen.
+Um nun …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Fri, 20 Feb 2009 22:26:00 +0100</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2009-02-20:/screencast-einer-windows-session-in-virtualbox.html</guid><category>misc</category><category>helferlein</category><category>virtualbox</category></item><item><title>Konsolenhelfer (1): dstat</title><link>https://xunzi.github.io/konsolenhelfer-1-dstat.html</link><description>&lt;p&gt;Auf der Suche nach Performance-Engpässen ist es öfter notwendig, die
+Ausgaben der Kommandos &lt;code&gt;vmstat&lt;/code&gt;, &lt;code&gt;iostat&lt;/code&gt; und &lt;code&gt;nfsstat&lt;/code&gt; miteinander zu
+vergleichen. Einfacher als drei Terminalfenster mit den jeweiligen
+Kommandos ist das Tool &lt;code&gt;dstat&lt;/code&gt;, das zusätzlich noch eine
+augenfreundlich kolorierte Ausgabe erzeugt. &lt;code&gt;Dstat&lt;/code&gt; von &lt;a href="http://dag.wieers.com/home-made/dstat/"&gt;Dag Wieers&lt;/a&gt;. &lt;code&gt;dstat&lt;/code&gt; misst eine konfigurierbare Auswahl von …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Sat, 05 Jul 2008 11:08:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2008-07-05:/konsolenhelfer-1-dstat.html</guid><category>misc</category><category>helferlein</category><category>dstat</category></item></channel></rss>

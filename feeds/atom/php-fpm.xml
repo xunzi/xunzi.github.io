@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bloggggg - php-fpm</title><link href="https://xunzi.github.io/" rel="alternate"></link><link href="https://xunzi.github.io/feeds/atom/php-fpm.xml" rel="self"></link><id>https://xunzi.github.io/</id><updated>2012-07-02T19:33:00+02:00</updated><subtitle>We are fools whether we dance or not so we might as well dance</subtitle><entry><title>Apache raus, Nginx rein</title><link href="https://xunzi.github.io/apache-raus-nginx-rein.html" rel="alternate"></link><published>2012-07-02T19:33:00+02:00</published><updated>2012-07-02T19:33:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2012-07-02:/apache-raus-nginx-rein.html</id><summary type="html">&lt;p&gt;Anlässlich des Upgrades auf Ubuntu Precise habe ich den Webserver
+umgestellt von Apache auf Nginx. Für das ungeliebte Php muss dann
+&lt;a href="http://php-fpm.org/"&gt;php-fpm.org/&lt;/a&gt; mit ins Boot, der Java-Appserver wird per Proxy
+angebunden, da Nginx kein AJP spricht. Auf dem kleinen Webserver
+performt das Ganze ganz gut und hat den Vorteil …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Anlässlich des Upgrades auf Ubuntu Precise habe ich den Webserver
+umgestellt von Apache auf Nginx. Für das ungeliebte Php muss dann
+&lt;a href="http://php-fpm.org/"&gt;php-fpm.org/&lt;/a&gt; mit ins Boot, der Java-Appserver wird per Proxy
+angebunden, da Nginx kein AJP spricht. Auf dem kleinen Webserver
+performt das Ganze ganz gut und hat den Vorteil, dass die Nginx-Konfig
+deutlich einfacher und überschaubarer ist.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Erst dachte ich, die openJDK-Version im Lieferumfang von Precise hätte
+ne massive Macke, weil der Tomcat-Prozess munter alle verfügbaren
+Cpu-Zyklen aufgebraucht hat, es stellte sich dann aber heraus, dass die
+&lt;a href="http://www.heise.de/newsticker/meldung/Schaltsekunde-Linux-kann-einfrieren-1629683.html"&gt;Schaltsekunde&lt;/a&gt; schuld war und ein dezenter Reboot die schnellste
+Abhilfe brachte.&lt;/p&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;[EDIT]&lt;/strong&gt; Einen anständigen Performance-Schub für die Auslieferung von
+Bildern bringt es, die Parameter &lt;code&gt;fastcgi_max_temp_file_size&lt;/code&gt; auf 0 und
+&lt;code&gt;proxy_buffering&lt;/code&gt; auf off  zu setzen, sonst werden grössere Dateien wie
+Photos oder Mp3-Dateien erst auf die Platte gepuffert und dann von Nginx
+ausgeliefert, da kommt es dann schon mal zu unschönen Verzögerungen.&lt;/p&gt;
+&lt;/p&gt;</content><category term="misc"></category><category term="apache"></category><category term="php-fpm"></category><category term="nginx"></category></entry><entry><title>Testinstallation: Owncloud</title><link href="https://xunzi.github.io/testinstallation-owncloud.html" rel="alternate"></link><published>2012-04-12T15:32:00+02:00</published><updated>2012-04-12T15:32:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2012-04-12:/testinstallation-owncloud.html</id><summary type="html">&lt;p&gt;Ich habe - angeregt durch die Jubelmeldungen über &lt;a href="http://owncloud.org"&gt;owncloud&lt;/a&gt; - eine
+Testinstanz von "Your Cloud, Your Data, Your Way!" aufgesetzt. OC
+kombiniert einen Webdav-Server, mit dem man die Dateien in die
+Dateimanager moderner Betriebssysteme einbinden kann mit einem
+Kalender/Caldav-Server und einem Addressbuch/carddav-Server. Die
+Standards caldav und carddav werden z. B …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ich habe - angeregt durch die Jubelmeldungen über &lt;a href="http://owncloud.org"&gt;owncloud&lt;/a&gt; - eine
+Testinstanz von "Your Cloud, Your Data, Your Way!" aufgesetzt. OC
+kombiniert einen Webdav-Server, mit dem man die Dateien in die
+Dateimanager moderner Betriebssysteme einbinden kann mit einem
+Kalender/Caldav-Server und einem Addressbuch/carddav-Server. Die
+Standards caldav und carddav werden z. B. von Apples iOS unterstützt, so
+dass man in der eigenen Wolke seine Kalenderdaten und Kontakte speichern
+kann, ohne dass Google oder die anderen üblichen Verdächtigen nen
+schnellen Euro mit der Zweit- und Drittverwertung der persönlichen Daten
+machen können.&lt;/p&gt;
+&lt;p&gt;Das ist soweit ja ganz schnuckelig, leider ist das Ganze in Php
+geschrieben (apropos: &lt;a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/"&gt;hier&lt;/a&gt; gibt es ein schönes Php-Bashing), um es
+mit Nginx zum Laufen zu kriegen, braucht es einen Fcgi-Server, der den
+Php-Matsch ausführt, unter Ubuntu gibt es dafür &lt;a href="http://packages.ubuntu.com/oneiric/php5-fpm"&gt;php-fpm&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Die iOS-Clients finden die Caldav- und Carddav-Server für eine bestimmte
+Domäne per DNS-Request (Details dazu gibt es &lt;a href="http://andrew.mcmillan.net.nz/blog/srv_records_with_dnsmasq"&gt;hier&lt;/a&gt;).  Ist der Server
+einmal lokalisiert, sucht iOS nach well-known-Resourcen gemäss
+&lt;a href="http://tools.ietf.org/html/rfc5785.html"&gt;RFC5785&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Da diese nicht in der Owncoud-Applikation abgebildet werden, empfiehlt
+sich ein Redirect:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;rewrite ^/.well-known/host-meta /public.php?service=host-meta last;rewrite ^/.well-known/host-meta.json /public.php?service=host-meta-json last;&lt;/span&gt;
+&lt;span class="err"&gt;rewrite ^/.well-known/carddav /remote.php/carddav/ redirect;rewrite ^/.well-known/caldav /remote.php/caldav/ redirect;rewrite ^(/core/doc/[^\/]+/)$ $1/index.html;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Das reicht aber immer noch nicht, um das MacOS-Addressbuch glücklich zu
+machen, hier bedarf es eines weiteren Redirects:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;rewrite /apps/contacts/carddav.php/addressbooks/(.+)/addressbook/ /apps/contacts/carddav.php/addressbooks/$1/default permanent;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Das funktioniert natürlich nur, wenn der Kalender auch &lt;code&gt;default&lt;/code&gt; heisst,
+ist das nicht der Fall, klappt es nicht mehr. Diese Probleme sind wohl
+in der Lion-Version des MacOS-Adressbuches behoben.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; Synchronisation mit Thunderbird klappt auch, der Kalender
+braucht das &lt;a href="https://addons.mozilla.org/thunderbird/2313/"&gt;Lightning-Plugin&lt;/a&gt; und das Addressbuch kann man mit Hilfe
+des &lt;a href="http://www.sogo.nu/files/downloads/extensions/sogo-connector-10.0.1.xpi"&gt;Sogo-Konnektors&lt;/a&gt; und des Plugins "&lt;a href="https://nic-nac-project.org/~kaosmos/morecols-en.html"&gt;More Functions for
+Addressbook&lt;/a&gt;" syncen, klappt erstaunlich schmerzfrei.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit&lt;/strong&gt;: Nach dem Update auf Lion klappt das Caldav-Discovery
+tatsächlich problemlos.&lt;/p&gt;</content><category term="misc"></category><category term="owncloud"></category><category term="php-fpm"></category><category term="nginx"></category></entry></feed>
