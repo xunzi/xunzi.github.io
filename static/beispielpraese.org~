@@ -1,0 +1,28 @@
+#+TITLE: Beispielpräse
+#+AUTHOR: Christian Drexler
+#+startup: beamer
+#+BEAMER_FRAME_LEVEL: 2
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [presentation]
+#+BEAMER_FRAME_LEVEL: 2
+#+BEAMER_HEADER_EXTRA: \usetheme{CambridgeUS}\usecolortheme{default}\useinnertheme{rectangles}\definecolor{darkred}{rgb}{0.8,0,0}\setbeamercolor{structure}{bg=black, fg=darkred}\institute{manninet.de}\beamertemplatenavigationsymbolsempty\hypersetup{pdftitle={Versionskontrolle},pdfauthor={Christian Drexler}}
+#+COLUMNS: %35ITEM %10BEAMER_env(Env) %10BEAMER_envargs(Args) %4BEAMER_col(Col) %8BEAMER_extra(Ex)
+
+
+* Einleitung
+** Einleitung
+Hier kommt die Einleitung hin, sogar mit der für Präsentationen so
+wichtigen Bullet-List:
+- Punkt Eins
+- Punkt Zwei
+- denkt Euch den Rest selber aus
+* Hauptteil
+
+** Folie 1
+Hier sollte eigentlich was sinnvolles stehen ...
+
+** Folie 2
+Hier auch
+* Schluß
+** Folie 3
+Und jetzt noch damit anzufangen lohnt sich sowieso nicht mehr
