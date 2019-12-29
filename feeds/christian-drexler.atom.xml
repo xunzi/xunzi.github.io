@@ -103,7 +103,34 @@ eher leichtgewichtige VM-ähnliche Konstrukte passend sind.&lt;/p&gt;
 Auch die Netzwerkanbindung ist flexibel, neben dem "klassichen" Bridge-Konzept gibt es auch die Möglichkeit,
 definierte Ports (tcp oder udp) zu proxen.
 Dazu passen die neu bei Ubuntu eingeführten &lt;a href="https://blog.ubuntu.com/2018/07/09/minimal-ubuntu-released"&gt;Minimal Images&lt;/a&gt; für schlanke und auf das Nötigste reduzierte Installationen.&lt;/p&gt;
-&lt;p&gt;Lxd unterstützt seit neustem auch Clustering, das kommt aber auf dem rootserver mangels Hardware-Redundanz nicht zum Einsatz.&lt;/p&gt;</content><category term="misc"></category><category term="kvm"></category><category term="rootserver"></category><category term="lxd"></category></entry><entry><title>Virsh disk handling</title><link href="https://xunzi.github.io/virsh-disk-handling.html" rel="alternate"></link><published>2018-07-02T22:25:00+02:00</published><updated>2018-07-02T22:25:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2018-07-02:/virsh-disk-handling.html</id><summary type="html">&lt;p&gt;Wenn die qemu/kvm-Platten vollaufen, kann man relativ einfach eine neue Platte erzeugen und mounten. Das ist in vielen Fällen weniger kritisch, als existierende Diskimages, Partitionen und Dateisysteme zu vergrößern.&lt;/p&gt;
+&lt;p&gt;Lxd unterstützt seit neustem auch Clustering, das kommt aber auf dem rootserver mangels Hardware-Redundanz nicht zum Einsatz.&lt;/p&gt;
+&lt;p&gt;Der Server ist ein Hetzner EX41 mit 32 GB RAM, Intel Core i7-6700 Quad Core und 2 4 TB SATA Disks. Momentan laufen hier 12 Container,
+die extern erreichbaren Container hängen an einer Bridge  mit dem phyiskalischen Interface des Hosts.
+Weiterhin gibt es ein internes Lxd-Network, an dem Infrastrukturdienste wie Ldap, MySQL und Redis lauschen.
+Die externe Anbindung erfolgt über ein /29-Netzwerk. Die Container, die an der externen Bridge hängen, routen den Traffic über die externe Ip
+des Hosts, nur  mit dieser als Gateway ist Kommunikation mizt dem Internet möglich.
+Die Container haben dafür folgende Netplan-Konfig:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;root@container:~# cat /etc/netplan/50-cloud-init.yaml&lt;/span&gt;
+&lt;span class="l l-Scalar l-Scalar-Plain"&gt;network&lt;/span&gt;&lt;span class="p p-Indicator"&gt;:&lt;/span&gt;
+    &lt;span class="nt"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;2&lt;/span&gt;
+    &lt;span class="nt"&gt;ethernets&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="nt"&gt;eth0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="nt"&gt;dhcp4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;
+            &lt;span class="nt"&gt;addresses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;w.x.y.z/24&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+        &lt;span class="nt"&gt;eth1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="nt"&gt;dhcp4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;
+            &lt;span class="nt"&gt;addresses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;a.b.c.d/29&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+            &lt;span class="nt"&gt;gateway4&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;e.f.g.h&lt;/span&gt;
+            &lt;span class="nt"&gt;nameservers&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                    &lt;span class="nt"&gt;addresses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;213.133.100.100&lt;/span&gt;&lt;span class="p p-Indicator"&gt;,&lt;/span&gt;&lt;span class="nv"&gt;213.133.99.99&lt;/span&gt;&lt;span class="p p-Indicator"&gt;,&lt;/span&gt;&lt;span class="nv"&gt;213.133.98.98&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+            &lt;span class="nt"&gt;routes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+             &lt;span class="p p-Indicator"&gt;-&lt;/span&gt; &lt;span class="nt"&gt;to&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;0.0.0.0/0&lt;/span&gt;
+               &lt;span class="nt"&gt;via&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;e.f.g.h&lt;/span&gt;
+               &lt;span class="nt"&gt;on-link&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;wobei &lt;code&gt;w.x.y.z&lt;/code&gt; das RFC-1819-konforme interne Netz, &lt;code&gt;a.b.c.d&lt;/code&gt; die Ip des Containers und &lt;code&gt;e.f.g.h&lt;/code&gt; die Ip des Hosts darstellen.&lt;/p&gt;</content><category term="misc"></category><category term="kvm"></category><category term="rootserver"></category><category term="lxd"></category></entry><entry><title>Virsh disk handling</title><link href="https://xunzi.github.io/virsh-disk-handling.html" rel="alternate"></link><published>2018-07-02T22:25:00+02:00</published><updated>2018-07-02T22:25:00+02:00</updated><author><name>Christian Drexler</name></author><id>tag:xunzi.github.io,2018-07-02:/virsh-disk-handling.html</id><summary type="html">&lt;p&gt;Wenn die qemu/kvm-Platten vollaufen, kann man relativ einfach eine neue Platte erzeugen und mounten. Das ist in vielen Fällen weniger kritisch, als existierende Diskimages, Partitionen und Dateisysteme zu vergrößern.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Neue Platte erzeugen&lt;/li&gt;
 &lt;/ul&gt;
