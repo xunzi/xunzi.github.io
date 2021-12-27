@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Bloggggg - backup</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Wed, 03 Oct 2012 17:15:00 +0200</lastBuildDate><item><title>Langsames TimeMachine-Backup mit MacOS 10.7.5</title><link>https://xunzi.github.io/langsames-timemachine-backup-mit-macos-1075.html</link><description>&lt;p&gt;Seit ein paar Tagen läuft das TimeMachine Backup auf dem Synology-NAS
-grottenlangsam. Ich habe verschiedene Dinge ausprobiert (neues Share
-anlegen, Indexdateien von Spotlight löschen, Indizierung für TM-Share
-ausschalten), alles ohne Erfolg. Schliesslich hat mich Google auf diesen
-&lt;a href="https://discussions.apple.com/thread/4324046?start=60&amp;amp;tstart=0"&gt;Thread&lt;/a&gt; geführt, wo der Spotlight-Indexer als Schuldiger benannt
-wird. Tatsächlich rennt das Backup …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Wed, 03 Oct 2012 17:15:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2012-10-03:/langsames-timemachine-backup-mit-macos-1075.html</guid><category>misc</category><category>macos</category><category>spotlight</category><category>backup</category></item></channel></rss>

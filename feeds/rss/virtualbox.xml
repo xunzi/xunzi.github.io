@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Bloggggg - virtualbox</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Fri, 20 Feb 2009 22:26:00 +0100</lastBuildDate><item><title>Screencast einer Windows-Session in Virtualbox</title><link>https://xunzi.github.io/screencast-einer-windows-session-in-virtualbox.html</link><description>&lt;p&gt;Screencasts von Windows-Sessions, die in einer Virtualbox-VM laufen,
-sind dank vrdp und pyvnc2swf sehr einfach zu erstellen.&lt;/p&gt;
-&lt;p&gt;Ein Screencast ist so etwas wie ein animierter Screenshot und in manchen
-Fällen einleuchtender als eine lange Kette von Schnappschüssen des
-Bildschirms.&lt;/p&gt;
-&lt;p&gt;Das Tool &lt;a href="http://www.unixuser.org/~euske/vnc2swf/"&gt;pyvnc2swf&lt;/a&gt; erstellt aus einer Vnc-Session ein Flashfilmchen.
-Um nun …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Fri, 20 Feb 2009 22:26:00 +0100</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2009-02-20:/screencast-einer-windows-session-in-virtualbox.html</guid><category>misc</category><category>helferlein</category><category>virtualbox</category></item></channel></rss>

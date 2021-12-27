@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Bloggggg - ssl</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Mon, 09 Jun 2008 20:09:00 +0200</lastBuildDate><item><title>SSL-Problem</title><link>https://xunzi.github.io/ssl-problem.html</link><description>&lt;p&gt;Ein Verweis auf die Zertifikatskette (certificate chain) läßt
-https-Verbindungen von IE oder Opera zu Apache scheitern. Geholfen bei
-der Fehlersuche haben openssl und &lt;a href="http://www.google.de"&gt;google.&lt;/a&gt; Das &lt;a href="http://www.drexler-online.net/blog/serverkonfiguration/"&gt;erwähnte&lt;/a&gt; Problem
-mit SSL-Verbindungen von IE7 und Opera unter WIndows hat sich nun auch
-gelöst: Schuld war ein Eintrag in einer Apache-Konfigurationsdatei, der
-auf die …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Mon, 09 Jun 2008 20:09:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2008-06-09:/ssl-problem.html</guid><category>misc</category><category>ssl</category><category>apache</category></item></channel></rss>

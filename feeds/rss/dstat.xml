@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Bloggggg - dstat</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Sat, 05 Jul 2008 11:08:00 +0200</lastBuildDate><item><title>Konsolenhelfer (1): dstat</title><link>https://xunzi.github.io/konsolenhelfer-1-dstat.html</link><description>&lt;p&gt;Auf der Suche nach Performance-Engpässen ist es öfter notwendig, die
-Ausgaben der Kommandos &lt;code&gt;vmstat&lt;/code&gt;, &lt;code&gt;iostat&lt;/code&gt; und &lt;code&gt;nfsstat&lt;/code&gt; miteinander zu
-vergleichen. Einfacher als drei Terminalfenster mit den jeweiligen
-Kommandos ist das Tool &lt;code&gt;dstat&lt;/code&gt;, das zusätzlich noch eine
-augenfreundlich kolorierte Ausgabe erzeugt. &lt;code&gt;Dstat&lt;/code&gt; von &lt;a href="http://dag.wieers.com/home-made/dstat/"&gt;Dag Wieers&lt;/a&gt;. &lt;code&gt;dstat&lt;/code&gt; misst eine konfigurierbare Auswahl von …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Sat, 05 Jul 2008 11:08:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2008-07-05:/konsolenhelfer-1-dstat.html</guid><category>misc</category><category>helferlein</category><category>dstat</category></item></channel></rss>

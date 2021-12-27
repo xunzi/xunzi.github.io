@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Bloggggg - pebble</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Mon, 13 May 2013 18:36:00 +0200</lastBuildDate><item><title>Blogtransfer von Pebble zu Mezzanine</title><link>https://xunzi.github.io/blogtransfer-von-pebble-zu-mezzanine.html</link><description>&lt;p&gt;Die Umsetzung der alten Blogposts aus Pebble erfolgte mit Hilfe eines
-Skripts, das die xml-Dateien parst und entsprechende
-Mezzanine/Django-Objeckte anlegt inkl. Tags und Kategorien.&lt;/p&gt;
-&lt;p&gt;Das Skript gibt es als &lt;a href="https://gist.github.com/xunzi/5603984"&gt;Gist&lt;/a&gt; bei Github.&lt;/p&gt;
-&lt;p&gt;Um wenigstens die Syndication-Clients nicht zu verschrecken, schubsen
-die folgenden Rewrite-Regeln in der Nginx-Konfig die Requests zu …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Mon, 13 May 2013 18:36:00 +0200</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2013-05-13:/blogtransfer-von-pebble-zu-mezzanine.html</guid><category>misc</category><category>mezzanine</category><category>web</category><category>pebble</category></item></channel></rss>

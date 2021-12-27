@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Bloggggg - firefox</title><link>https://xunzi.github.io/</link><description>We are fools whether we dance or not so we might as well dance</description><lastBuildDate>Mon, 23 Mar 2009 09:09:00 +0100</lastBuildDate><item><title>Bloggen aus Firefox</title><link>https://xunzi.github.io/bloggen-aus-firefox.html</link><description>&lt;p&gt;Eine hübsche und nützliche Erweiterung für Firefox ist &lt;a href="https://addons.mozilla.org/en-US/firefox/addon/1730"&gt;ScribeFire&lt;/a&gt;,
-mit dessen Hilfe via &lt;a href="http://en.wikipedia.org/wiki/MetaWeblog"&gt;Metaweblog-API&lt;/a&gt; Blogbeiträge direkt aus Firefox
-heraus erstellt werden können.  &lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;[Update]&lt;/strong&gt; FireScribe fügt neuen Einträgen ein unsichtbares
-pixelgroßes Jpg-Bild hinzu, das auf Zemanta verweist (sichtbar in der
-Quellcode-Ansicht). Die Konfigurationsoption "Automatically insert
-invisible tracking pixel for statistics gathering …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Christian Drexler</dc:creator><pubDate>Mon, 23 Mar 2009 09:09:00 +0100</pubDate><guid isPermaLink="false">tag:xunzi.github.io,2009-03-23:/bloggen-aus-firefox.html</guid><category>misc</category><category>firefox</category><category>helferlein</category></item></channel></rss>
