@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.90.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Einbruch!&nbsp;&ndash;&nbsp;Bloggggggg</title><link rel="stylesheet" href="/css/core.min.9e958365cf0319ede466a402e1369f31dc1f205c868aa836fe25581725c829d3f3545d9f142cccafe35363950a63e2a6.css" integrity="sha384-npWDZc8DGe3kZqQC4TafMdwfIFyGiqg2/iVYFyXIKdPzVF2fFCzMr&#43;NTY5UKY&#43;Km"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Einbruch!" /><body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/wolken.jpg" alt /><span class="site name">Bloggggggg</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a><a class="nav item" href="https://gohugo%2eio/"target="_blank" rel="noopener noreferrer">Hugo</a><a class="nav item" href="https://github%2ecom/xunzi"target="_blank" rel="noopener noreferrer">Github</a><a class="nav item" href="https://twitter%2ecom/xunzi"target="_blank" rel="noopener noreferrer">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">100% JavaScript-free</span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Einbruch!</h1><p class="article date">2010-09-19<span class="lastmod"> • edited 2021-12-26</span></p></section><article class="article markdown-body"><p>Einbruch in unseren schönen Server! Spam- und Virusmails ham se
+verschickt, die Schmutzbuckel.</p>
+<p>Aufgefallen ist das Ganze dadurch, daß Postfix immer versucht hat, Mails
+an den Webserver-User zuzustellen. Ich habe mir die Mails dann mal
+weiterleiten lassen und hatte in ein paar Sekunden weit über 500 neue
+Emails, alles Bounces von Aol und Yahoo, die mich darüber informieren
+wollten, daß meine Mails nicht zugestellt werden konnten. In der
+Mailqueue waren auch noch ein paar Dutzend Mails, denen die Mxe von
+Yahoo die Annahme verweigerten. Sehr verdächtig! Die gebouncten Mails
+machten Werbung für potenzsteigernde Mittel und enthielten wohl auch
+Viren.</p>
+<p>Der Einbruch erfolgte über eine nicht gepatchte Webapplikation, hier
+fanden sich dann in einem Cache-Verzeichnis ein paar Php-Dateien, namens
+admin.php, cache.php (die sind nach dem Dateidatum zusammen dort
+gelandet), cached.php (zwei Tage später hochgeladen) und sendme.php
+(hierüber sind die Spammails hochgeladen worden). Admin.php ist ein
+<a href="/static/w4ck1ng.png">Webinterface</a>
+, mit dem man verschiedene interessante Sachen machen
+kann. Cache.php und cached.php ermöglichen es, einen Irc-Server
+aufzumachen.</p>
+<p>Die Zahl der Müllmails liegt bei etwa 20000, das hat schon gereicht, um
+auf die Blackliste von Barracuda zu kommen (die haben den Eintrag aber
+auf Nachfrage sehr schnell wieder gelöscht).</p>
+<p>Insgesamt eine sehr ärgerliche Geschichte, die wohl auch noch
+unangenehmer hätte ausgehen können.</p>
+<p>Die Datei admin.php hat die Checksumme 20ed027c0d6d6798b3ec03fb8ef42756,
+falls mal einer vergleichen will.</p>
+<p>Als Gegenmaßnahme habe ich dem Webserver-User die Shell gegen /bin/false
+ausgetauscht (das hätte ich schon längst machen sollen) und einen Bcc
+für alle Mails eingerichtet, die der Webserver-User schickt. Das geht
+mit folgendem Eintrag in /etc/postfix/main.cf:</p>
+<p><code>sender_bcc_maps = hash:/etc/postfix/sender_bcc</code></p>
+<p>In dieser Datei stehen Absenderadressen und die dazugehörigen
+bcc-Adressen. Das Ganze muß noch per postmap /etc/postfix/sender_bcc in
+eine Hashmap umgewandelt werden, dann wird für jede Mail, die
+<a href="mailto:www-data@minden144.server4you.de">www-data@minden144.server4you.de</a>
+ eine Blindkopie an eine andere Andresse
+geschickt.</p>
+</article><section class="article labels"><a class="tag" href=/tags/web/>web</a><a class="tag" href=/tags/rootserver/>rootserver</a><a class="tag" href=/tags/security/>security</a></section><section class="article author"><p class="name">Christian Drexler</p><div class="bio">Ex-Sinologe, Systemadministrator, betreibt Cloud-Infrastruktur für einen großen Mobilfunk- und Festnetzanbieter</div><div class="details"><a class="item" href="https://github.com/xunzi" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-github"></span>&nbsp;xunzi</a><a class="item" href="https://twitter.com/xunzi" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-twitter"></span>&nbsp;@xunzi</a><a class="item" href="mailto:webmaster@drexler-online.net" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-email"></span>&nbsp;webmaster@drexler-online.net</a></div>
+</section>
+</div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/post/org-mode/"><span class="iconfont icon-article"></span>Org-mode</a></p><p><a class="link" href="/post/von-linux-zu-macos/"><span class="iconfont icon-article"></span>von Linux zu MacOS</a></p></section>
+   <tiny>Commit 9c1320d</tiny>
+  
+</div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">© 2008 - 2021 C. Drexler</p>
+    <p class="powerby"><span>Powered&nbsp;by&nbsp;</span><a href="https://gohugo.io" 
+        target="_blank" rel="noopener noreferrer">Hugo</a><span>&nbsp;&amp;&nbsp;</span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank" rel="noopener noreferrer">Notepadium</a></p></div>
+</section></body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.90.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Testinstallation: Owncloud&nbsp;&ndash;&nbsp;Bloggggggg</title><link rel="stylesheet" href="/css/core.min.9e958365cf0319ede466a402e1369f31dc1f205c868aa836fe25581725c829d3f3545d9f142cccafe35363950a63e2a6.css" integrity="sha384-npWDZc8DGe3kZqQC4TafMdwfIFyGiqg2/iVYFyXIKdPzVF2fFCzMr&#43;NTY5UKY&#43;Km"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Testinstallation: Owncloud" /><body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/wolken.jpg" alt /><span class="site name">Bloggggggg</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a><a class="nav item" href="https://gohugo%2eio/"target="_blank" rel="noopener noreferrer">Hugo</a><a class="nav item" href="https://github%2ecom/xunzi"target="_blank" rel="noopener noreferrer">Github</a><a class="nav item" href="https://twitter%2ecom/xunzi"target="_blank" rel="noopener noreferrer">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">100% JavaScript-free</span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Testinstallation: Owncloud</h1><p class="article date">2012-04-12<span class="lastmod"> • edited 2021-12-26</span></p></section><article class="article markdown-body"><p>Ich habe - angeregt durch die Jubelmeldungen über <a href="http://owncloud.org"target="_blank" rel="noopener noreferrer">owncloud</a>
+ - eine
+Testinstanz von &ldquo;Your Cloud, Your Data, Your Way!&rdquo; aufgesetzt. OC
+kombiniert einen Webdav-Server, mit dem man die Dateien in die
+Dateimanager moderner Betriebssysteme einbinden kann mit einem
+Kalender/Caldav-Server und einem Addressbuch/carddav-Server. Die
+Standards caldav und carddav werden z. B. von Apples iOS unterstützt, so
+dass man in der eigenen Wolke seine Kalenderdaten und Kontakte speichern
+kann, ohne dass Google oder die anderen üblichen Verdächtigen nen
+schnellen Euro mit der Zweit- und Drittverwertung der persönlichen Daten
+machen können.</p>
+<p>Das ist soweit ja ganz schnuckelig, leider ist das Ganze in Php
+geschrieben (apropos: <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/"target="_blank" rel="noopener noreferrer">hier</a>
+ gibt es ein schönes Php-Bashing), um es
+mit Nginx zum Laufen zu kriegen, braucht es einen Fcgi-Server, der den
+Php-Matsch ausführt, unter Ubuntu gibt es dafür <a href="http://packages.ubuntu.com/oneiric/php5-fpm"target="_blank" rel="noopener noreferrer">php-fpm</a>
+.</p>
+<p>Die iOS-Clients finden die Caldav- und Carddav-Server für eine bestimmte
+Domäne per DNS-Request (Details dazu gibt es <a href="http://andrew.mcmillan.net.nz/blog/srv_records_with_dnsmasq"target="_blank" rel="noopener noreferrer">hier</a>
+).  Ist der Server
+einmal lokalisiert, sucht iOS nach well-known-Resourcen gemäss
+<a href="http://tools.ietf.org/html/rfc5785.html"target="_blank" rel="noopener noreferrer">RFC5785</a>
+.</p>
+<p>Da diese nicht in der Owncoud-Applikation abgebildet werden, empfiehlt
+sich ein Redirect:</p>
+<pre><code>rewrite ^/.well-known/host-meta /public.php?service=host-meta last;rewrite ^/.well-known/host-meta.json /public.php?service=host-meta-json last;
+rewrite ^/.well-known/carddav /remote.php/carddav/ redirect;rewrite ^/.well-known/caldav /remote.php/caldav/ redirect;rewrite ^(/core/doc/[^\/]+/)$ $1/index.html;
+</code></pre>
+<p>Das reicht aber immer noch nicht, um das MacOS-Addressbuch glücklich zu
+machen, hier bedarf es eines weiteren Redirects:</p>
+<pre><code>rewrite /apps/contacts/carddav.php/addressbooks/(.+)/addressbook/ /apps/contacts/carddav.php/addressbooks/$1/default permanent;
+</code></pre>
+<p>Das funktioniert natürlich nur, wenn der Kalender auch <code>default</code> heisst,
+ist das nicht der Fall, klappt es nicht mehr. Diese Probleme sind wohl
+in der Lion-Version des MacOS-Adressbuches behoben.</p>
+<p><strong>Edit:</strong> Synchronisation mit Thunderbird klappt auch, der Kalender
+braucht das <a href="https://addons.mozilla.org/thunderbird/2313/"target="_blank" rel="noopener noreferrer">Lightning-Plugin</a>
+ und das Addressbuch kann man mit Hilfe
+des <a href="http://www.sogo.nu/files/downloads/extensions/sogo-connector-10.0.1.xpi"target="_blank" rel="noopener noreferrer">Sogo-Konnektors</a>
+ und des Plugins &ldquo;<a href="https://nic-nac-project.org/~kaosmos/morecols-en.html"target="_blank" rel="noopener noreferrer">More Functions for
+Addressbook</a>
+&rdquo; syncen, klappt erstaunlich schmerzfrei.</p>
+<p><strong>Edit</strong>: Nach dem Update auf Lion klappt das Caldav-Discovery
+tatsächlich problemlos.</p>
+</article><section class="article labels"><a class="tag" href=/tags/owncloud/>owncloud</a><a class="tag" href=/tags/php-fpm/>php-fpm</a><a class="tag" href=/tags/nginx/>nginx</a></section><section class="article author"><p class="name">Christian Drexler</p><div class="bio">Ex-Sinologe, Systemadministrator, betreibt Cloud-Infrastruktur für einen großen Mobilfunk- und Festnetzanbieter</div><div class="details"><a class="item" href="https://github.com/xunzi" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-github"></span>&nbsp;xunzi</a><a class="item" href="https://twitter.com/xunzi" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-twitter"></span>&nbsp;@xunzi</a><a class="item" href="mailto:webmaster@drexler-online.net" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-email"></span>&nbsp;webmaster@drexler-online.net</a></div>
+</section>
+</div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/post/apache-raus-nginx-rein/"><span class="iconfont icon-article"></span>Apache raus, Nginx rein</a></p><p><a class="link" href="/post/snmp-unter-ubuntu/"><span class="iconfont icon-article"></span>Snmp unter Ubuntu</a></p></section>
+   <tiny>Commit 9c1320d</tiny>
+  
+</div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">© 2008 - 2021 C. Drexler</p>
+    <p class="powerby"><span>Powered&nbsp;by&nbsp;</span><a href="https://gohugo.io" 
+        target="_blank" rel="noopener noreferrer">Hugo</a><span>&nbsp;&amp;&nbsp;</span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank" rel="noopener noreferrer">Notepadium</a></p></div>
+</section></body>
+
+</html>

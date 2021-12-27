@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.90.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>SSL-Problem&nbsp;&ndash;&nbsp;Bloggggggg</title><link rel="stylesheet" href="/css/core.min.9e958365cf0319ede466a402e1369f31dc1f205c868aa836fe25581725c829d3f3545d9f142cccafe35363950a63e2a6.css" integrity="sha384-npWDZc8DGe3kZqQC4TafMdwfIFyGiqg2/iVYFyXIKdPzVF2fFCzMr&#43;NTY5UKY&#43;Km"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="SSL-Problem" /><body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/wolken.jpg" alt /><span class="site name">Bloggggggg</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a><a class="nav item" href="https://gohugo%2eio/"target="_blank" rel="noopener noreferrer">Hugo</a><a class="nav item" href="https://github%2ecom/xunzi"target="_blank" rel="noopener noreferrer">Github</a><a class="nav item" href="https://twitter%2ecom/xunzi"target="_blank" rel="noopener noreferrer">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">100% JavaScript-free</span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">SSL-Problem</h1><p class="article date">2008-06-09<span class="lastmod"> • edited 2021-12-26</span></p></section><article class="article markdown-body"><p>Ein Verweis auf die Zertifikatskette (certificate chain) läßt
+https-Verbindungen von IE oder Opera zu Apache scheitern. Geholfen bei
+der Fehlersuche haben openssl und <a href="http://www.google.de"target="_blank" rel="noopener noreferrer">google.</a>
+ Das <a href="http://www.drexler-online.net/blog/serverkonfiguration/"target="_blank" rel="noopener noreferrer">erwähnte</a>
+ Problem
+mit SSL-Verbindungen von IE7 und Opera unter WIndows hat sich nun auch
+gelöst: Schuld war ein Eintrag in einer Apache-Konfigurationsdatei, der
+auf die Zertifikatskette verweist:<br>
+<code>SSLCertificateChainFile /etc/ssl/certs/ca-certificates.crt</code><br>
+Auch wenn in weiteren Direktiven die Überprüfung von
+Client-Zertifikaten explizit abgeschaltet ist, versucht Apache dennoch,
+ein Client-Zertifikat anzufordern.<br>
+Das sieht beim Debugging mit openssl dann so aus:</p>
+<pre><code>[0]xpc:~% openssl s_client -connect hostname.domainname.tld:443 CONNECTED(00000003) 8634:error:1408E098:SSL routines:SSL3_GET_MESSAGE:excessive message size:s3_both.c:449:
+</code></pre>
+<p>Unter Firefox hat es wunderbar funktioniert, weil ich da tatsächlich ein
+Client-Zertifikat installiert habe.</p>
+</article><section class="article labels"><a class="tag" href=/tags/ssl/>ssl</a><a class="tag" href=/tags/apache/>apache</a></section><section class="article author"><p class="name">Christian Drexler</p><div class="bio">Ex-Sinologe, Systemadministrator, betreibt Cloud-Infrastruktur für einen großen Mobilfunk- und Festnetzanbieter</div><div class="details"><a class="item" href="https://github.com/xunzi" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-github"></span>&nbsp;xunzi</a><a class="item" href="https://twitter.com/xunzi" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-twitter"></span>&nbsp;@xunzi</a><a class="item" href="mailto:webmaster@drexler-online.net" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-email"></span>&nbsp;webmaster@drexler-online.net</a></div>
+</section>
+</div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/post/konsolenhelfer-1-dstat/"><span class="iconfont icon-article"></span>Konsolenhelfer (1): dstat</a></p></section>
+   <tiny>Commit 9c1320d</tiny>
+  
+</div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">© 2008 - 2021 C. Drexler</p>
+    <p class="powerby"><span>Powered&nbsp;by&nbsp;</span><a href="https://gohugo.io" 
+        target="_blank" rel="noopener noreferrer">Hugo</a><span>&nbsp;&amp;&nbsp;</span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank" rel="noopener noreferrer">Notepadium</a></p></div>
+</section></body>
+
+</html>

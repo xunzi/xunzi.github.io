@@ -1,0 +1,321 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on Bloggggggg</title>
+    <link>https://drexler-online.net/tags/web/</link>
+    <description>Recent content in web on Bloggggggg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de-de</language>
+    <copyright>© 2008 - 2021 C. Drexler</copyright>
+    <lastBuildDate>Mon, 08 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://drexler-online.net/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pelican2Hugo</title>
+      <link>https://drexler-online.net/post/pelican2hugo/</link>
+      <pubDate>Mon, 27 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/pelican2hugo/</guid>
+      <description>&lt;p&gt;Das Blog ist wieder mal auf eine neue Plattform umgezogen, es bleibt bei einem static site generator, aber statt &lt;a href=&#34;https://blog.getpelican.com/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Pelican&lt;/a&gt;
+
+ist jetzt &lt;a href=&#34;https://gohugo.io/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Hugo&lt;/a&gt;
+ am Start.&lt;/p&gt;
+&lt;p&gt;Die Artikel sind nach wie vor in Markdown verfasst, so dass hier keine Umwandlung notwendg ist, einzig die Headers/Front Matter sind in einem neuen Format.&lt;/p&gt;
+&lt;p&gt;Ich habe ein &lt;a href=&#34;https://github.com/xunzi/misc/blob/master/pelican2hugo.py&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Conversionsskript&lt;/a&gt;
+ geschrieben, das die Frontmatter von Pelican ins Hugo-Format umwandelt.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://drexler-online.net/about/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/about/</guid>
+      <description>&lt;h1 id=&#34;willkommen&#34;&gt;Willkommen&lt;/h1&gt;
+&lt;p&gt;Herzlich willkommen. Dies ist eindeutig einer der weniger stark besuchten Winkel des Internet, deshalb bin ich überrascht aber natürlich auch hoch erfreut über jeden Besucher.&lt;/p&gt;
+&lt;h1 id=&#34;über-mich&#34;&gt;Über mich&lt;/h1&gt;
+&lt;p&gt;&lt;img  src=&#34;https://drexler-online.net/images/cdrexler.jpg&#34;
+        alt/&gt;
+Ich habe mehr als 20 Jahre Berufserfahrung als Systemadministrator für Unix- und Linux-Systeme mit umfangreichen Kenntnissen in den  Bereichen Virtualisierung, Netzwerk und Automatisierung.&lt;/p&gt;
+&lt;h2 id=&#34;kontakt&#34;&gt;Kontakt&lt;/h2&gt;
+&lt;p&gt;Christian Drexler &lt;a href=&#34;mailto:webmaster@drexler-online.net&#34;&gt;webmaster@drexler-online.net&lt;/a&gt;
+&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Terraform und Lxd</title>
+      <link>https://drexler-online.net/post/terraform-und-lxd/</link>
+      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/terraform-und-lxd/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.terraform.io/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Terraform&lt;/a&gt;
+ ist eine deklarative Beschreibungssprache für Cloud-Infrastrukturen.&lt;/p&gt;
+&lt;p&gt;Unterstützt werden viele Cloudprovider, unter anderem auch lxd.&lt;/p&gt;
+&lt;p&gt;Ein kleines Beispiel für das Deployment von zwei lxd-Containern mit PostgreSQL:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-terraform&#34; data-lang=&#34;terraform&#34;&gt;&lt;span class=&#34;nx&#34;&gt;terraform&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+
+	&lt;span class=&#34;nx&#34;&gt;required_providers&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        	&lt;span class=&#34;na&#34;&gt;lxd&lt;/span&gt; = &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+                	&lt;span class=&#34;na&#34;&gt;source&lt;/span&gt; = &lt;span class=&#34;s2&#34;&gt;&amp;#34;terraform-lxd/lxd&amp;#34;&lt;/span&gt;
+			&lt;span class=&#34;na&#34;&gt;version&lt;/span&gt; = &lt;span class=&#34;s2&#34;&gt;&amp;#34;1.6.0&amp;#34;&lt;/span&gt;
+        	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;kr&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;provider&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;lxd&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;generate_client_certificates&lt;/span&gt; = &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;accept_remote_certificate&lt;/span&gt;    = &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+
+ &lt;span class=&#34;nx&#34;&gt;lxd_remote&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;na&#34;&gt;name&lt;/span&gt;     = &lt;span class=&#34;s2&#34;&gt;&amp;#34;rpi4-8gb&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;na&#34;&gt;scheme&lt;/span&gt;   = &lt;span class=&#34;s2&#34;&gt;&amp;#34;https&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;na&#34;&gt;address&lt;/span&gt;  = &lt;span class=&#34;s2&#34;&gt;&amp;#34;10.10.10.1&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;na&#34;&gt;password&lt;/span&gt; = &lt;span class=&#34;s2&#34;&gt;&amp;#34;sowasvongeheim&amp;#34;&lt;/span&gt;
+    &lt;span class=&#34;na&#34;&gt;default&lt;/span&gt;  = &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;kr&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;resource&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;lxd_cached_image&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;focal&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;source_remote&lt;/span&gt; = &lt;span class=&#34;s2&#34;&gt;&amp;#34;ubuntu&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;source_image&lt;/span&gt;  = &lt;span class=&#34;s2&#34;&gt;&amp;#34;ed6764dcaa08&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;kr&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt; resource&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;lxd_container&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;pg&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;name&lt;/span&gt;      = &lt;span class=&#34;s2&#34;&gt;&amp;#34;pg0&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;count&lt;/span&gt;     = &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;image&lt;/span&gt;     = &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;lxd_cached_image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;focal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fingerprint&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;profiles&lt;/span&gt;  = &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;pgbase&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;ephemeral&lt;/span&gt; = &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;
+
+  &lt;span class=&#34;na&#34;&gt;config&lt;/span&gt; = &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;boot.autostart&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+  &lt;span class=&#34;na&#34;&gt;limits&lt;/span&gt; = &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;na&#34;&gt;cpu&lt;/span&gt; = &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;kr&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;kr&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ip_adresses&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;na&#34;&gt;value&lt;/span&gt; = &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;container&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;lxd_container&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+	&lt;span class=&#34;nx&#34;&gt;container&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;container&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ipv4_address&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>KVM zu LXD</title>
+      <link>https://drexler-online.net/post/kvm-zu-lxd/</link>
+      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/kvm-zu-lxd/</guid>
+      <description>&lt;p&gt;Alle vier Jahre migrieren wir den Hetzner-Server auf neue Hardware,
+bei der letzten Umstellung haben wir auch gleich den Unterbau
+geändert, wo früher die individuellen Gäste als kvm/libvirt-Gäste
+liefen und die Infrastruktur (Datenbanken, Verzeichnisdienst, Email)
+auf dem Host, sind jetzt alle Funktionen in &lt;a href=&#34;https://linuxcontainers.org/lxd/introduction/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Lxd&lt;/a&gt;
+-Container
+ausgelagert.&lt;/p&gt;
+&lt;p&gt;Lxd-Container stellen sich wie ein vollwertiges Betriebssystem dar,
+mir persönlich sind Docker-Container zu friemelig, der Unix-Admin in
+mir stört sich einfach daran, dass man bei Docker nicht so einfach mit
+der Shell rumporkeln kann, bis es geht. Ich sehe Docker und rkt eher
+als fortgeschrittenes Delivery-Format, während für unseren Rootserver
+eher leichtgewichtige VM-ähnliche Konstrukte passend sind.&lt;/p&gt;
+&lt;p&gt;Ich habe angefangen, Links und Beispielbefehle zu Lxd auf &lt;a href=&#34;https://github.com/xunzi/lxd-documents&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Github&lt;/a&gt;
+ zu sammeln.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Virsh disk handling</title>
+      <link>https://drexler-online.net/post/virsh-disk-handling/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/virsh-disk-handling/</guid>
+      <description>&lt;p&gt;Wenn die qemu/kvm-Platten vollaufen, kann man relativ einfach eine neue Platte erzeugen und mounten. Das ist in vielen Fällen weniger kritisch, als existierende Diskimages, Partitionen und Dateisysteme zu vergrößern.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Neue Platte erzeugen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Eine neues Diskimage (im qcow2-Format, siehe &lt;a href=&#34;https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Virtualization/3.5/html/Technical_Guide/QCOW2.html&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Diskussion&lt;/a&gt;
+ zu den Unterschieden der beiden Formate, qcow2 ist angeblich langsamer, bietet aber Snapshots) kann man folgendrmaßen erstellen:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;next:&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;1026&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;~% &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;qcow2&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;next:&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;1026&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;~% &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;your_vm_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;somename&amp;#34;&lt;/span&gt;
+&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;next:&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;1026&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;~% qemu-img create -f &lt;span class=&#34;nv&#34;&gt;$format&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$your_vm_name&lt;/span&gt;-128G.qcow2 128G
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Für Images im Raw-Format einfach die erste Zeile so umschreiben:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;next:&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;1026&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;~% &lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;format&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;raw&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Diskimage an VM anhängen&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;0&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;next:&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;1026&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;~% virsh attach-disk &lt;span class=&#34;nv&#34;&gt;$your_vm_name&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$your_vm_name&lt;/span&gt;-128G.qcow2 vdb --current
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dottmuxconf</title>
+      <link>https://drexler-online.net/post/dot-tumxconf/</link>
+      <pubDate>Mon, 18 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/dot-tumxconf/</guid>
+      <description>&lt;p&gt;Tmux-Konfig mit grüner Statusleite und veränderten Keybinding.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;unbind C-b
+set -g prefix C-g
+bind C-g send-prefix
+bind g send-prefix
+
+set-window-option -g window-status-current-style bg=red
+
+# Set window notifications
+setw -g monitor-activity on
+set -g visual-activity on
+setw -g automatic-rename
+
+#emacs key bindings of course
+set-window-option -g mode-keys emacs
+	
+set -g history-limit 10000
+set -g default-terminal &amp;quot;xterm-256color&amp;quot;
+set -g base-index 1
+set -g status-interval 2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Eine Kopie dieser Datei findet Ihr auf &lt;a href=&#34;https://github.com/xunzi/dotfiles.git&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;github&lt;/a&gt;
+.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Umstellung auf https</title>
+      <link>https://drexler-online.net/post/umstellung-auf-https/</link>
+      <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/umstellung-auf-https/</guid>
+      <description>&lt;p&gt;Da es dank &lt;a href=&#34;https://letsencrypt.org/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt;
+ jetzt auch https-Zertifikate für lau gibt,
+die in allen Browsern akzeptiert werden, habe ich dieses Blog dann
+auch mal auf https umgestellt. Hierfür benötigt man nur den
+Letsencrypt-Client, dann ist das Ganze in 2 Minuten umgesetzt. Ergänzt
+um einen Redirect von http auf https ist die Seite jetzt ganz  den
+neuen Google-Siteranking-Kriterien entsprechend gesichert.&lt;/p&gt;
+&lt;p&gt;Der &lt;a href=&#34;https://www.ssllabs.com/ssltest/analyze.html?d=drexler-online.net&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;SSL Server Test&lt;/a&gt;
+ vergibt für die Konfig sogar ein A+.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dotzsh</title>
+      <link>https://drexler-online.net/post/dot-zshrc/</link>
+      <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/dot-zshrc/</guid>
+      <description>&lt;p&gt;Im Laufe der Jahre gewachsene Zsh-Konfig.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Enable compsys completion.
+bindkey -e
+setopt NO_BEEP SHARE_HISTORY HIST_IGNORE_ALL_DUPS
+autoload -U compinit
+compinit
+
+if [[ -o interactive ]] ; then
+	PS1=&#39;%(?.[%?].%S[%?]%s)%B%m%b:{%!}%~%# &#39;
+	alias l=&#39;ls -l&#39;
+	#alias ls=&#39;ls --color=auto&#39;
+fi
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.history.zsh
+	
+#pip only in virtualenv	
+export PIP_REQUIRE_VIRTUALENV=true
+export PIP_DOWNLOAD_CACHE=~/.pip/cache
+
+#
+function myssh {
+if [[ &amp;quot;x$TMUX&amp;quot; != &amp;quot;x&amp;quot; ]] ; then
+ print -P &amp;quot;Ssh to %B$1%b&amp;quot;
+ d=$(date &#39;+%s&#39;)
+ tmux neww -n $1 &amp;quot;script -q logs/$1-$d.log ssh $1&amp;quot;
+ else
+ print -P &amp;quot;no target given&amp;quot;
+fi
+}
+	
+#
+# pip zsh completion start
+function _pip_completion {
+ local words cword
+ read -Ac words
+ read -cn cword
+ reply=( $( COMP_WORDS=&amp;quot;$words[*]&amp;quot; \
+ COMP_CWORD=$(( cword-1 )) \
+ PIP_AUTO_COMPLETE=1 $words[1] ) )
+}
+compctl -K _pip_completion pip
+# pip zsh completion end
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Eine Kopie dieser Dateien findt Ihr auf &lt;a href=&#34;https://github.com/xunzi/dotfiles.git&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;github&lt;/a&gt;
+.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bildergalerien mit Sigal</title>
+      <link>https://drexler-online.net/post/bildergalerien-mit-sigal/</link>
+      <pubDate>Sat, 19 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/bildergalerien-mit-sigal/</guid>
+      <description>&lt;p&gt;Die gelegentlich anfallenden Fotos aus dem Freunds- und Familienkreis
+habe ich bisher ärgerlicherweise bei Google hochgeladen udn mit einem
+privaten Link verteilt, so dass sie zwar nicht einer Google-Suche zum
+Opfer fallen können, aber dennoch bei Google bekannt sind. Viele Leute
+sind nachvollziehbarerweise auch gar nicht glücklich darüber, wenn sie
+ihr Antlitz auf einer bei Google gehosteten Seite wiederfinden, so
+dass hier eine neue Lösung hermusste. Da ich ja das Blog schon mit
+&lt;a href=&#34;%7bfilename%7dstreiche-mezzanine-setze-pelican.md&#34;&gt;Pelican&lt;/a&gt;
+ auf einen
+Generator für statische Webseiten umgestellt habe, lag es natürlich
+nahe, auch die Fotos mit einem solchen Generator in die Webseite
+einzubinden. Die Wahl ist hier auf &lt;a href=&#34;http://sigal.saimon.org/en/latest/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Sigal&lt;/a&gt;
+ gefallen, das im
+wesentlichen auf den gleichen Technologien aufsetzt (Python,
+Jinja-Templates, Blinker).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Update&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Irgendwie war das Handling doch nicht benutzerfreundlich genug, Bilder
+teile ich jetzt über owncloud. Der ganze Sigal-Kram ist wieder
+rausgeflogen.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Streiche Mezzanine, setze Pelican</title>
+      <link>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</link>
+      <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</guid>
+      <description>&lt;p&gt;Da &lt;a href=&#34;%7bfilename%7dblogtransfer-von-pebble-zu-mezzanine.md&#34;&gt;Mezzanines&lt;/a&gt;
+
+Funktionsumfang für meine bescheidenen Bedürfnisse doch zu groß war,
+habe ich das Blog auf &lt;a href=&#34;http://getpelican.com/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Pelican&lt;/a&gt;
+ umgestellt, einen Generator für
+statische Webseiten. Denn Text kann man in &lt;a href=&#34;http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;reStructuredText&lt;/a&gt;
+ oder
+&lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Markdown&lt;/a&gt;
+ verfassen und es gibt eine große Auswahl an &lt;a href=&#34;https://github.com/getpelican/pelican-themes&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Themes&lt;/a&gt;
+ und
+&lt;a href=&#34;https://github.com/getpelican/pelican-plugins&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Plugins&lt;/a&gt;
+, so dass bei Bedarf das Aussehen des Blogs schnell mal
+umgestellt werden kann. Ein weiterer Vorteil ist, dass die Inhalte
+dann einfach unter Versionskontrolle gestellt werden können, es sind
+ja nur Textdateien.&lt;/p&gt;
+&lt;p&gt;Praktischerweise kann Pelican auch von einem Rss-Feed &lt;a href=&#34;http://docs.getpelican.com/en/3.3.0/importer.html&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;importieren&lt;/a&gt;
+,
+so dass der erneute Transfer des Inhalts schnell und schmerzfrei über
+die Bühne ging.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
