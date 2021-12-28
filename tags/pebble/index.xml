@@ -54,7 +54,7 @@ Ich habe mehr als 20 Jahre Berufserfahrung als Systemadministrator für Unix- un
       <description>&lt;p&gt;&lt;a href=&#34;https://www.terraform.io/&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Terraform&lt;/a&gt;
  ist eine deklarative Beschreibungssprache für Cloud-Infrastrukturen.&lt;/p&gt;
 &lt;p&gt;Unterstützt werden viele Cloudprovider, unter anderem auch lxd.&lt;/p&gt;
-&lt;p&gt;Ein kleines Beispiel für das Deployment von zwei lxd-Containern mit PostgreSQL:&lt;/p&gt;
+&lt;p&gt;Ein kleines Beispiel für das Deployment von zwei lxd-Containern:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-terraform&#34; data-lang=&#34;terraform&#34;&gt;&lt;span class=&#34;nx&#34;&gt;terraform&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 
 	&lt;span class=&#34;nx&#34;&gt;required_providers&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
