@@ -185,8 +185,7 @@ set -g default-terminal &amp;quot;xterm-256color&amp;quot;
 set -g base-index 1
 set -g status-interval 2
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Eine Kopie dieser Datei findet Ihr auf &lt;a href=&#34;https://github.com/xunzi/dotfiles.git&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;github&lt;/a&gt;
-.&lt;/p&gt;
-</description>
+.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -257,8 +256,7 @@ function _pip_completion {
 compctl -K _pip_completion pip
 # pip zsh completion end
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Eine Kopie dieser Dateien findt Ihr auf &lt;a href=&#34;https://github.com/xunzi/dotfiles.git&#34;target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;github&lt;/a&gt;
-.&lt;/p&gt;
-</description>
+.&lt;/p&gt;</description>
     </item>
     
     <item>

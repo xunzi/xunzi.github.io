@@ -5,7 +5,7 @@
 <meta name="twitter:title" content="Blogtransfer von Pebble zu Mezzanine" /><body><section id="header">
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><img class="site logo" src="/images/wolken.jpg" alt /><span class="site name">Bloggggggg</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a><a class="nav item" href="https://gohugo%2eio/"target="_blank" rel="noopener noreferrer">Hugo</a><a class="nav item" href="https://github%2ecom/xunzi"target="_blank" rel="noopener noreferrer">Github</a><a class="nav item" href="https://twitter%2ecom/xunzi"target="_blank" rel="noopener noreferrer">Twitter</a></nav></div></span></div><div class="site slogan"><span class="title">100% JavaScript-free</span></div></section><section id="content"><div class="article-container"><section class="article header">
-    <h1 class="article title">Blogtransfer von Pebble zu Mezzanine</h1><p class="article date">2013-05-13<span class="lastmod"> • edited 2021-12-26</span></p></section><article class="article markdown-body"><p>Die Umsetzung der alten Blogposts aus Pebble erfolgte mit Hilfe eines
+    <h1 class="article title">Blogtransfer von Pebble zu Mezzanine</h1><p class="article date">2013-05-13<span class="lastmod"> • edited 2021-12-28</span></p></section><article class="article markdown-body"><p>Die Umsetzung der alten Blogposts aus Pebble erfolgte mit Hilfe eines
 Skripts, das die xml-Dateien parst und entsprechende
 Mezzanine/Django-Objeckte anlegt inkl. Tags und Kategorien.</p>
 <p>Das Skript gibt es als <a href="https://gist.github.com/xunzi/5603984"target="_blank" rel="noopener noreferrer">Gist</a>
@@ -16,12 +16,11 @@ alten Rss- und Atom-Feeds auf die neuen Resourcen weiter:</p>
 <p><code>rewrite ^/pebble/atom.xml$ /blog/feeds/atom/ break;rewrite ^/pebble/tags/(.+)/(.+).xml$ /blog/tag/$1/feeds/$2/ break;</code></p>
 <p>Alle anderen Requests zu den alten Pebble-Urls werden einfach auf die
 Blogübersicht weitergeleitet:</p>
-<p><code>rewrite ^/pebble/.*     /blog/ permanent;</code></p>
-</article><section class="article labels"><a class="tag" href=/tags/mezzanine/>mezzanine</a><a class="tag" href=/tags/web/> web</a><a class="tag" href=/tags/pebble/> pebble</a></section><section class="article author"><p class="name">Christian Drexler</p><div class="bio">Ex-Sinologe, Systemadministrator, betreibt Cloud-Infrastruktur für einen großen Mobilfunk- und Festnetzanbieter</div><div class="details"><a class="item" href="https://github.com/xunzi" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-github"></span>&nbsp;xunzi</a><a class="item" href="https://twitter.com/xunzi" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-twitter"></span>&nbsp;@xunzi</a><a class="item" href="mailto:webmaster@drexler-online.net" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-email"></span>&nbsp;webmaster@drexler-online.net</a></div>
+<p><code>rewrite ^/pebble/.*     /blog/ permanent;</code></p></article><section class="article labels"><a class="tag" href=/tags/mezzanine/>mezzanine</a><a class="tag" href=/tags/web/> web</a><a class="tag" href=/tags/pebble/> pebble</a></section><section class="article author"><p class="name">Christian Drexler</p><div class="bio">Ex-Sinologe, Systemadministrator, betreibt Cloud-Infrastruktur für einen großen Mobilfunk- und Festnetzanbieter</div><div class="details"><a class="item" href="https://github.com/xunzi" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-github"></span>&nbsp;xunzi</a><a class="item" href="https://twitter.com/xunzi" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-twitter"></span>&nbsp;@xunzi</a><a class="item" href="mailto:webmaster@drexler-online.net" target="_blank" rel="noopener noreferrer"><span class="iconfont icon-email"></span>&nbsp;webmaster@drexler-online.net</a></div>
 </section>
 </div>
 <div class="article bottom"><section class="article navigation"><p><a class="link" href="/post/streiche-mezzanine-setze-pelican/"><span class="iconfont icon-article"></span>Streiche Mezzanine, setze Pelican</a></p><p><a class="link" href="/post/langsames-timemachine-backup-mit-macos-1075/"><span class="iconfont icon-article"></span>Langsames TimeMachine-Backup mit MacOS 10.7.5</a></p></section>
-   <tiny>Commit 9c1320d</tiny>
+   <tiny>Commit 883e584</tiny>
   
 </div></section><section id="footer"><div class="footer-wrap">
     <p class="copyright">© 2008 - 2021 C. Drexler</p>
