@@ -6,25 +6,22 @@
     <description>Recent content in Nginx on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Jul 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apache raus, Nginx rein</title>
       <link>https://drexler-online.net/post/apache-raus-nginx-rein/</link>
       <pubDate>Mon, 02 Jul 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/apache-raus-nginx-rein/</guid>
       <description>Anlässlich des Upgrades auf Ubuntu Precise habe ich den Webserver umgestellt von Apache auf Nginx. Für das ungeliebte Php muss dann php-fpm.org/ mit ins Boot, der Java-Appserver wird per Proxy angebunden, da Nginx kein AJP spricht. Auf dem kleinen Webserver performt das Ganze ganz gut und hat den Vorteil, dass die Nginx-Konfig deutlich einfacher und überschaubarer ist.
 Erst dachte ich, die openJDK-Version im Lieferumfang von Precise hätte ne massive Macke, weil der Tomcat-Prozess munter alle verfügbaren Cpu-Zyklen aufgebraucht hat, es stellte sich dann aber heraus, dass die Schaltsekunde schuld war und ein dezenter Reboot die schnellste Abhilfe brachte.</description>
     </item>
-    
     <item>
       <title>Testinstallation: Owncloud</title>
       <link>https://drexler-online.net/post/testinstallation-owncloud/</link>
       <pubDate>Thu, 12 Apr 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/testinstallation-owncloud/</guid>
       <description>Ich habe - angeregt durch die Jubelmeldungen über owncloud - eine Testinstanz von &amp;ldquo;Your Cloud, Your Data, Your Way!&amp;rdquo; aufgesetzt. OC kombiniert einen Webdav-Server, mit dem man die Dateien in die Dateimanager moderner Betriebssysteme einbinden kann mit einem Kalender/Caldav-Server und einem Addressbuch/carddav-Server. Die Standards caldav und carddav werden z. B. von Apples iOS unterstützt, so dass man in der eigenen Wolke seine Kalenderdaten und Kontakte speichern kann, ohne dass Google oder die anderen üblichen Verdächtigen nen schnellen Euro mit der Zweit- und Drittverwertung der persönlichen Daten machen können.</description>
     </item>
-    
   </channel>
 </rss>

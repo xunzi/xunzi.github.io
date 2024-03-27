@@ -6,53 +6,44 @@
     <description>Recent content in Web on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 08 Feb 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Umstellung auf https</title>
       <link>https://drexler-online.net/post/umstellung-auf-https/</link>
       <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/umstellung-auf-https/</guid>
       <description>Da es dank Let&amp;rsquo;s Encrypt jetzt auch https-Zertifikate für lau gibt, die in allen Browsern akzeptiert werden, habe ich dieses Blog dann auch mal auf https umgestellt. Hierfür benötigt man nur den Letsencrypt-Client, dann ist das Ganze in 2 Minuten umgesetzt. Ergänzt um einen Redirect von http auf https ist die Seite jetzt ganz den neuen Google-Siteranking-Kriterien entsprechend gesichert.
 Der SSL Server Test vergibt für die Konfig sogar ein A+.</description>
     </item>
-    
     <item>
       <title>Bildergalerien mit Sigal</title>
       <link>https://drexler-online.net/post/bildergalerien-mit-sigal/</link>
       <pubDate>Sat, 19 Jul 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/bildergalerien-mit-sigal/</guid>
       <description>Die gelegentlich anfallenden Fotos aus dem Freunds- und Familienkreis habe ich bisher ärgerlicherweise bei Google hochgeladen udn mit einem privaten Link verteilt, so dass sie zwar nicht einer Google-Suche zum Opfer fallen können, aber dennoch bei Google bekannt sind. Viele Leute sind nachvollziehbarerweise auch gar nicht glücklich darüber, wenn sie ihr Antlitz auf einer bei Google gehosteten Seite wiederfinden, so dass hier eine neue Lösung hermusste. Da ich ja das Blog schon mit Pelican auf einen Generator für statische Webseiten umgestellt habe, lag es natürlich nahe, auch die Fotos mit einem solchen Generator in die Webseite einzubinden.</description>
     </item>
-    
     <item>
       <title>Streiche Mezzanine, setze Pelican</title>
       <link>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</link>
       <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</guid>
       <description>Da Mezzanines Funktionsumfang für meine bescheidenen Bedürfnisse doch zu groß war, habe ich das Blog auf Pelican umgestellt, einen Generator für statische Webseiten. Denn Text kann man in reStructuredText oder Markdown verfassen und es gibt eine große Auswahl an Themes und Plugins, so dass bei Bedarf das Aussehen des Blogs schnell mal umgestellt werden kann. Ein weiterer Vorteil ist, dass die Inhalte dann einfach unter Versionskontrolle gestellt werden können, es sind ja nur Textdateien.</description>
     </item>
-    
     <item>
       <title>Einbruch!</title>
       <link>https://drexler-online.net/post/einbruch/</link>
       <pubDate>Sun, 19 Sep 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/einbruch/</guid>
       <description>Einbruch in unseren schönen Server! Spam- und Virusmails ham se verschickt, die Schmutzbuckel.
 Aufgefallen ist das Ganze dadurch, daß Postfix immer versucht hat, Mails an den Webserver-User zuzustellen. Ich habe mir die Mails dann mal weiterleiten lassen und hatte in ein paar Sekunden weit über 500 neue Emails, alles Bounces von Aol und Yahoo, die mich darüber informieren wollten, daß meine Mails nicht zugestellt werden konnten. In der Mailqueue waren auch noch ein paar Dutzend Mails, denen die Mxe von Yahoo die Annahme verweigerten.</description>
     </item>
-    
     <item>
       <title>Django-Toolbar</title>
       <link>https://drexler-online.net/post/django-toolbar/</link>
       <pubDate>Thu, 24 Jun 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/django-toolbar/</guid>
       <description>Bei meinen Experimenten mit Django ist mir letztlich die Django-Toolbar unter die Finger gekommen. Hierbei handelt es sich um eine Django-Middleware, die zusätzlich zu der normalen Ausgabe ein Overlay erzeugt, dem man so interessante Details wie die Http-Header des aktuellen Requests oder die SQL-Queries, die für den aktuellen Request ausgeführt wurden. Das ist schon cool, fast noch cooler ist, daß Django mittlerweile sehr gut und vollständig in Ubuntu verfügbar ist (und auch die Toolbar ein aptitude install python-django-debug-toolbar entfernt ist).</description>
     </item>
-    
   </channel>
 </rss>

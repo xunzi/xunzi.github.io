@@ -6,55 +6,46 @@
     <description>Recent content in Helferlein on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 14 Sep 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/helferlein/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/helferlein/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>von Linux zu MacOS</title>
       <link>https://drexler-online.net/post/von-linux-zu-macos/</link>
       <pubDate>Tue, 14 Sep 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/von-linux-zu-macos/</guid>
       <description>Da seit neuestem ein MacMini unseren Sekretär ziert, musste ich für einige liebgewonnene Applikationen Ersatz suchen. Besonders schwierig war diese Suche im Bereich Bildverwaltung und Musikverwaltung.
 Als Bildverwaltung kam bisher immer Digikam zum Einsatz. Das läßt sich zwar auch unter MacOS kompilieren, aber das erfordert häßliche Krücken, um die KDE-Umgebung zum Laufen zu bringen. iPhoto war auch nicht so mein Fall (das war vor allem erstaunlich zäh, noch bevor ich alle meine Bilder importiert hatte), schließlich bin ich bei Googles Picasa gelandet, weil ich keine Lust hatte, ein- oder zweihundert Euro für die einschlägigen Produkte von Adobe oder Apple auszugeben, Picasa angenehm flott reagiert und die grundlegenden Bearbeitungsfunktionen bereithält, die ich so brauche.</description>
     </item>
-    
     <item>
       <title>Django-Toolbar</title>
       <link>https://drexler-online.net/post/django-toolbar/</link>
       <pubDate>Thu, 24 Jun 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/django-toolbar/</guid>
       <description>Bei meinen Experimenten mit Django ist mir letztlich die Django-Toolbar unter die Finger gekommen. Hierbei handelt es sich um eine Django-Middleware, die zusätzlich zu der normalen Ausgabe ein Overlay erzeugt, dem man so interessante Details wie die Http-Header des aktuellen Requests oder die SQL-Queries, die für den aktuellen Request ausgeführt wurden. Das ist schon cool, fast noch cooler ist, daß Django mittlerweile sehr gut und vollständig in Ubuntu verfügbar ist (und auch die Toolbar ein aptitude install python-django-debug-toolbar entfernt ist).</description>
     </item>
-    
     <item>
       <title>Bloggen aus Firefox</title>
       <link>https://drexler-online.net/post/bloggen-aus-firefox/</link>
       <pubDate>Mon, 23 Mar 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/bloggen-aus-firefox/</guid>
       <description>Eine hübsche und nützliche Erweiterung für Firefox ist ScribeFire, mit dessen Hilfe via Metaweblog-API Blogbeiträge direkt aus Firefox heraus erstellt werden können.
 [Update] FireScribe fügt neuen Einträgen ein unsichtbares pixelgroßes Jpg-Bild hinzu, das auf Zemanta verweist (sichtbar in der Quellcode-Ansicht). Die Konfigurationsoption &amp;ldquo;Automatically insert invisible tracking pixel for statistics gathering&amp;rdquo; unter &amp;ldquo;Publishing&amp;rdquo; sollte dieses Verhalten deaktivieren.</description>
     </item>
-    
     <item>
       <title>Screencast einer Windows-Session in Virtualbox</title>
       <link>https://drexler-online.net/post/screencast-einer-windows-session-in-virtualbox/</link>
       <pubDate>Fri, 20 Feb 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/screencast-einer-windows-session-in-virtualbox/</guid>
       <description>Screencasts von Windows-Sessions, die in einer Virtualbox-VM laufen, sind dank vrdp und pyvnc2swf sehr einfach zu erstellen.
 Ein Screencast ist so etwas wie ein animierter Screenshot und in manchen Fällen einleuchtender als eine lange Kette von Schnappschüssen des Bildschirms.
 Das Tool pyvnc2swf erstellt aus einer Vnc-Session ein Flashfilmchen. Um nun ein Screencast von einem per Virtualbox in ein Fenster verbannten Windows zu erstellen, reicht es, in den Einstellungen der virtuellen Maschine unter &amp;ldquo;Remote Display&amp;rdquo; das Häkchen bei &amp;ldquo;Enable VRDP Server&amp;rdquo; zu setzen und die virtuelle Maschine zu starten.</description>
     </item>
-    
     <item>
       <title>Konsolenhelfer (1): dstat</title>
       <link>https://drexler-online.net/post/konsolenhelfer-1-dstat/</link>
       <pubDate>Sat, 05 Jul 2008 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/konsolenhelfer-1-dstat/</guid>
       <description>Auf der Suche nach Performance-Engpässen ist es öfter notwendig, die Ausgaben der Kommandos vmstat, iostat und nfsstat miteinander zu vergleichen. Einfacher als drei Terminalfenster mit den jeweiligen Kommandos ist das Tool dstat, das zusätzlich noch eine augenfreundlich kolorierte Ausgabe erzeugt. Dstat von Dag Wieers. dstat misst eine konfigurierbare Auswahl von Betriebssystem-Parametern und zeigt sie kontinuierlich an. Wird dstat ohne weitere Parameter aufgerufen, zeigt es Statistiken zu Cpu, Blockdevice, Netzwerk, Paging und System (Context switches und Interrupts) an: Dstat ist durch Plugins erweiterbar, eine Liste der verfügbaren Plugins gibt das Kommando dstat -M list.</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,15 +6,14 @@
     <description>Recent content in Zsh on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Sep 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 18:10:11 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/zsh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dotzsh</title>
       <link>https://drexler-online.net/post/dot-zshrc/</link>
       <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/dot-zshrc/</guid>
       <description>&lt;p&gt;Im Laufe der Jahre gewachsene Zsh-Konfig.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

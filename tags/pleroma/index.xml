@@ -6,16 +6,15 @@
     <description>Recent content in Pleroma on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 11 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/pleroma/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Apr 2023 13:36:35 +0200</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/pleroma/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pleroma: Remove Rum Index</title>
       <link>https://drexler-online.net/post/pleroma-remove-rum-index/</link>
       <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/pleroma-remove-rum-index/</guid>
       <description>When setting up pleroma for my activity-pub instance I was a bit over-zealous and selected the option &amp;ldquo;Enable RUM index&amp;rdquo; without knowing what it means.
 As this is a single user instance using RUM indices is really not neccessary, also I found out that they are quite heavy in disk usage, blowing up the db by several GB. I also found out that creating these indices takes a very long time when I upgraded to a newer PostgreSQL version and had to import the dump file.</description>
     </item>
-    
   </channel>
 </rss>

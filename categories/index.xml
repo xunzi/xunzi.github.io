@@ -5,6 +5,7 @@
     <link>https://drexler-online.net/categories/</link>
     <description>Recent content in Categories on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://drexler-online.net/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <atom:link href="https://drexler-online.net/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -6,27 +6,24 @@
     <description>Recent content in Mezzanine on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 30 Nov 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/mezzanine/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 18:10:11 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/mezzanine/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Streiche Mezzanine, setze Pelican</title>
       <link>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</link>
       <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</guid>
       <description>Da Mezzanines Funktionsumfang für meine bescheidenen Bedürfnisse doch zu groß war, habe ich das Blog auf Pelican umgestellt, einen Generator für statische Webseiten. Denn Text kann man in reStructuredText oder Markdown verfassen und es gibt eine große Auswahl an Themes und Plugins, so dass bei Bedarf das Aussehen des Blogs schnell mal umgestellt werden kann. Ein weiterer Vorteil ist, dass die Inhalte dann einfach unter Versionskontrolle gestellt werden können, es sind ja nur Textdateien.</description>
     </item>
-    
     <item>
       <title>Blogtransfer von Pebble zu Mezzanine</title>
       <link>https://drexler-online.net/post/blogtransfer-von-pebble-zu-mezzanine/</link>
       <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/blogtransfer-von-pebble-zu-mezzanine/</guid>
       <description>&lt;p&gt;Die Umsetzung der alten Blogposts aus Pebble erfolgte mit Hilfe eines
 Skripts, das die xml-Dateien parst und entsprechende
 Mezzanine/Django-Objeckte anlegt inkl. Tags und Kategorien.&lt;/p&gt;
 &lt;p&gt;Das Skript gibt es als &lt;a href=&#34;https://gist.github.com/xunzi/5603984&#34;&gt;Gist&lt;/a&gt; bei Github.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

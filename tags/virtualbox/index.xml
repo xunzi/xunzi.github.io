@@ -6,17 +6,16 @@
     <description>Recent content in Virtualbox on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Feb 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Screencast einer Windows-Session in Virtualbox</title>
       <link>https://drexler-online.net/post/screencast-einer-windows-session-in-virtualbox/</link>
       <pubDate>Fri, 20 Feb 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/screencast-einer-windows-session-in-virtualbox/</guid>
       <description>Screencasts von Windows-Sessions, die in einer Virtualbox-VM laufen, sind dank vrdp und pyvnc2swf sehr einfach zu erstellen.
 Ein Screencast ist so etwas wie ein animierter Screenshot und in manchen Fällen einleuchtender als eine lange Kette von Schnappschüssen des Bildschirms.
 Das Tool pyvnc2swf erstellt aus einer Vnc-Session ein Flashfilmchen. Um nun ein Screencast von einem per Virtualbox in ein Fenster verbannten Windows zu erstellen, reicht es, in den Einstellungen der virtuellen Maschine unter &amp;ldquo;Remote Display&amp;rdquo; das Häkchen bei &amp;ldquo;Enable VRDP Server&amp;rdquo; zu setzen und die virtuelle Maschine zu starten.</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,54 +6,45 @@
     <description>Recent content in Rootserver on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 07 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/rootserver/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Nov 2022 20:06:02 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/rootserver/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>KVM zu LXD</title>
       <link>https://drexler-online.net/post/kvm-zu-lxd/</link>
       <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/kvm-zu-lxd/</guid>
       <description>Alle vier Jahre migrieren wir den Hetzner-Server auf neue Hardware, bei der letzten Umstellung haben wir auch gleich den Unterbau geändert, wo früher die individuellen Gäste als kvm/libvirt-Gäste liefen und die Infrastruktur (Datenbanken, Verzeichnisdienst, Email) auf dem Host, sind jetzt alle Funktionen in Lxd-Container ausgelagert.
 Lxd-Container stellen sich wie ein vollwertiges Betriebssystem dar, mir persönlich sind Docker-Container zu friemelig, der Unix-Admin in mir stört sich einfach daran, dass man bei Docker nicht so einfach mit der Shell rumporkeln kann, bis es geht.</description>
     </item>
-    
     <item>
       <title>Streiche Mezzanine, setze Pelican</title>
       <link>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</link>
       <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</guid>
       <description>Da Mezzanines Funktionsumfang für meine bescheidenen Bedürfnisse doch zu groß war, habe ich das Blog auf Pelican umgestellt, einen Generator für statische Webseiten. Denn Text kann man in reStructuredText oder Markdown verfassen und es gibt eine große Auswahl an Themes und Plugins, so dass bei Bedarf das Aussehen des Blogs schnell mal umgestellt werden kann. Ein weiterer Vorteil ist, dass die Inhalte dann einfach unter Versionskontrolle gestellt werden können, es sind ja nur Textdateien.</description>
     </item>
-    
     <item>
       <title>Einbruch!</title>
       <link>https://drexler-online.net/post/einbruch/</link>
       <pubDate>Sun, 19 Sep 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/einbruch/</guid>
       <description>Einbruch in unseren schönen Server! Spam- und Virusmails ham se verschickt, die Schmutzbuckel.
 Aufgefallen ist das Ganze dadurch, daß Postfix immer versucht hat, Mails an den Webserver-User zuzustellen. Ich habe mir die Mails dann mal weiterleiten lassen und hatte in ein paar Sekunden weit über 500 neue Emails, alles Bounces von Aol und Yahoo, die mich darüber informieren wollten, daß meine Mails nicht zugestellt werden konnten. In der Mailqueue waren auch noch ein paar Dutzend Mails, denen die Mxe von Yahoo die Annahme verweigerten.</description>
     </item>
-    
     <item>
       <title>Neuer Jabber-Server</title>
       <link>https://drexler-online.net/post/neuer-jabber-server/</link>
       <pubDate>Mon, 13 Jul 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/neuer-jabber-server/</guid>
       <description>Im Zuge der Server-Renovierung habe ich auch den Jabberserver von Openfireauf Prosody umgestellt.
 Prosody ist sehr klein und braucht nur sehr wenige Resourcen. Außerdem ist es sehr sehr einfach aufzusetzen (obwohl Openfire mit der Weboberfläche da auch recht simpel ist). Was noch fehlt sind die Gateway-Plugins zu anderen IM-Systemen, mit denen man einen Jabber-Account beispielsweise mit einem MSN-Account verknüpfen kann, aber das ist mir momentan nicht so wichtig. Zum Ausgleich ist Prosody Virtualhost-fähig und in Lua geschrieben, eine Sprache, die ich mir sowieso immer schon mal ansehen wollte.</description>
     </item>
-    
     <item>
       <title>Upgrade auf Lenny und Umstellung auf Dovecot</title>
       <link>https://drexler-online.net/post/upgrade-auf-lenny-und-umstellung-auf-dovecot/</link>
       <pubDate>Sun, 12 Jul 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/upgrade-auf-lenny-und-umstellung-auf-dovecot/</guid>
       <description>Gestern habe ich mir ein Herz gefasst und den Server auf Lenny aktualisiert. Der erste Lauf von aptitude dist-upgrade förderte 7 unauflösbare Konflikte zu Tage, aber nach dem Entfernen von libsasl2 und libapache2-mod-php5 ging es dann reibungslos. Nach dem reboot (immer ein spannender Moment bis die Pings wieder zurückkommen) ging dann fast alles wieder wie gewohnt bis auf Postfix und den Tomcat-Mount per ajp. Postfix mochte keine Benutzer mehr authentifizieren, wohl ein Problem mit Sasl und Passworten im Klartext (die ich in Syscp ausgeschaltet habe).</description>
     </item>
-    
   </channel>
 </rss>

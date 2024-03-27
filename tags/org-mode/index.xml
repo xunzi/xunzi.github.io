@@ -6,25 +6,22 @@
     <description>Recent content in Org-Mode on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 17 Jan 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Org-Export als Beamer-Präse</title>
       <link>https://drexler-online.net/post/org-export-als-beamer-prase/</link>
       <pubDate>Mon, 17 Jan 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/org-export-als-beamer-prase/</guid>
       <description>Eine der zahlreichen äußerst praktischen Anwendungen von org-mode ist die Möglichkeit, org-Dokumente als Beamer-Präsentationen zu exportieren. Das sieht dann z.B. so aus, wie in diesem Beispiel. Erzeugt wurde das Ganze aus dieser org-Datei. (Damit dieser Export funktioniert, muß übrigens eine LaTex-Umgebung installiert sein!)</description>
     </item>
-    
     <item>
       <title>Org-mode</title>
       <link>https://drexler-online.net/post/org-mode/</link>
       <pubDate>Sat, 15 Jan 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/org-mode/</guid>
       <description>Die Suche nach einer Aufgaben- und Wissensmanagement-Software hat sich als Odyssee herausgestellt. Wichtige Stationen dieser Reise waren Scribble Paper, Task coach und Makagiga, ihr vorläufiges Ende fand die Reise bei org-mode.
 Ein Problem, das mich schon länger umtreibt, ist ein Programm, mit dem ich einerseits meine Todo-Liste und andererseits die zahlreichen Informationen managen kann, die tagtäglich so auf mich einprasseln.Kompliziert wird die Suche dadurch, daß das Ganze unter Windows laufen muß, damit ich es bei der Arbeit sinnvoll nutzen kann.</description>
     </item>
-    
   </channel>
 </rss>

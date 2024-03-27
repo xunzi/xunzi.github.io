@@ -6,16 +6,15 @@
     <description>Recent content in Kvm on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 07 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/kvm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/kvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>KVM zu LXD</title>
       <link>https://drexler-online.net/post/kvm-zu-lxd/</link>
       <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/kvm-zu-lxd/</guid>
       <description>Alle vier Jahre migrieren wir den Hetzner-Server auf neue Hardware, bei der letzten Umstellung haben wir auch gleich den Unterbau geändert, wo früher die individuellen Gäste als kvm/libvirt-Gäste liefen und die Infrastruktur (Datenbanken, Verzeichnisdienst, Email) auf dem Host, sind jetzt alle Funktionen in Lxd-Container ausgelagert.
 Lxd-Container stellen sich wie ein vollwertiges Betriebssystem dar, mir persönlich sind Docker-Container zu friemelig, der Unix-Admin in mir stört sich einfach daran, dass man bei Docker nicht so einfach mit der Shell rumporkeln kann, bis es geht.</description>
     </item>
-    
   </channel>
 </rss>

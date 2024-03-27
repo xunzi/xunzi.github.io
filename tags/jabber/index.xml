@@ -6,16 +6,15 @@
     <description>Recent content in Jabber on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 Jul 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/jabber/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Nov 2022 20:06:02 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/jabber/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neuer Jabber-Server</title>
       <link>https://drexler-online.net/post/neuer-jabber-server/</link>
       <pubDate>Mon, 13 Jul 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/neuer-jabber-server/</guid>
       <description>Im Zuge der Server-Renovierung habe ich auch den Jabberserver von Openfireauf Prosody umgestellt.
 Prosody ist sehr klein und braucht nur sehr wenige Resourcen. Außerdem ist es sehr sehr einfach aufzusetzen (obwohl Openfire mit der Weboberfläche da auch recht simpel ist). Was noch fehlt sind die Gateway-Plugins zu anderen IM-Systemen, mit denen man einen Jabber-Account beispielsweise mit einem MSN-Account verknüpfen kann, aber das ist mir momentan nicht so wichtig. Zum Ausgleich ist Prosody Virtualhost-fähig und in Lua geschrieben, eine Sprache, die ich mir sowieso immer schon mal ansehen wollte.</description>
     </item>
-    
   </channel>
 </rss>

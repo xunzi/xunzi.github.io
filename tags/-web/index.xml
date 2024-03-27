@@ -6,18 +6,17 @@
     <description>Recent content in  Web on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 13 May 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/-web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 18:10:11 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/-web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blogtransfer von Pebble zu Mezzanine</title>
       <link>https://drexler-online.net/post/blogtransfer-von-pebble-zu-mezzanine/</link>
       <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/blogtransfer-von-pebble-zu-mezzanine/</guid>
       <description>&lt;p&gt;Die Umsetzung der alten Blogposts aus Pebble erfolgte mit Hilfe eines
 Skripts, das die xml-Dateien parst und entsprechende
 Mezzanine/Django-Objeckte anlegt inkl. Tags und Kategorien.&lt;/p&gt;
 &lt;p&gt;Das Skript gibt es als &lt;a href=&#34;https://gist.github.com/xunzi/5603984&#34;&gt;Gist&lt;/a&gt; bei Github.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

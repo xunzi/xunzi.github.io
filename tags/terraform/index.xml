@@ -6,16 +6,15 @@
     <description>Recent content in Terraform on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 18:10:11 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Terraform und Lxd</title>
       <link>https://drexler-online.net/post/terraform-und-lxd/</link>
       <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/terraform-und-lxd/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.terraform.io/&#34;&gt;Terraform&lt;/a&gt; ist eine deklarative Beschreibungssprache für Cloud-Infrastrukturen.&lt;/p&gt;
 &lt;p&gt;Unterstützt werden viele Cloudprovider, unter anderem auch lxd.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

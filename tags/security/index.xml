@@ -6,25 +6,22 @@
     <description>Recent content in Security on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Sep 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Einbruch!</title>
       <link>https://drexler-online.net/post/einbruch/</link>
       <pubDate>Sun, 19 Sep 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/einbruch/</guid>
       <description>Einbruch in unseren schönen Server! Spam- und Virusmails ham se verschickt, die Schmutzbuckel.
 Aufgefallen ist das Ganze dadurch, daß Postfix immer versucht hat, Mails an den Webserver-User zuzustellen. Ich habe mir die Mails dann mal weiterleiten lassen und hatte in ein paar Sekunden weit über 500 neue Emails, alles Bounces von Aol und Yahoo, die mich darüber informieren wollten, daß meine Mails nicht zugestellt werden konnten. In der Mailqueue waren auch noch ein paar Dutzend Mails, denen die Mxe von Yahoo die Annahme verweigerten.</description>
     </item>
-    
     <item>
       <title>Interview mit einem Botnetz-Chef</title>
       <link>https://drexler-online.net/post/interview-mit-einem-botnetz-chef/</link>
       <pubDate>Thu, 15 Oct 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/interview-mit-einem-botnetz-chef/</guid>
       <description>Die Securitygurus bei Cisco haben ihre Kommunikation mit einem Botnetzbetreiber beschrieben. Der Typ kam gar nicht so unsympathisch rüber, ein Kleinunternehmer, der seine Herde durch IM-Spam vergrößert, kein erkennbares Unrechtsbewußtsein, eher mangelndes Mitleid mit naiven Usern, die blind auf alles klicken, was nicht schnell genug wegscrollt.</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,15 +6,14 @@
     <description>Recent content in Snmp on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Jun 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/snmp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/snmp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Snmp unter Ubuntu</title>
       <link>https://drexler-online.net/post/snmp-unter-ubuntu/</link>
       <pubDate>Sun, 19 Jun 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/snmp-unter-ubuntu/</guid>
       <description>Falls mal jemand unter Ubuntu die net-snmp-Utilities (snmpwalk etc.) einsetzen will, ist zu beachten, daß zusätzlich zm Paket snmp auch noch snmp-mibs-downloader installiert werden muss, dann werden die MIBs automatisch heruntergaladen und integriert. Zusätzlich muß noch in der Datei /etc/snmp/snmp.conf die Zeile mibs : auskommentiert werden. Grund für das Gehmpel sind wohl Lizenzprobleme, die die Auslieferung der MIBs seit Ubuntu 10.4 als Teil der Distribution verhindern.</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,15 +6,14 @@
     <description>Recent content in Django on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Jun 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/django/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Django-Toolbar</title>
       <link>https://drexler-online.net/post/django-toolbar/</link>
       <pubDate>Thu, 24 Jun 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/django-toolbar/</guid>
       <description>Bei meinen Experimenten mit Django ist mir letztlich die Django-Toolbar unter die Finger gekommen. Hierbei handelt es sich um eine Django-Middleware, die zusätzlich zu der normalen Ausgabe ein Overlay erzeugt, dem man so interessante Details wie die Http-Header des aktuellen Requests oder die SQL-Queries, die für den aktuellen Request ausgeführt wurden. Das ist schon cool, fast noch cooler ist, daß Django mittlerweile sehr gut und vollständig in Ubuntu verfügbar ist (und auch die Toolbar ein aptitude install python-django-debug-toolbar entfernt ist).</description>
     </item>
-    
   </channel>
 </rss>

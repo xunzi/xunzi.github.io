@@ -6,26 +6,23 @@
     <description>Recent content in Lxd on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/lxd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 18:10:11 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/lxd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Terraform und Lxd</title>
       <link>https://drexler-online.net/post/terraform-und-lxd/</link>
       <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/terraform-und-lxd/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.terraform.io/&#34;&gt;Terraform&lt;/a&gt; ist eine deklarative Beschreibungssprache für Cloud-Infrastrukturen.&lt;/p&gt;
 &lt;p&gt;Unterstützt werden viele Cloudprovider, unter anderem auch lxd.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>KVM zu LXD</title>
       <link>https://drexler-online.net/post/kvm-zu-lxd/</link>
       <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/kvm-zu-lxd/</guid>
       <description>Alle vier Jahre migrieren wir den Hetzner-Server auf neue Hardware, bei der letzten Umstellung haben wir auch gleich den Unterbau geändert, wo früher die individuellen Gäste als kvm/libvirt-Gäste liefen und die Infrastruktur (Datenbanken, Verzeichnisdienst, Email) auf dem Host, sind jetzt alle Funktionen in Lxd-Container ausgelagert.
 Lxd-Container stellen sich wie ein vollwertiges Betriebssystem dar, mir persönlich sind Docker-Container zu friemelig, der Unix-Admin in mir stört sich einfach daran, dass man bei Docker nicht so einfach mit der Shell rumporkeln kann, bis es geht.</description>
     </item>
-    
   </channel>
 </rss>

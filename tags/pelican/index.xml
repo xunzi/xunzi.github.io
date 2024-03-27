@@ -6,26 +6,23 @@
     <description>Recent content in Pelican on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 27 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/pelican/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Dec 2021 20:27:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/pelican/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pelican2Hugo</title>
       <link>https://drexler-online.net/post/pelican2hugo/</link>
       <pubDate>Mon, 27 Dec 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/pelican2hugo/</guid>
       <description>Das Blog ist wieder mal auf eine neue Plattform umgezogen, es bleibt bei einem static site generator, aber statt Pelican ist jetzt Hugo am Start.
 Die Artikel sind nach wie vor in Markdown verfasst, so dass hier keine Umwandlung notwendg ist, einzig die Headers/Front Matter sind in einem neuen Format.
 Ich habe ein Conversionsskript geschrieben, das die Frontmatter von Pelican ins Hugo-Format umwandelt.</description>
     </item>
-    
     <item>
       <title>Streiche Mezzanine, setze Pelican</title>
       <link>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</link>
       <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</guid>
       <description>Da Mezzanines Funktionsumfang für meine bescheidenen Bedürfnisse doch zu groß war, habe ich das Blog auf Pelican umgestellt, einen Generator für statische Webseiten. Denn Text kann man in reStructuredText oder Markdown verfassen und es gibt eine große Auswahl an Themes und Plugins, so dass bei Bedarf das Aussehen des Blogs schnell mal umgestellt werden kann. Ein weiterer Vorteil ist, dass die Inhalte dann einfach unter Versionskontrolle gestellt werden können, es sind ja nur Textdateien.</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,18 +6,17 @@
     <description>Recent content in Backup on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Oct 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/backup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Langsames TimeMachine-Backup mit MacOS 10.7.5</title>
       <link>https://drexler-online.net/post/langsames-timemachine-backup-mit-macos-1075/</link>
       <pubDate>Wed, 03 Oct 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/langsames-timemachine-backup-mit-macos-1075/</guid>
       <description>Seit ein paar Tagen läuft das TimeMachine Backup auf dem Synology-NAS grottenlangsam. Ich habe verschiedene Dinge ausprobiert (neues Share anlegen, Indexdateien von Spotlight löschen, Indizierung für TM-Share ausschalten), alles ohne Erfolg. Schliesslich hat mich Google auf diesen Thread geführt, wo der Spotlight-Indexer als Schuldiger benannt wird. Tatsächlich rennt das Backup wieder, wenn man per
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
 den Indexer stoppt.
 Nach erfolgreichem Backup sollte man dann auch mit</description>
     </item>
-    
   </channel>
 </rss>

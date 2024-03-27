@@ -6,15 +6,14 @@
     <description>Recent content in Dstat on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Jul 2008 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/dstat/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/dstat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Konsolenhelfer (1): dstat</title>
       <link>https://drexler-online.net/post/konsolenhelfer-1-dstat/</link>
       <pubDate>Sat, 05 Jul 2008 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/konsolenhelfer-1-dstat/</guid>
       <description>Auf der Suche nach Performance-Engpässen ist es öfter notwendig, die Ausgaben der Kommandos vmstat, iostat und nfsstat miteinander zu vergleichen. Einfacher als drei Terminalfenster mit den jeweiligen Kommandos ist das Tool dstat, das zusätzlich noch eine augenfreundlich kolorierte Ausgabe erzeugt. Dstat von Dag Wieers. dstat misst eine konfigurierbare Auswahl von Betriebssystem-Parametern und zeigt sie kontinuierlich an. Wird dstat ohne weitere Parameter aufgerufen, zeigt es Statistiken zu Cpu, Blockdevice, Netzwerk, Paging und System (Context switches und Interrupts) an: Dstat ist durch Plugins erweiterbar, eine Liste der verfügbaren Plugins gibt das Kommando dstat -M list.</description>
     </item>
-    
   </channel>
 </rss>

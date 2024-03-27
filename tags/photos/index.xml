@@ -6,24 +6,21 @@
     <description>Recent content in Photos on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 19 Jul 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/photos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/photos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bildergalerien mit Sigal</title>
       <link>https://drexler-online.net/post/bildergalerien-mit-sigal/</link>
       <pubDate>Sat, 19 Jul 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/bildergalerien-mit-sigal/</guid>
       <description>Die gelegentlich anfallenden Fotos aus dem Freunds- und Familienkreis habe ich bisher ärgerlicherweise bei Google hochgeladen udn mit einem privaten Link verteilt, so dass sie zwar nicht einer Google-Suche zum Opfer fallen können, aber dennoch bei Google bekannt sind. Viele Leute sind nachvollziehbarerweise auch gar nicht glücklich darüber, wenn sie ihr Antlitz auf einer bei Google gehosteten Seite wiederfinden, so dass hier eine neue Lösung hermusste. Da ich ja das Blog schon mit Pelican auf einen Generator für statische Webseiten umgestellt habe, lag es natürlich nahe, auch die Fotos mit einem solchen Generator in die Webseite einzubinden.</description>
     </item>
-    
     <item>
       <title>Photo-Sammlung bei Google</title>
       <link>https://drexler-online.net/post/photo-sammlung-bei-google/</link>
       <pubDate>Mon, 23 Mar 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/photo-sammlung-bei-google/</guid>
       <description>Schon seit November letzten Jahres gibt es bei Google zehntausende Photos der Zeitschrift LIFE, die in ihrem wechselvollen Werdegang auch einmal ein Zentralorgan des Photojournalismus war.</description>
     </item>
-    
   </channel>
 </rss>

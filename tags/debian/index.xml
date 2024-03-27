@@ -6,15 +6,14 @@
     <description>Recent content in Debian on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 12 Jul 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Upgrade auf Lenny und Umstellung auf Dovecot</title>
       <link>https://drexler-online.net/post/upgrade-auf-lenny-und-umstellung-auf-dovecot/</link>
       <pubDate>Sun, 12 Jul 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/upgrade-auf-lenny-und-umstellung-auf-dovecot/</guid>
       <description>Gestern habe ich mir ein Herz gefasst und den Server auf Lenny aktualisiert. Der erste Lauf von aptitude dist-upgrade förderte 7 unauflösbare Konflikte zu Tage, aber nach dem Entfernen von libsasl2 und libapache2-mod-php5 ging es dann reibungslos. Nach dem reboot (immer ein spannender Moment bis die Pings wieder zurückkommen) ging dann fast alles wieder wie gewohnt bis auf Postfix und den Tomcat-Mount per ajp. Postfix mochte keine Benutzer mehr authentifizieren, wohl ein Problem mit Sasl und Passworten im Klartext (die ich in Syscp ausgeschaltet habe).</description>
     </item>
-    
   </channel>
 </rss>

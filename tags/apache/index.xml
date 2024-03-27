@@ -6,27 +6,24 @@
     <description>Recent content in Apache on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Jul 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/apache/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2021 22:21:01 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/apache/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apache raus, Nginx rein</title>
       <link>https://drexler-online.net/post/apache-raus-nginx-rein/</link>
       <pubDate>Mon, 02 Jul 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/apache-raus-nginx-rein/</guid>
       <description>Anlässlich des Upgrades auf Ubuntu Precise habe ich den Webserver umgestellt von Apache auf Nginx. Für das ungeliebte Php muss dann php-fpm.org/ mit ins Boot, der Java-Appserver wird per Proxy angebunden, da Nginx kein AJP spricht. Auf dem kleinen Webserver performt das Ganze ganz gut und hat den Vorteil, dass die Nginx-Konfig deutlich einfacher und überschaubarer ist.
 Erst dachte ich, die openJDK-Version im Lieferumfang von Precise hätte ne massive Macke, weil der Tomcat-Prozess munter alle verfügbaren Cpu-Zyklen aufgebraucht hat, es stellte sich dann aber heraus, dass die Schaltsekunde schuld war und ein dezenter Reboot die schnellste Abhilfe brachte.</description>
     </item>
-    
     <item>
       <title>SSL-Problem</title>
       <link>https://drexler-online.net/post/ssl-problem/</link>
       <pubDate>Mon, 09 Jun 2008 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/ssl-problem/</guid>
       <description>Ein Verweis auf die Zertifikatskette (certificate chain) läßt https-Verbindungen von IE oder Opera zu Apache scheitern. Geholfen bei der Fehlersuche haben openssl und google. Das erwähnte Problem mit SSL-Verbindungen von IE7 und Opera unter WIndows hat sich nun auch gelöst: Schuld war ein Eintrag in einer Apache-Konfigurationsdatei, der auf die Zertifikatskette verweist:
 SSLCertificateChainFile /etc/ssl/certs/ca-certificates.crt
 Auch wenn in weiteren Direktiven die Überprüfung von Client-Zertifikaten explizit abgeschaltet ist, versucht Apache dennoch, ein Client-Zertifikat anzufordern.</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,15 +6,14 @@
     <description>Recent content in Qemu-Img on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/qemu-img/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 18:10:11 +0100</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/qemu-img/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Virsh disk handling</title>
       <link>https://drexler-online.net/post/virsh-disk-handling/</link>
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://drexler-online.net/post/virsh-disk-handling/</guid>
       <description>&lt;p&gt;Wenn die qemu/kvm-Platten vollaufen, kann man relativ einfach eine neue Platte erzeugen und mounten. Das ist in vielen Fällen weniger kritisch, als existierende Diskimages, Partitionen und Dateisysteme zu vergrößern.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
