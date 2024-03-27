@@ -18,7 +18,7 @@
     <lastmod>2023-04-11T13:36:35+02:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/</loc>
-    <lastmod>2023-04-11T13:36:35+02:00</lastmod>
+    <lastmod>2023-11-06T11:58:28+01:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/tags/blog/</loc>
     <lastmod>2021-12-27T20:27:01+01:00</lastmod>
@@ -65,7 +65,7 @@
     <loc>https://drexler-online.net/post/virsh-disk-handling/</loc>
     <lastmod>2021-12-28T18:10:11+01:00</lastmod>
   </url><url>
-    <loc>https://drexler-online.net/tags/dotfiles/</loc>
+    <loc>https://drexler-online.net/tags/-dotfiles/</loc>
     <lastmod>2021-12-28T18:10:11+01:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/post/dot-tumxconf/</loc>
@@ -78,7 +78,7 @@
     <lastmod>2021-12-26T22:21:01+01:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/tags/web/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
+    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/post/dot-zshrc/</loc>
     <lastmod>2021-12-28T18:10:11+01:00</lastmod>
@@ -98,7 +98,10 @@
     <loc>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</loc>
     <lastmod>2021-12-26T22:21:01+01:00</lastmod>
   </url><url>
-    <loc>https://drexler-online.net/tags/pebble/</loc>
+    <loc>https://drexler-online.net/tags/-pebble/</loc>
+    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
+  </url><url>
+    <loc>https://drexler-online.net/tags/-web/</loc>
     <lastmod>2021-12-28T18:10:11+01:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/post/blogtransfer-von-pebble-zu-mezzanine/</loc>
@@ -244,6 +247,9 @@
   </url><url>
     <loc>https://drexler-online.net/post/ssl-problem/</loc>
     <lastmod>2021-12-26T22:21:01+01:00</lastmod>
+  </url><url>
+    <loc>https://drexler-online.net/static/favourites-screencast/</loc>
+    <lastmod>2021-12-27T19:59:51+01:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/static/beispielpraese/</loc>
     <lastmod>2021-12-27T19:59:51+01:00</lastmod>

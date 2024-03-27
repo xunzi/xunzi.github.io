@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Tue, 11 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>pleroma</title>
+      <title>Pleroma</title>
       <link>https://drexler-online.net/tags/pleroma/</link>
       <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -17,7 +17,7 @@
     </item>
     
     <item>
-      <title>postgres</title>
+      <title>Postgres</title>
       <link>https://drexler-online.net/tags/postgres/</link>
       <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -26,7 +26,7 @@
     </item>
     
     <item>
-      <title>blog</title>
+      <title>Blog</title>
       <link>https://drexler-online.net/tags/blog/</link>
       <pubDate>Mon, 27 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -35,7 +35,7 @@
     </item>
     
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://drexler-online.net/tags/hugo/</link>
       <pubDate>Mon, 27 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -44,7 +44,7 @@
     </item>
     
     <item>
-      <title>pelican</title>
+      <title>Pelican</title>
       <link>https://drexler-online.net/tags/pelican/</link>
       <pubDate>Mon, 27 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -53,7 +53,7 @@
     </item>
     
     <item>
-      <title>lxd</title>
+      <title>Lxd</title>
       <link>https://drexler-online.net/tags/lxd/</link>
       <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -62,7 +62,7 @@
     </item>
     
     <item>
-      <title>terraform</title>
+      <title>Terraform</title>
       <link>https://drexler-online.net/tags/terraform/</link>
       <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
       
@@ -71,7 +71,7 @@
     </item>
     
     <item>
-      <title>kvm</title>
+      <title>Kvm</title>
       <link>https://drexler-online.net/tags/kvm/</link>
       <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
       
@@ -80,7 +80,7 @@
     </item>
     
     <item>
-      <title>rootserver</title>
+      <title>Rootserver</title>
       <link>https://drexler-online.net/tags/rootserver/</link>
       <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
       
@@ -89,7 +89,7 @@
     </item>
     
     <item>
-      <title>blockdevice</title>
+      <title>Blockdevice</title>
       <link>https://drexler-online.net/tags/blockdevice/</link>
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -98,7 +98,7 @@
     </item>
     
     <item>
-      <title>qemu-img</title>
+      <title>Qemu-Img</title>
       <link>https://drexler-online.net/tags/qemu-img/</link>
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -107,7 +107,7 @@
     </item>
     
     <item>
-      <title>virsh</title>
+      <title>Virsh</title>
       <link>https://drexler-online.net/tags/virsh/</link>
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -116,16 +116,16 @@
     </item>
     
     <item>
-      <title> dotfiles</title>
-      <link>https://drexler-online.net/tags/dotfiles/</link>
+      <title> Dotfiles</title>
+      <link>https://drexler-online.net/tags/-dotfiles/</link>
       <pubDate>Mon, 18 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://drexler-online.net/tags/dotfiles/</guid>
+      <guid>https://drexler-online.net/tags/-dotfiles/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>tmux</title>
+      <title>Tmux</title>
       <link>https://drexler-online.net/tags/tmux/</link>
       <pubDate>Mon, 18 Jul 2016 00:00:00 +0000</pubDate>
       
@@ -134,7 +134,7 @@
     </item>
     
     <item>
-      <title>web</title>
+      <title>Web</title>
       <link>https://drexler-online.net/tags/web/</link>
       <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
       
@@ -143,7 +143,7 @@
     </item>
     
     <item>
-      <title>zsh</title>
+      <title>Zsh</title>
       <link>https://drexler-online.net/tags/zsh/</link>
       <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
       
@@ -152,7 +152,7 @@
     </item>
     
     <item>
-      <title>photos</title>
+      <title>Photos</title>
       <link>https://drexler-online.net/tags/photos/</link>
       <pubDate>Sat, 19 Jul 2014 00:00:00 +0000</pubDate>
       
@@ -161,7 +161,7 @@
     </item>
     
     <item>
-      <title>mezzanine</title>
+      <title>Mezzanine</title>
       <link>https://drexler-online.net/tags/mezzanine/</link>
       <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
       
@@ -170,16 +170,25 @@
     </item>
     
     <item>
-      <title> pebble</title>
-      <link>https://drexler-online.net/tags/pebble/</link>
+      <title> Pebble</title>
+      <link>https://drexler-online.net/tags/-pebble/</link>
       <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://drexler-online.net/tags/pebble/</guid>
+      <guid>https://drexler-online.net/tags/-pebble/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>backup</title>
+      <title> Web</title>
+      <link>https://drexler-online.net/tags/-web/</link>
+      <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/tags/-web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backup</title>
       <link>https://drexler-online.net/tags/backup/</link>
       <pubDate>Wed, 03 Oct 2012 00:00:00 +0000</pubDate>
       
@@ -188,7 +197,7 @@
     </item>
     
     <item>
-      <title>macos</title>
+      <title>Macos</title>
       <link>https://drexler-online.net/tags/macos/</link>
       <pubDate>Wed, 03 Oct 2012 00:00:00 +0000</pubDate>
       
@@ -197,7 +206,7 @@
     </item>
     
     <item>
-      <title>spotlight</title>
+      <title>Spotlight</title>
       <link>https://drexler-online.net/tags/spotlight/</link>
       <pubDate>Wed, 03 Oct 2012 00:00:00 +0000</pubDate>
       
@@ -206,7 +215,7 @@
     </item>
     
     <item>
-      <title>apache</title>
+      <title>Apache</title>
       <link>https://drexler-online.net/tags/apache/</link>
       <pubDate>Mon, 02 Jul 2012 00:00:00 +0000</pubDate>
       
@@ -215,7 +224,7 @@
     </item>
     
     <item>
-      <title>nginx</title>
+      <title>Nginx</title>
       <link>https://drexler-online.net/tags/nginx/</link>
       <pubDate>Mon, 02 Jul 2012 00:00:00 +0000</pubDate>
       
@@ -224,7 +233,7 @@
     </item>
     
     <item>
-      <title>php-fpm</title>
+      <title>Php-Fpm</title>
       <link>https://drexler-online.net/tags/php-fpm/</link>
       <pubDate>Mon, 02 Jul 2012 00:00:00 +0000</pubDate>
       
@@ -233,7 +242,7 @@
     </item>
     
     <item>
-      <title>owncloud</title>
+      <title>Owncloud</title>
       <link>https://drexler-online.net/tags/owncloud/</link>
       <pubDate>Thu, 12 Apr 2012 00:00:00 +0000</pubDate>
       
@@ -242,7 +251,7 @@
     </item>
     
     <item>
-      <title>snmp</title>
+      <title>Snmp</title>
       <link>https://drexler-online.net/tags/snmp/</link>
       <pubDate>Sun, 19 Jun 2011 00:00:00 +0000</pubDate>
       
@@ -251,7 +260,7 @@
     </item>
     
     <item>
-      <title>ubuntu</title>
+      <title>Ubuntu</title>
       <link>https://drexler-online.net/tags/ubuntu/</link>
       <pubDate>Sun, 19 Jun 2011 00:00:00 +0000</pubDate>
       
@@ -260,7 +269,7 @@
     </item>
     
     <item>
-      <title>beamer</title>
+      <title>Beamer</title>
       <link>https://drexler-online.net/tags/beamer/</link>
       <pubDate>Mon, 17 Jan 2011 00:00:00 +0000</pubDate>
       
@@ -269,7 +278,7 @@
     </item>
     
     <item>
-      <title>emacs</title>
+      <title>Emacs</title>
       <link>https://drexler-online.net/tags/emacs/</link>
       <pubDate>Mon, 17 Jan 2011 00:00:00 +0000</pubDate>
       
@@ -278,7 +287,7 @@
     </item>
     
     <item>
-      <title>org-mode</title>
+      <title>Org-Mode</title>
       <link>https://drexler-online.net/tags/org-mode/</link>
       <pubDate>Mon, 17 Jan 2011 00:00:00 +0000</pubDate>
       
@@ -287,7 +296,7 @@
     </item>
     
     <item>
-      <title>security</title>
+      <title>Security</title>
       <link>https://drexler-online.net/tags/security/</link>
       <pubDate>Sun, 19 Sep 2010 00:00:00 +0000</pubDate>
       
@@ -296,7 +305,7 @@
     </item>
     
     <item>
-      <title>helferlein</title>
+      <title>Helferlein</title>
       <link>https://drexler-online.net/tags/helferlein/</link>
       <pubDate>Tue, 14 Sep 2010 00:00:00 +0000</pubDate>
       
@@ -305,7 +314,7 @@
     </item>
     
     <item>
-      <title>linux</title>
+      <title>Linux</title>
       <link>https://drexler-online.net/tags/linux/</link>
       <pubDate>Tue, 14 Sep 2010 00:00:00 +0000</pubDate>
       
@@ -314,7 +323,7 @@
     </item>
     
     <item>
-      <title>django</title>
+      <title>Django</title>
       <link>https://drexler-online.net/tags/django/</link>
       <pubDate>Thu, 24 Jun 2010 00:00:00 +0000</pubDate>
       
@@ -323,7 +332,7 @@
     </item>
     
     <item>
-      <title>radfahren</title>
+      <title>Radfahren</title>
       <link>https://drexler-online.net/tags/radfahren/</link>
       <pubDate>Wed, 02 Dec 2009 00:00:00 +0000</pubDate>
       
@@ -332,7 +341,7 @@
     </item>
     
     <item>
-      <title>verkehr</title>
+      <title>Verkehr</title>
       <link>https://drexler-online.net/tags/verkehr/</link>
       <pubDate>Wed, 02 Dec 2009 00:00:00 +0000</pubDate>
       
@@ -341,7 +350,7 @@
     </item>
     
     <item>
-      <title>bookmarks</title>
+      <title>Bookmarks</title>
       <link>https://drexler-online.net/tags/bookmarks/</link>
       <pubDate>Sun, 11 Oct 2009 00:00:00 +0000</pubDate>
       
@@ -350,7 +359,7 @@
     </item>
     
     <item>
-      <title>taz</title>
+      <title>Taz</title>
       <link>https://drexler-online.net/tags/taz/</link>
       <pubDate>Sun, 11 Oct 2009 00:00:00 +0000</pubDate>
       
@@ -359,7 +368,7 @@
     </item>
     
     <item>
-      <title>jabber</title>
+      <title>Jabber</title>
       <link>https://drexler-online.net/tags/jabber/</link>
       <pubDate>Mon, 13 Jul 2009 00:00:00 +0000</pubDate>
       
@@ -368,7 +377,7 @@
     </item>
     
     <item>
-      <title>prosody</title>
+      <title>Prosody</title>
       <link>https://drexler-online.net/tags/prosody/</link>
       <pubDate>Mon, 13 Jul 2009 00:00:00 +0000</pubDate>
       
@@ -377,7 +386,7 @@
     </item>
     
     <item>
-      <title>debian</title>
+      <title>Debian</title>
       <link>https://drexler-online.net/tags/debian/</link>
       <pubDate>Sun, 12 Jul 2009 00:00:00 +0000</pubDate>
       
@@ -386,7 +395,7 @@
     </item>
     
     <item>
-      <title>dovecot</title>
+      <title>Dovecot</title>
       <link>https://drexler-online.net/tags/dovecot/</link>
       <pubDate>Sun, 12 Jul 2009 00:00:00 +0000</pubDate>
       
@@ -395,7 +404,7 @@
     </item>
     
     <item>
-      <title>firefox</title>
+      <title>Firefox</title>
       <link>https://drexler-online.net/tags/firefox/</link>
       <pubDate>Mon, 23 Mar 2009 00:00:00 +0000</pubDate>
       
@@ -404,7 +413,7 @@
     </item>
     
     <item>
-      <title>virtualbox</title>
+      <title>Virtualbox</title>
       <link>https://drexler-online.net/tags/virtualbox/</link>
       <pubDate>Fri, 20 Feb 2009 00:00:00 +0000</pubDate>
       
@@ -413,7 +422,7 @@
     </item>
     
     <item>
-      <title>dstat</title>
+      <title>Dstat</title>
       <link>https://drexler-online.net/tags/dstat/</link>
       <pubDate>Sat, 05 Jul 2008 00:00:00 +0000</pubDate>
       
@@ -422,7 +431,7 @@
     </item>
     
     <item>
-      <title>ssl</title>
+      <title>Ssl</title>
       <link>https://drexler-online.net/tags/ssl/</link>
       <pubDate>Mon, 09 Jun 2008 00:00:00 +0000</pubDate>
       

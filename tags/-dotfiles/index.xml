@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title> Dotfiles on Yaub (yet another useless blog)</title>
+    <link>https://drexler-online.net/tags/-dotfiles/</link>
+    <description>Recent content in  Dotfiles on Yaub (yet another useless blog)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 18 Jul 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/-dotfiles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dottmuxconf</title>
+      <link>https://drexler-online.net/post/dot-tumxconf/</link>
+      <pubDate>Mon, 18 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/dot-tumxconf/</guid>
+      <description>&lt;p&gt;Tmux-Konfig mit grüner Statusleite und veränderten Keybinding.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dotzsh</title>
+      <link>https://drexler-online.net/post/dot-zshrc/</link>
+      <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://drexler-online.net/post/dot-zshrc/</guid>
+      <description>&lt;p&gt;Im Laufe der Jahre gewachsene Zsh-Konfig.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

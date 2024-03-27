@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>web on Yaub (yet another useless blog)</title>
+    <title>Web on Yaub (yet another useless blog)</title>
     <link>https://drexler-online.net/tags/web/</link>
-    <description>Recent content in web on Yaub (yet another useless blog)</description>
+    <description>Recent content in Web on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 08 Feb 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/web/index.xml" rel="self" type="application/rss+xml" />
@@ -33,18 +33,6 @@ Der SSL Server Test vergibt für die Konfig sogar ein A+.</description>
       
       <guid>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</guid>
       <description>Da Mezzanines Funktionsumfang für meine bescheidenen Bedürfnisse doch zu groß war, habe ich das Blog auf Pelican umgestellt, einen Generator für statische Webseiten. Denn Text kann man in reStructuredText oder Markdown verfassen und es gibt eine große Auswahl an Themes und Plugins, so dass bei Bedarf das Aussehen des Blogs schnell mal umgestellt werden kann. Ein weiterer Vorteil ist, dass die Inhalte dann einfach unter Versionskontrolle gestellt werden können, es sind ja nur Textdateien.</description>
-    </item>
-    
-    <item>
-      <title>Blogtransfer von Pebble zu Mezzanine</title>
-      <link>https://drexler-online.net/post/blogtransfer-von-pebble-zu-mezzanine/</link>
-      <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://drexler-online.net/post/blogtransfer-von-pebble-zu-mezzanine/</guid>
-      <description>&lt;p&gt;Die Umsetzung der alten Blogposts aus Pebble erfolgte mit Hilfe eines
-Skripts, das die xml-Dateien parst und entsprechende
-Mezzanine/Django-Objeckte anlegt inkl. Tags und Kategorien.&lt;/p&gt;
-&lt;p&gt;Das Skript gibt es als &lt;a href=&#34;https://gist.github.com/xunzi/5603984&#34;&gt;Gist&lt;/a&gt; bei Github.&lt;/p&gt;</description>
     </item>
     
     <item>

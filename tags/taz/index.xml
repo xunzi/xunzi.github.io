@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>taz on Yaub (yet another useless blog)</title>
+    <title>Taz on Yaub (yet another useless blog)</title>
     <link>https://drexler-online.net/tags/taz/</link>
-    <description>Recent content in taz on Yaub (yet another useless blog)</description>
+    <description>Recent content in Taz on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 11 Oct 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://drexler-online.net/tags/taz/index.xml" rel="self" type="application/rss+xml" />
