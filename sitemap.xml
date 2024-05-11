@@ -5,20 +5,35 @@
     <loc>https://drexler-online.net/post/</loc>
     <lastmod>2021-12-26T22:21:01+01:00</lastmod>
   </url><url>
-    <loc>https://drexler-online.net/tags/pleroma/</loc>
-    <lastmod>2023-04-11T13:36:35+02:00</lastmod>
+    <loc>https://drexler-online.net/about/</loc>
+    <lastmod>2024-05-11T22:37:22+02:00</lastmod>
   </url><url>
-    <loc>https://drexler-online.net/post/pleroma-remove-rum-index/</loc>
-    <lastmod>2023-04-11T13:36:35+02:00</lastmod>
+    <loc>https://drexler-online.net/tags/activitypub/</loc>
+    <lastmod>2024-05-11T22:21:32+02:00</lastmod>
   </url><url>
-    <loc>https://drexler-online.net/tags/postgres/</loc>
-    <lastmod>2023-04-11T13:36:35+02:00</lastmod>
+    <loc>https://drexler-online.net/tags/akkoma/</loc>
+    <lastmod>2024-05-11T22:21:32+02:00</lastmod>
+  </url><url>
+    <loc>https://drexler-online.net/tags/fediadmin/</loc>
+    <lastmod>2024-05-11T22:49:56+02:00</lastmod>
+  </url><url>
+    <loc>https://drexler-online.net/post/akkoma-sparate-media-domain/</loc>
+    <lastmod>2024-05-11T22:21:32+02:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/tags/</loc>
-    <lastmod>2023-04-11T13:36:35+02:00</lastmod>
+    <lastmod>2024-05-11T22:49:56+02:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/</loc>
-    <lastmod>2023-11-06T11:58:28+01:00</lastmod>
+    <lastmod>2024-05-11T22:49:56+02:00</lastmod>
+  </url><url>
+    <loc>https://drexler-online.net/tags/pleroma/</loc>
+    <lastmod>2024-05-11T22:49:56+02:00</lastmod>
+  </url><url>
+    <loc>https://drexler-online.net/post/pleroma-remove-rum-index/</loc>
+    <lastmod>2024-05-11T22:49:56+02:00</lastmod>
+  </url><url>
+    <loc>https://drexler-online.net/tags/postgres/</loc>
+    <lastmod>2024-05-11T22:49:56+02:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/tags/blog/</loc>
     <lastmod>2021-12-27T20:27:01+01:00</lastmod>
@@ -32,9 +47,6 @@
     <loc>https://drexler-online.net/post/pelican2hugo/</loc>
     <lastmod>2021-12-27T20:27:01+01:00</lastmod>
   </url><url>
-    <loc>https://drexler-online.net/about/</loc>
-    <lastmod>2023-11-06T11:58:28+01:00</lastmod>
-  </url><url>
     <loc>https://drexler-online.net/tags/lxd/</loc>
     <lastmod>2021-12-28T18:10:11+01:00</lastmod>
   </url><url>
@@ -43,210 +55,6 @@
   </url><url>
     <loc>https://drexler-online.net/post/terraform-und-lxd/</loc>
     <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/kvm/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/kvm-zu-lxd/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/rootserver/</loc>
-    <lastmod>2022-11-07T20:06:02+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/blockdevice/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/qemu-img/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/virsh/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/virsh-disk-handling/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/-dotfiles/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/dot-tumxconf/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/tmux/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/umstellung-auf-https/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/web/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/dot-zshrc/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/zsh/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/bildergalerien-mit-sigal/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/photos/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/mezzanine/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/-pebble/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/-web/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/blogtransfer-von-pebble-zu-mezzanine/</loc>
-    <lastmod>2021-12-28T18:10:11+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/backup/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/langsames-timemachine-backup-mit-macos-1075/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/macos/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/spotlight/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/apache/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/apache-raus-nginx-rein/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/nginx/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/php-fpm/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/owncloud/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/testinstallation-owncloud/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/snmp/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/snmp-unter-ubuntu/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/ubuntu/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/beamer/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/emacs/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/org-export-als-beamer-prase/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/org-mode/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/org-mode/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/einbruch/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/security/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/helferlein/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/linux/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/von-linux-zu-macos/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/django/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/django-toolbar/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/fahrrad-aggro/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/radfahren/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/verkehr/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/interview-mit-einem-botnetz-chef/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/bookmarks/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/taz/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/taz-werbespot/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/jabber/</loc>
-    <lastmod>2022-11-07T20:06:02+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/neuer-jabber-server/</loc>
-    <lastmod>2022-11-07T20:06:02+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/prosody/</loc>
-    <lastmod>2022-11-07T20:06:02+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/debian/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/dovecot/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/upgrade-auf-lenny-und-umstellung-auf-dovecot/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/bloggen-aus-firefox/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/firefox/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/photo-sammlung-bei-google/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/screencast-einer-windows-session-in-virtualbox/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/virtualbox/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/dstat/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/konsolenhelfer-1-dstat/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/tags/ssl/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
-  </url><url>
-    <loc>https://drexler-online.net/post/ssl-problem/</loc>
-    <lastmod>2021-12-26T22:21:01+01:00</lastmod>
   </url><url>
     <loc>https://drexler-online.net/static/favourites-screencast/</loc>
     <lastmod>2021-12-27T19:59:51+01:00</lastmod>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Akkoma on Yaub (yet another useless blog)</title>
+    <link>https://drexler-online.net/tags/akkoma/</link>
+    <description>Recent content in Akkoma on Yaub (yet another useless blog)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 May 2024 22:21:32 +0200</lastBuildDate>
+    <atom:link href="https://drexler-online.net/tags/akkoma/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Separate Media Domain for Akkoma</title>
+      <link>https://drexler-online.net/post/akkoma-sparate-media-domain/</link>
+      <pubDate>Sat, 11 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://drexler-online.net/post/akkoma-sparate-media-domain/</guid>
+      <description>The last release of Akkoma finally enforces setting a base_url value for the uploader (guess who didn&amp;rsquo;t read the release notes before upgrading and had to start digging after the service refused to start).
+To enable akkoma to start again I set the base_url value to the main domain of my akkoma instance but this still leaves a rather stern warning to switch to another domain for uplaods (and the media proxy if you use it).</description>
+    </item>
+  </channel>
+</rss>

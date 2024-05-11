@@ -17,12 +17,5 @@
 Die Artikel sind nach wie vor in Markdown verfasst, so dass hier keine Umwandlung notwendg ist, einzig die Headers/Front Matter sind in einem neuen Format.
 Ich habe ein Conversionsskript geschrieben, das die Frontmatter von Pelican ins Hugo-Format umwandelt.</description>
     </item>
-    <item>
-      <title>Streiche Mezzanine, setze Pelican</title>
-      <link>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</link>
-      <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</guid>
-      <description>Da Mezzanines Funktionsumfang für meine bescheidenen Bedürfnisse doch zu groß war, habe ich das Blog auf Pelican umgestellt, einen Generator für statische Webseiten. Denn Text kann man in reStructuredText oder Markdown verfassen und es gibt eine große Auswahl an Themes und Plugins, so dass bei Bedarf das Aussehen des Blogs schnell mal umgestellt werden kann. Ein weiterer Vorteil ist, dass die Inhalte dann einfach unter Versionskontrolle gestellt werden können, es sind ja nur Textdateien.</description>
-    </item>
   </channel>
 </rss>

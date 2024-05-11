@@ -6,8 +6,26 @@
     <description>Recent content on Yaub (yet another useless blog)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Nov 2023 11:58:28 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 11 May 2024 22:49:56 +0200</lastBuildDate>
     <atom:link href="https://drexler-online.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://drexler-online.net/about/</link>
+      <pubDate>Sat, 11 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://drexler-online.net/about/</guid>
+      <description>Willkommen Herzlich willkommen. Dies ist eindeutig einer der weniger stark besuchten Winkel des Internet, deshalb bin ich überrascht aber natürlich auch hoch erfreut über jeden Besucher.
+Über mich Ich habe mehr als 20 Jahre Berufserfahrung als Systemadministrator für Unix- und Linux-Systeme mit umfangreichen Kenntnissen in den Bereichen Virtualisierung, Netzwerk und Automatisierung.
+Impressum Kontakt Christian Drexler webmaster@drexler-online.net
+Datenschutzerklärung Auf dieser Webseite werden keine personenbezogenen Daten erhoben, gespeichert oder verarbeitet. Es werden keine Cookies verwendet.</description>
+    </item>
+    <item>
+      <title>Separate Media Domain for Akkoma</title>
+      <link>https://drexler-online.net/post/akkoma-sparate-media-domain/</link>
+      <pubDate>Sat, 11 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://drexler-online.net/post/akkoma-sparate-media-domain/</guid>
+      <description>The last release of Akkoma finally enforces setting a base_url value for the uploader (guess who didn&amp;rsquo;t read the release notes before upgrading and had to start digging after the service refused to start).
+To enable akkoma to start again I set the base_url value to the main domain of my akkoma instance but this still leaves a rather stern warning to switch to another domain for uplaods (and the media proxy if you use it).</description>
+    </item>
     <item>
       <title>Pleroma: Remove Rum Index</title>
       <link>https://drexler-online.net/post/pleroma-remove-rum-index/</link>
@@ -26,229 +44,12 @@ Die Artikel sind nach wie vor in Markdown verfasst, so dass hier keine Umwandlun
 Ich habe ein Conversionsskript geschrieben, das die Frontmatter von Pelican ins Hugo-Format umwandelt.</description>
     </item>
     <item>
-      <title>About</title>
-      <link>https://drexler-online.net/about/</link>
-      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/about/</guid>
-      <description>Willkommen Herzlich willkommen. Dies ist eindeutig einer der weniger stark besuchten Winkel des Internet, deshalb bin ich überrascht aber natürlich auch hoch erfreut über jeden Besucher.
-Hier finden sich Blogeinträge zu verschiedenen Themen, der älteste ist von 2008. Die meisten Einträdge sind deshalb wohl nicht mehr unbeding relevant und müssten eigentlich mal in ein Archiv verschoben werden.
-Über mich Ich habe mehr als 20 Jahre Berufserfahrung als Systemadministrator für Unix- und Linux-Systeme mit umfangreichen Kenntnissen in den Bereichen Virtualisierung, Netzwerk und Automatisierung.</description>
-    </item>
-    <item>
       <title>Terraform und Lxd</title>
       <link>https://drexler-online.net/post/terraform-und-lxd/</link>
       <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
       <guid>https://drexler-online.net/post/terraform-und-lxd/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://www.terraform.io/&#34;&gt;Terraform&lt;/a&gt; ist eine deklarative Beschreibungssprache für Cloud-Infrastrukturen.&lt;/p&gt;
 &lt;p&gt;Unterstützt werden viele Cloudprovider, unter anderem auch lxd.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>KVM zu LXD</title>
-      <link>https://drexler-online.net/post/kvm-zu-lxd/</link>
-      <pubDate>Sun, 07 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/kvm-zu-lxd/</guid>
-      <description>Alle vier Jahre migrieren wir den Hetzner-Server auf neue Hardware, bei der letzten Umstellung haben wir auch gleich den Unterbau geändert, wo früher die individuellen Gäste als kvm/libvirt-Gäste liefen und die Infrastruktur (Datenbanken, Verzeichnisdienst, Email) auf dem Host, sind jetzt alle Funktionen in Lxd-Container ausgelagert.
-Lxd-Container stellen sich wie ein vollwertiges Betriebssystem dar, mir persönlich sind Docker-Container zu friemelig, der Unix-Admin in mir stört sich einfach daran, dass man bei Docker nicht so einfach mit der Shell rumporkeln kann, bis es geht.</description>
-    </item>
-    <item>
-      <title>Virsh disk handling</title>
-      <link>https://drexler-online.net/post/virsh-disk-handling/</link>
-      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/virsh-disk-handling/</guid>
-      <description>&lt;p&gt;Wenn die qemu/kvm-Platten vollaufen, kann man relativ einfach eine neue Platte erzeugen und mounten. Das ist in vielen Fällen weniger kritisch, als existierende Diskimages, Partitionen und Dateisysteme zu vergrößern.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Dottmuxconf</title>
-      <link>https://drexler-online.net/post/dot-tumxconf/</link>
-      <pubDate>Mon, 18 Jul 2016 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/dot-tumxconf/</guid>
-      <description>&lt;p&gt;Tmux-Konfig mit grüner Statusleite und veränderten Keybinding.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Umstellung auf https</title>
-      <link>https://drexler-online.net/post/umstellung-auf-https/</link>
-      <pubDate>Mon, 08 Feb 2016 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/umstellung-auf-https/</guid>
-      <description>Da es dank Let&amp;rsquo;s Encrypt jetzt auch https-Zertifikate für lau gibt, die in allen Browsern akzeptiert werden, habe ich dieses Blog dann auch mal auf https umgestellt. Hierfür benötigt man nur den Letsencrypt-Client, dann ist das Ganze in 2 Minuten umgesetzt. Ergänzt um einen Redirect von http auf https ist die Seite jetzt ganz den neuen Google-Siteranking-Kriterien entsprechend gesichert.
-Der SSL Server Test vergibt für die Konfig sogar ein A+.</description>
-    </item>
-    <item>
-      <title>Dotzsh</title>
-      <link>https://drexler-online.net/post/dot-zshrc/</link>
-      <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/dot-zshrc/</guid>
-      <description>&lt;p&gt;Im Laufe der Jahre gewachsene Zsh-Konfig.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Bildergalerien mit Sigal</title>
-      <link>https://drexler-online.net/post/bildergalerien-mit-sigal/</link>
-      <pubDate>Sat, 19 Jul 2014 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/bildergalerien-mit-sigal/</guid>
-      <description>Die gelegentlich anfallenden Fotos aus dem Freunds- und Familienkreis habe ich bisher ärgerlicherweise bei Google hochgeladen udn mit einem privaten Link verteilt, so dass sie zwar nicht einer Google-Suche zum Opfer fallen können, aber dennoch bei Google bekannt sind. Viele Leute sind nachvollziehbarerweise auch gar nicht glücklich darüber, wenn sie ihr Antlitz auf einer bei Google gehosteten Seite wiederfinden, so dass hier eine neue Lösung hermusste. Da ich ja das Blog schon mit Pelican auf einen Generator für statische Webseiten umgestellt habe, lag es natürlich nahe, auch die Fotos mit einem solchen Generator in die Webseite einzubinden.</description>
-    </item>
-    <item>
-      <title>Streiche Mezzanine, setze Pelican</title>
-      <link>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</link>
-      <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/streiche-mezzanine-setze-pelican/</guid>
-      <description>Da Mezzanines Funktionsumfang für meine bescheidenen Bedürfnisse doch zu groß war, habe ich das Blog auf Pelican umgestellt, einen Generator für statische Webseiten. Denn Text kann man in reStructuredText oder Markdown verfassen und es gibt eine große Auswahl an Themes und Plugins, so dass bei Bedarf das Aussehen des Blogs schnell mal umgestellt werden kann. Ein weiterer Vorteil ist, dass die Inhalte dann einfach unter Versionskontrolle gestellt werden können, es sind ja nur Textdateien.</description>
-    </item>
-    <item>
-      <title>Blogtransfer von Pebble zu Mezzanine</title>
-      <link>https://drexler-online.net/post/blogtransfer-von-pebble-zu-mezzanine/</link>
-      <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/blogtransfer-von-pebble-zu-mezzanine/</guid>
-      <description>&lt;p&gt;Die Umsetzung der alten Blogposts aus Pebble erfolgte mit Hilfe eines
-Skripts, das die xml-Dateien parst und entsprechende
-Mezzanine/Django-Objeckte anlegt inkl. Tags und Kategorien.&lt;/p&gt;
-&lt;p&gt;Das Skript gibt es als &lt;a href=&#34;https://gist.github.com/xunzi/5603984&#34;&gt;Gist&lt;/a&gt; bei Github.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Langsames TimeMachine-Backup mit MacOS 10.7.5</title>
-      <link>https://drexler-online.net/post/langsames-timemachine-backup-mit-macos-1075/</link>
-      <pubDate>Wed, 03 Oct 2012 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/langsames-timemachine-backup-mit-macos-1075/</guid>
-      <description>Seit ein paar Tagen läuft das TimeMachine Backup auf dem Synology-NAS grottenlangsam. Ich habe verschiedene Dinge ausprobiert (neues Share anlegen, Indexdateien von Spotlight löschen, Indizierung für TM-Share ausschalten), alles ohne Erfolg. Schliesslich hat mich Google auf diesen Thread geführt, wo der Spotlight-Indexer als Schuldiger benannt wird. Tatsächlich rennt das Backup wieder, wenn man per
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
-den Indexer stoppt.
-Nach erfolgreichem Backup sollte man dann auch mit</description>
-    </item>
-    <item>
-      <title>Apache raus, Nginx rein</title>
-      <link>https://drexler-online.net/post/apache-raus-nginx-rein/</link>
-      <pubDate>Mon, 02 Jul 2012 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/apache-raus-nginx-rein/</guid>
-      <description>Anlässlich des Upgrades auf Ubuntu Precise habe ich den Webserver umgestellt von Apache auf Nginx. Für das ungeliebte Php muss dann php-fpm.org/ mit ins Boot, der Java-Appserver wird per Proxy angebunden, da Nginx kein AJP spricht. Auf dem kleinen Webserver performt das Ganze ganz gut und hat den Vorteil, dass die Nginx-Konfig deutlich einfacher und überschaubarer ist.
-Erst dachte ich, die openJDK-Version im Lieferumfang von Precise hätte ne massive Macke, weil der Tomcat-Prozess munter alle verfügbaren Cpu-Zyklen aufgebraucht hat, es stellte sich dann aber heraus, dass die Schaltsekunde schuld war und ein dezenter Reboot die schnellste Abhilfe brachte.</description>
-    </item>
-    <item>
-      <title>Testinstallation: Owncloud</title>
-      <link>https://drexler-online.net/post/testinstallation-owncloud/</link>
-      <pubDate>Thu, 12 Apr 2012 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/testinstallation-owncloud/</guid>
-      <description>Ich habe - angeregt durch die Jubelmeldungen über owncloud - eine Testinstanz von &amp;ldquo;Your Cloud, Your Data, Your Way!&amp;rdquo; aufgesetzt. OC kombiniert einen Webdav-Server, mit dem man die Dateien in die Dateimanager moderner Betriebssysteme einbinden kann mit einem Kalender/Caldav-Server und einem Addressbuch/carddav-Server. Die Standards caldav und carddav werden z. B. von Apples iOS unterstützt, so dass man in der eigenen Wolke seine Kalenderdaten und Kontakte speichern kann, ohne dass Google oder die anderen üblichen Verdächtigen nen schnellen Euro mit der Zweit- und Drittverwertung der persönlichen Daten machen können.</description>
-    </item>
-    <item>
-      <title>Snmp unter Ubuntu</title>
-      <link>https://drexler-online.net/post/snmp-unter-ubuntu/</link>
-      <pubDate>Sun, 19 Jun 2011 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/snmp-unter-ubuntu/</guid>
-      <description>Falls mal jemand unter Ubuntu die net-snmp-Utilities (snmpwalk etc.) einsetzen will, ist zu beachten, daß zusätzlich zm Paket snmp auch noch snmp-mibs-downloader installiert werden muss, dann werden die MIBs automatisch heruntergaladen und integriert. Zusätzlich muß noch in der Datei /etc/snmp/snmp.conf die Zeile mibs : auskommentiert werden. Grund für das Gehmpel sind wohl Lizenzprobleme, die die Auslieferung der MIBs seit Ubuntu 10.4 als Teil der Distribution verhindern.</description>
-    </item>
-    <item>
-      <title>Org-Export als Beamer-Präse</title>
-      <link>https://drexler-online.net/post/org-export-als-beamer-prase/</link>
-      <pubDate>Mon, 17 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/org-export-als-beamer-prase/</guid>
-      <description>Eine der zahlreichen äußerst praktischen Anwendungen von org-mode ist die Möglichkeit, org-Dokumente als Beamer-Präsentationen zu exportieren. Das sieht dann z.B. so aus, wie in diesem Beispiel. Erzeugt wurde das Ganze aus dieser org-Datei. (Damit dieser Export funktioniert, muß übrigens eine LaTex-Umgebung installiert sein!)</description>
-    </item>
-    <item>
-      <title>Org-mode</title>
-      <link>https://drexler-online.net/post/org-mode/</link>
-      <pubDate>Sat, 15 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/org-mode/</guid>
-      <description>Die Suche nach einer Aufgaben- und Wissensmanagement-Software hat sich als Odyssee herausgestellt. Wichtige Stationen dieser Reise waren Scribble Paper, Task coach und Makagiga, ihr vorläufiges Ende fand die Reise bei org-mode.
-Ein Problem, das mich schon länger umtreibt, ist ein Programm, mit dem ich einerseits meine Todo-Liste und andererseits die zahlreichen Informationen managen kann, die tagtäglich so auf mich einprasseln.Kompliziert wird die Suche dadurch, daß das Ganze unter Windows laufen muß, damit ich es bei der Arbeit sinnvoll nutzen kann.</description>
-    </item>
-    <item>
-      <title>Einbruch!</title>
-      <link>https://drexler-online.net/post/einbruch/</link>
-      <pubDate>Sun, 19 Sep 2010 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/einbruch/</guid>
-      <description>Einbruch in unseren schönen Server! Spam- und Virusmails ham se verschickt, die Schmutzbuckel.
-Aufgefallen ist das Ganze dadurch, daß Postfix immer versucht hat, Mails an den Webserver-User zuzustellen. Ich habe mir die Mails dann mal weiterleiten lassen und hatte in ein paar Sekunden weit über 500 neue Emails, alles Bounces von Aol und Yahoo, die mich darüber informieren wollten, daß meine Mails nicht zugestellt werden konnten. In der Mailqueue waren auch noch ein paar Dutzend Mails, denen die Mxe von Yahoo die Annahme verweigerten.</description>
-    </item>
-    <item>
-      <title>von Linux zu MacOS</title>
-      <link>https://drexler-online.net/post/von-linux-zu-macos/</link>
-      <pubDate>Tue, 14 Sep 2010 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/von-linux-zu-macos/</guid>
-      <description>Da seit neuestem ein MacMini unseren Sekretär ziert, musste ich für einige liebgewonnene Applikationen Ersatz suchen. Besonders schwierig war diese Suche im Bereich Bildverwaltung und Musikverwaltung.
-Als Bildverwaltung kam bisher immer Digikam zum Einsatz. Das läßt sich zwar auch unter MacOS kompilieren, aber das erfordert häßliche Krücken, um die KDE-Umgebung zum Laufen zu bringen. iPhoto war auch nicht so mein Fall (das war vor allem erstaunlich zäh, noch bevor ich alle meine Bilder importiert hatte), schließlich bin ich bei Googles Picasa gelandet, weil ich keine Lust hatte, ein- oder zweihundert Euro für die einschlägigen Produkte von Adobe oder Apple auszugeben, Picasa angenehm flott reagiert und die grundlegenden Bearbeitungsfunktionen bereithält, die ich so brauche.</description>
-    </item>
-    <item>
-      <title>Django-Toolbar</title>
-      <link>https://drexler-online.net/post/django-toolbar/</link>
-      <pubDate>Thu, 24 Jun 2010 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/django-toolbar/</guid>
-      <description>Bei meinen Experimenten mit Django ist mir letztlich die Django-Toolbar unter die Finger gekommen. Hierbei handelt es sich um eine Django-Middleware, die zusätzlich zu der normalen Ausgabe ein Overlay erzeugt, dem man so interessante Details wie die Http-Header des aktuellen Requests oder die SQL-Queries, die für den aktuellen Request ausgeführt wurden. Das ist schon cool, fast noch cooler ist, daß Django mittlerweile sehr gut und vollständig in Ubuntu verfügbar ist (und auch die Toolbar ein aptitude install python-django-debug-toolbar entfernt ist).</description>
-    </item>
-    <item>
-      <title>Fahrrad-Aggro</title>
-      <link>https://drexler-online.net/post/fahrrad-aggro/</link>
-      <pubDate>Wed, 02 Dec 2009 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/fahrrad-aggro/</guid>
-      <description>Habe einen sehr lesenswerten Artikel in der Online-Ausgabe der Times über Sinn und Unsinn des tollkühnen Radfahrens im Innenstadtverkehr gefunden. Die Kurzfassung: Fahrradfahren in der Stadt ist toll (ökologisch lobenswert, schnell und frei von Parkplatzsorgen), aber die meisten Radfahrer fahren wie die gesengten Säue.
-Bei dieser Beobachtung hab ich mich natürlich gleich wiedererkannt, da ich jeden morgen nachdem ich meinen Sohn zur Schule gebracht habe, an &amp;ldquo;Need for Speed&amp;rdquo; auf der Kirchfeldstraße teilnehme.</description>
-    </item>
-    <item>
-      <title>Interview mit einem Botnetz-Chef</title>
-      <link>https://drexler-online.net/post/interview-mit-einem-botnetz-chef/</link>
-      <pubDate>Thu, 15 Oct 2009 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/interview-mit-einem-botnetz-chef/</guid>
-      <description>Die Securitygurus bei Cisco haben ihre Kommunikation mit einem Botnetzbetreiber beschrieben. Der Typ kam gar nicht so unsympathisch rüber, ein Kleinunternehmer, der seine Herde durch IM-Spam vergrößert, kein erkennbares Unrechtsbewußtsein, eher mangelndes Mitleid mit naiven Usern, die blind auf alles klicken, was nicht schnell genug wegscrollt.</description>
-    </item>
-    <item>
-      <title>taz-Werbespot</title>
-      <link>https://drexler-online.net/post/taz-werbespot/</link>
-      <pubDate>Sun, 11 Oct 2009 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/taz-werbespot/</guid>
-      <description>Daß es den tollen taz-Werbespot überhaupt gibt, habe ich erst dadurch mitbekommen, daß der Bundesgerichtshof jetzt entschieden hat, daß der Spot keine unzulässige Herbsetzung des Boulevardblattes darstellt. Schön, daß Bild der taz den Gefallen getan hat, dagegen zu klagen - ich hab was gelernt und meine Vorurteile über Bild haben sich bestätigt, nämlich daß die lange nicht so gut einstecken wie austeilen können.</description>
-    </item>
-    <item>
-      <title>Neuer Jabber-Server</title>
-      <link>https://drexler-online.net/post/neuer-jabber-server/</link>
-      <pubDate>Mon, 13 Jul 2009 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/neuer-jabber-server/</guid>
-      <description>Im Zuge der Server-Renovierung habe ich auch den Jabberserver von Openfireauf Prosody umgestellt.
-Prosody ist sehr klein und braucht nur sehr wenige Resourcen. Außerdem ist es sehr sehr einfach aufzusetzen (obwohl Openfire mit der Weboberfläche da auch recht simpel ist). Was noch fehlt sind die Gateway-Plugins zu anderen IM-Systemen, mit denen man einen Jabber-Account beispielsweise mit einem MSN-Account verknüpfen kann, aber das ist mir momentan nicht so wichtig. Zum Ausgleich ist Prosody Virtualhost-fähig und in Lua geschrieben, eine Sprache, die ich mir sowieso immer schon mal ansehen wollte.</description>
-    </item>
-    <item>
-      <title>Upgrade auf Lenny und Umstellung auf Dovecot</title>
-      <link>https://drexler-online.net/post/upgrade-auf-lenny-und-umstellung-auf-dovecot/</link>
-      <pubDate>Sun, 12 Jul 2009 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/upgrade-auf-lenny-und-umstellung-auf-dovecot/</guid>
-      <description>Gestern habe ich mir ein Herz gefasst und den Server auf Lenny aktualisiert. Der erste Lauf von aptitude dist-upgrade förderte 7 unauflösbare Konflikte zu Tage, aber nach dem Entfernen von libsasl2 und libapache2-mod-php5 ging es dann reibungslos. Nach dem reboot (immer ein spannender Moment bis die Pings wieder zurückkommen) ging dann fast alles wieder wie gewohnt bis auf Postfix und den Tomcat-Mount per ajp. Postfix mochte keine Benutzer mehr authentifizieren, wohl ein Problem mit Sasl und Passworten im Klartext (die ich in Syscp ausgeschaltet habe).</description>
-    </item>
-    <item>
-      <title>Bloggen aus Firefox</title>
-      <link>https://drexler-online.net/post/bloggen-aus-firefox/</link>
-      <pubDate>Mon, 23 Mar 2009 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/bloggen-aus-firefox/</guid>
-      <description>Eine hübsche und nützliche Erweiterung für Firefox ist ScribeFire, mit dessen Hilfe via Metaweblog-API Blogbeiträge direkt aus Firefox heraus erstellt werden können.
-[Update] FireScribe fügt neuen Einträgen ein unsichtbares pixelgroßes Jpg-Bild hinzu, das auf Zemanta verweist (sichtbar in der Quellcode-Ansicht). Die Konfigurationsoption &amp;ldquo;Automatically insert invisible tracking pixel for statistics gathering&amp;rdquo; unter &amp;ldquo;Publishing&amp;rdquo; sollte dieses Verhalten deaktivieren.</description>
-    </item>
-    <item>
-      <title>Photo-Sammlung bei Google</title>
-      <link>https://drexler-online.net/post/photo-sammlung-bei-google/</link>
-      <pubDate>Mon, 23 Mar 2009 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/photo-sammlung-bei-google/</guid>
-      <description>Schon seit November letzten Jahres gibt es bei Google zehntausende Photos der Zeitschrift LIFE, die in ihrem wechselvollen Werdegang auch einmal ein Zentralorgan des Photojournalismus war.</description>
-    </item>
-    <item>
-      <title>Screencast einer Windows-Session in Virtualbox</title>
-      <link>https://drexler-online.net/post/screencast-einer-windows-session-in-virtualbox/</link>
-      <pubDate>Fri, 20 Feb 2009 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/screencast-einer-windows-session-in-virtualbox/</guid>
-      <description>Screencasts von Windows-Sessions, die in einer Virtualbox-VM laufen, sind dank vrdp und pyvnc2swf sehr einfach zu erstellen.
-Ein Screencast ist so etwas wie ein animierter Screenshot und in manchen Fällen einleuchtender als eine lange Kette von Schnappschüssen des Bildschirms.
-Das Tool pyvnc2swf erstellt aus einer Vnc-Session ein Flashfilmchen. Um nun ein Screencast von einem per Virtualbox in ein Fenster verbannten Windows zu erstellen, reicht es, in den Einstellungen der virtuellen Maschine unter &amp;ldquo;Remote Display&amp;rdquo; das Häkchen bei &amp;ldquo;Enable VRDP Server&amp;rdquo; zu setzen und die virtuelle Maschine zu starten.</description>
-    </item>
-    <item>
-      <title>Konsolenhelfer (1): dstat</title>
-      <link>https://drexler-online.net/post/konsolenhelfer-1-dstat/</link>
-      <pubDate>Sat, 05 Jul 2008 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/konsolenhelfer-1-dstat/</guid>
-      <description>Auf der Suche nach Performance-Engpässen ist es öfter notwendig, die Ausgaben der Kommandos vmstat, iostat und nfsstat miteinander zu vergleichen. Einfacher als drei Terminalfenster mit den jeweiligen Kommandos ist das Tool dstat, das zusätzlich noch eine augenfreundlich kolorierte Ausgabe erzeugt. Dstat von Dag Wieers. dstat misst eine konfigurierbare Auswahl von Betriebssystem-Parametern und zeigt sie kontinuierlich an. Wird dstat ohne weitere Parameter aufgerufen, zeigt es Statistiken zu Cpu, Blockdevice, Netzwerk, Paging und System (Context switches und Interrupts) an: Dstat ist durch Plugins erweiterbar, eine Liste der verfügbaren Plugins gibt das Kommando dstat -M list.</description>
-    </item>
-    <item>
-      <title>SSL-Problem</title>
-      <link>https://drexler-online.net/post/ssl-problem/</link>
-      <pubDate>Mon, 09 Jun 2008 00:00:00 +0000</pubDate>
-      <guid>https://drexler-online.net/post/ssl-problem/</guid>
-      <description>Ein Verweis auf die Zertifikatskette (certificate chain) läßt https-Verbindungen von IE oder Opera zu Apache scheitern. Geholfen bei der Fehlersuche haben openssl und google. Das erwähnte Problem mit SSL-Verbindungen von IE7 und Opera unter WIndows hat sich nun auch gelöst: Schuld war ein Eintrag in einer Apache-Konfigurationsdatei, der auf die Zertifikatskette verweist:
-SSLCertificateChainFile /etc/ssl/certs/ca-certificates.crt
-Auch wenn in weiteren Direktiven die Überprüfung von Client-Zertifikaten explizit abgeschaltet ist, versucht Apache dennoch, ein Client-Zertifikat anzufordern.</description>
     </item>
     <item>
       <title></title>
